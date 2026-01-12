@@ -11,14 +11,9 @@ vanilla_start_locations = [
     "A Seedy Place"
 ]
 
-test_location = [
-    "Test"
-]
-
 def get_location_table():
     table = {}
     table.update(add_locations(table, vanilla_start_locations))
-    table.update(add_locations(table, test_location))
     return table
 
 def add_locations(table: dict[str, int], locations: list[str]):

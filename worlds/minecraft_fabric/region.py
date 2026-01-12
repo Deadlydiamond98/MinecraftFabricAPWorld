@@ -4,21 +4,20 @@ from typing import TYPE_CHECKING, Optional
 if TYPE_CHECKING:
     from worlds.minecraft_fabric import FabricMinecraftWorld
 
-from BaseClasses import Region, Location, CollectionState, Entrance
-from worlds.minecraft_fabric.locations import location_table, vanilla_start_locations, test_location
+from BaseClasses import Region, Location, CollectionState, Entrance, LocationProgressType
+from worlds.minecraft_fabric.locations import location_table, vanilla_start_locations
 
 
 # REGIONS ##############################################################################################################
 
 
 def get_goal_condition(world: FabricMinecraftWorld, state: CollectionState):
-    return state.has("Apple", world.player, 2)
+    return state.has("Progressive Smelting", world.player)
 
 
-def create_regions(world):
+def create_regions(world: FabricMinecraftWorld):
     # Menu Region
     create_locations(world, "Menu", vanilla_start_locations)
-    create_locations(world, "Test", test_location)
 
     # Goal
     world.multiworld.completion_condition[world.player] = lambda state: get_goal_condition(world, state)
@@ -46,5 +45,6 @@ def connect(world, name: str, source: str, target: str, rule=None, reach: Option
 
     return connection if reach else None
 
-def connect_entrances(world) -> None:
-    connect(world, "Menu -> Target", "Menu", "Test", lambda state: state.has("Orange", world.player))
+
+def connect_entrances(world: FabricMinecraftWorld) -> None:
+    pass

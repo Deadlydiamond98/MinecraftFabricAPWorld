@@ -15,8 +15,9 @@ class MCItemPart:
 # Items that can be added ##############################################################################################
 
 progression = [
-    "Apple",
-    "Orange"
+    "Swim",
+    "Sprint",
+    "Progressive Smelting"
 ]
 
 useful_index = len(progression) - 1
@@ -64,7 +65,6 @@ def get_item_table():
     items += useful_part.items
     traps_part = get_items_part(ItemClassification.trap, len(items), traps)
     items += traps_part.items
-
     return items
 
 # This returns an MCItemPart, which is a list of items and an index for the next list's item ids

@@ -1,8 +1,9 @@
 import math
+from typing import Mapping, Any
 
 from BaseClasses import ItemClassification, Item
 from worlds.AutoWorld import World
-from worlds.minecraft_fabric.items import item_table, end_index, traps_index
+from worlds.minecraft_fabric.items import item_table, end_index, traps_index, useful_index
 from worlds.minecraft_fabric.locations import location_table
 from worlds.minecraft_fabric.options import FMCOptions
 from worlds.minecraft_fabric.region import create_regions, connect_entrances
@@ -27,6 +28,12 @@ class FabricMinecraftWorld(World):
     def create_regions(self):
         create_regions(self)
 
+    def fill_slot_data(self) -> Mapping[str, Any]:
+        return {
+            "randomize_swim": self.options.randomize_swim.value,
+            "randomize_sprint": self.options.randomize_sprint.value
+        }
+
     def connect_entrances(self) -> None:
         connect_entrances(self)
 
@@ -37,9 +44,18 @@ class FabricMinecraftWorld(World):
         total_items = len(self.multiworld.get_unfilled_locations(self.player))
 
         # Progression Items ############################################################################################
-        total_items = self.add_to_pool(0, total_items)
-        total_items = self.add_to_pool(0, total_items)
-        total_items = self.add_to_pool(1, total_items)
+
+        if self.options.randomize_swim:
+            total_items = self.add_to_pool(0, total_items)
+        if self.options.randomize_sprint:
+            total_items = self.add_to_pool(1, total_items)
+
+        # Progressive Smelting
+        total_items = self.add_to_pool(2, total_items)
+        total_items = self.add_to_pool(2, total_items)
+
+        # for i in range(1, useful_index):
+        #     total_items = self.add_to_pool(i, total_items)
 
         # Trap Items ###################################################################################################
         trap_weights = []
@@ -61,7 +77,7 @@ class FabricMinecraftWorld(World):
 
         # Filler Items #################################################################################################
         for i in range(total_items):
-            total_items = self.add_to_pool(self.random.randint(0, traps_index), total_items)
+            total_items = self.add_to_pool(self.random.randint(useful_index, traps_index), total_items)
 
 
     def add_to_pool(self, index: int, total_items: int):

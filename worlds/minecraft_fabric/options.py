@@ -1,6 +1,19 @@
 from dataclasses import dataclass
 
-from Options import PerGameCommonOptions, Choice, Range, ItemSet
+from Options import PerGameCommonOptions, Choice, Range, ItemSet, OptionSet, OptionGroup, Toggle
+
+
+# ABILITIES ############################################################################################################
+
+class RandomizeSwim(Toggle):
+    """Removes the ability to enter water, and adds a Swim Item to the pool."""
+    display_name = "Randomize Swim"
+    default = False
+
+class RandomizeSprint(Toggle):
+    """Removes the ability to Sprint, and adds a Sprint Item to the pool."""
+    display_name = "Randomize Sprint"
+    default = False
 
 
 # TRAP STUFF ###########################################################################################################
@@ -78,13 +91,18 @@ class LiteratureTrapWeight(BaseTrapWeight):
     """
     display_name = "Literature Trap Weight"
 
-# class EnabledMods(ItemSet):
+
+# class EnabledMods(OptionSet):
 #     """List Compatible Mods here to include their checks in the game"""
 #     display_name = "Mods"
 #     rich_text_doc = True
 
 @dataclass
 class FMCOptions(PerGameCommonOptions):
+    # Abilities
+    randomize_swim: RandomizeSwim
+    randomize_sprint: RandomizeSprint
+    # Traps
     trap_fill_percentage: TrapFillPercentage
     reverseControlsTrapWeight: ReverseControlsTrapWeight
     invertedMouseTrapWeight: InvertedMouseTrapWeight
