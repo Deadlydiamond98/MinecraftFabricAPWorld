@@ -17,7 +17,8 @@ class MCItemPart:
 progression = [
     "Swim",
     "Sprint",
-    "Progressive Smelting"
+    "Progressive Tools",
+    "Progressive Weapons"
 ]
 
 useful_index = len(progression) - 1

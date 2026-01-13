@@ -11,9 +11,14 @@ vanilla_start_locations = [
     "A Seedy Place"
 ]
 
+requiresStoneTool = [
+    "Getting an Upgrade"
+]
+
 def get_location_table():
     table = {}
     table.update(add_locations(table, vanilla_start_locations))
+    table.update(add_locations(table, requiresStoneTool))
     return table
 
 def add_locations(table: dict[str, int], locations: list[str]):

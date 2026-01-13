@@ -50,9 +50,16 @@ class FabricMinecraftWorld(World):
         if self.options.randomize_sprint:
             total_items = self.add_to_pool(1, total_items)
 
-        # Progressive Smelting
+        # Progressive Tools
         total_items = self.add_to_pool(2, total_items)
         total_items = self.add_to_pool(2, total_items)
+        total_items = self.add_to_pool(2, total_items)
+        total_items = self.add_to_pool(2, total_items)
+        # Progressive Weapons
+        total_items = self.add_to_pool(3, total_items)
+        total_items = self.add_to_pool(3, total_items)
+        total_items = self.add_to_pool(3, total_items)
+        total_items = self.add_to_pool(3, total_items)
 
         # for i in range(1, useful_index):
         #     total_items = self.add_to_pool(i, total_items)
