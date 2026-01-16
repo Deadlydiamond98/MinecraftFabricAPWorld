@@ -37,6 +37,7 @@ bl_progression = [
     "Brewing",
     "Enchanting",
     "Smithing",
+    "Other Crafting Stations",
     # Recipe
     "Bucket Recipes",
     "Flint and Steel Recipes",

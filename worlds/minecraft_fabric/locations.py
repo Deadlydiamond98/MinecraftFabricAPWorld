@@ -1,5 +1,5 @@
 
-# Start Locations
+# Vanilla Minecraft Locations
 vanilla = [
     # Story Advancements
     "Suit Up",
@@ -115,8 +115,11 @@ vanilla = [
     "The End... Again...",
     "Sky's the Limit",
     "You Need a Mint",
+]
 
-    # Archipelago Excluive Advancements ################################################################################
+# Archipelago Excluive Locations
+archipelago = [
+    # 1.12 Advancement
     "Getting Wood",
     "Benchmarking",
     "Time to Mine!",
@@ -132,12 +135,14 @@ vanilla = [
     "Librarian",
     "Overpowered",
     "When Pigs Fly"
+    # Bedrock Achievement
 ]
 
 
 def get_location_table():
     table = {}
     table.update(add_locations(table, vanilla))
+    table.update(add_locations(table, archipelago))
     return table
 
 def add_locations(table: dict[str, int], locations: list[str]):
