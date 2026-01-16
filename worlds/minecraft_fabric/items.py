@@ -94,27 +94,18 @@ filler = [
     "16 Arrows",
     "32 Arrows",
     # Blocks
-    "Oak Planks",
-    "Birch Planks",
-    "Spruce Planks",
-    "Jungle Planks",
-    "Acacia Planks",
-    "Dark Oak Planks",
-    "Cherry Planks",
-    "Crimson Planks",
-    "Warped Planks",
-    "Bamboo Planks",
-
+    "Wooden Planks",
     "Stone",
     "Andesite",
     "Diorite",
     "Granite",
 
     # Foods
-    "Apples",
+    "Random Fruit",
     "Golden Carrot",
     "Baked Potato",
     "Cookies",
+
     "Steak",
     "Porkchops",
     "Chicken",
