@@ -5,22 +5,23 @@ from Options import PerGameCommonOptions, Choice, Range, ItemSet, OptionSet, Opt
 
 # GOAL CONDITION #######################################################################################################
 
-# class GoalCondition(Choice):
-#     """
-#     Your Goal Condition for your game
-#
-#     ender_dragon - Goal when the Ender Dragon is defeated
-#     wither - Goal when the Wither is defeated
-#     both_bosses - Goal when the Ender Dragon and Wither is defeated
-#     advancements_only - Goal when you collect a certain amount of Advancements
-#     ruby_hunt - Goal when a certain amount of rubies are collected (McGuffin hunt)
-#     """
-#     option_ender_dragon = 0
-#     option_wither = 1
-#     option_both_bosses = 2
-#     option_advancements_only = 3
-#     option_ruby_hunt = 4
-#     default = 0
+class GoalCondition(Choice):
+    """
+    Your Goal Condition for your game
+
+    ender_dragon - Goal when the Ender Dragon is defeated
+    wither - Goal when the Wither is defeated
+    both_bosses - Goal when the Ender Dragon and Wither is defeated
+    advancements_only - Goal when you collect a certain amount of Advancements
+    ruby_hunt - Goal when a certain amount of rubies are collected (McGuffin hunt)
+    ("RUBY HUNT" AND "ADVANCEMENT ONLY" CURRENTLY NOT IMPLEMENTED)
+    """
+    option_ender_dragon = 0
+    option_wither = 1
+    option_both_bosses = 2
+    option_advancements_only = 3
+    option_ruby_hunt = 4
+    default = 0
 #
 # class AdvancementsToGoal(Range):
 #     """
@@ -152,7 +153,7 @@ class LiteratureTrapWeight(BaseTrapWeight):
 @dataclass
 class FMCOptions(PerGameCommonOptions):
     # Goal Related Options
-    # goal_condition: GoalCondition
+    goal_condition: GoalCondition
     exclude_hard_advancements: ExcludeHardAdvancements
     # extra_rubies: ExtraRubyPercentage
     # Abilities

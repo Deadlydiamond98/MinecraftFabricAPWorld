@@ -14,7 +14,17 @@ from worlds.minecraft_fabric.locations import location_table
 ########################################################################################################################
 
 def get_goal_condition(world, state):
-    # Placeholder Win Condition TODO: Make actual goal
+    goal_id = world.options.goal_condition.value
+
+    # I wish Python had Switch Case Statements :,(
+    if goal_id == 0: # Ender Dragon
+        return canAccessEnd(world, state) and canAccessNether(world, state)
+    elif goal_id == 1: # Wither
+        return canSummonWither(world, state)
+    elif goal_id == 2: # Both Bosses
+        return canAccessEnd(world, state) and canSummonWither(world, state)
+
+    # TODO: Placeholder Check for other goals, replace this
     return canAccessEnd(world, state) and canSummonWither(world, state)
 
 
