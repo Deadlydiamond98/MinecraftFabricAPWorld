@@ -16,8 +16,11 @@ class MCItemPart:
 # Items that can be added ##############################################################################################
 
 progression = [
+    "Ruby",
     "Swim",
     "Sprint",
+    "Jump",
+    "Chests & Barrels",
     "Progressive Tools",
     "Progressive Weapons",
     "Progressive Smelting",
@@ -48,7 +51,8 @@ bl_progression = [
     "Eye of Ender Recipes",
     "Fishing Rod Recipes",
     "Glass Bottle Recipes",
-    "Resource Compacting Recipes"
+    "Resource Compacting Recipes",
+    "Shield Recipes"
 ]
 
 useful_index = len(bl_progression) + bl_progression_index
@@ -63,13 +67,11 @@ useful = [
     "Ender Pearls",
 
     # Ore
-    "Coal Ore Vein",
     "Iron Ore Vein",
     "Gold Ore Vein",
     "Diamond Ore Vein",
     "Emerald Ore Vein",
 
-    "Large Coal Ore Vein",
     "Large Iron Ore Vein",
     "Large Gold Ore Vein",
     "Large Diamond Ore Vein",
@@ -99,6 +101,9 @@ filler = [
     "Andesite",
     "Diorite",
     "Granite",
+    # Ore
+    "Coal Ore Vein",
+    "Large Coal Ore Vein",
 
     # Foods
     "Random Fruit",

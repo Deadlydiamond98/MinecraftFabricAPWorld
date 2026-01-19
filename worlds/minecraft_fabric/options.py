@@ -3,7 +3,9 @@ from dataclasses import dataclass
 from Options import PerGameCommonOptions, Choice, Range, ItemSet, OptionSet, OptionGroup, Toggle
 
 
+########################################################################################################################
 # GOAL CONDITION #######################################################################################################
+########################################################################################################################
 
 class GoalCondition(Choice):
     """
@@ -14,7 +16,7 @@ class GoalCondition(Choice):
     both_bosses - Goal when the Ender Dragon and Wither is defeated
     advancements_only - Goal when you collect a certain amount of Advancements
     ruby_hunt - Goal when a certain amount of rubies are collected (McGuffin hunt)
-    ("RUBY HUNT" AND "ADVANCEMENT ONLY" CURRENTLY NOT IMPLEMENTED)
+    ("ADVANCEMENT ONLY" CURRENTLY NOT IMPLEMENTED)
     """
     option_ender_dragon = 0
     option_wither = 1
@@ -22,16 +24,19 @@ class GoalCondition(Choice):
     option_advancements_only = 3
     option_ruby_hunt = 4
     default = 0
-#
-# class AdvancementsToGoal(Range):
-#     """
-#     Determines the Percentage of Advancements needed to goal the game
-#     """
-#     display_name = "Advancements to Goal"
-#     range_start = 0
-#     range_end = 100
-#     default = 50
-#
+
+class AdvancementsRequiredToGoal(Range):
+    """
+    Determines the number of advancements needed in order to beat the game! These Advancements are required for goaling
+    in addition to your regular goal. If this is set to zero, no advancements will be required to goal.
+
+    If fewer available advancements exist than this number, the number of available advancements will be used instead.
+    """
+    display_name = "Advancements to Goal"
+    range_start = 0
+    range_end = 1000
+    default = 50
+
 class ExcludeHardAdvancements(Toggle):
     """
     Makes it so hard Advancements (such as "How Did We Get Here?") will not have checks
@@ -41,7 +46,8 @@ class ExcludeHardAdvancements(Toggle):
 
 class ExcludeExplorationAdvancements(Toggle):
     """
-    Makes it so Advancements that require a lot of exploration (such as "Sound of Music" or "Whatever Floats Your Goat!") will not have checks
+    Makes it so Advancements that require a lot of exploration (such as "Sound of Music" or "Whatever Floats Your Goat!")
+    will not have checks
     """
     display_name = "Exclude Exploration Advancements"
     default = False
@@ -52,38 +58,93 @@ class SpeedRunnerMode(Toggle):
     """
     display_name = "Speedrunner Mode"
     default = True
-#
-# class RubyPercentage(Range):
-#     """
-#     The Amount of Rubies Needed in order to goal
-#     """
-#     display_name = "Rubies Needed"
-#     range_start = 0
-#     range_end = 100
-#     default = 0
-#
-# class TotalRubyPercentage(Range):
-#     """
-#     Replaces a Percentage of Junk and Trap items in the pool with Rubies
-#     """
-#     display_name = "Ruby Fill Percentage"
-#     range_start = 0
-#     range_end = 100
-#     default = 0
 
+class TotalRubiesInGame(Range):
+    """
+    Maximum possible number of Rubies that will be in the item pool
+
+    If fewer available locations exist in the pool than this number, the number of available locations will be used instead.
+
+    Required Percentage of Rubies will be calculated based off of that number.
+
+    (Only Takes Effect when going for the Ruby Hunt Goal)
+    """
+    display_name = "Total Rubies In Game"
+    range_start = 1
+    range_end = 500
+    default = 50
+
+class RubyPercentageNeeded(Range):
+    """
+    The Percentage of Rubies that need to be collected to Goal for Ruby Hunt.
+    (Only Takes Effect when going for the Ruby Hunt Goal)
+    """
+    display_name = "Ruby Percentage Needed"
+    range_start = 1
+    range_end = 100
+    default = 100
+
+class KeepInventory(Toggle):
+    """
+    Prevents you from dropping your items when you die!
+    """
+    display_name = "Keep Inventory"
+    default = True
+
+
+
+
+########################################################################################################################
 # ABILITIES ############################################################################################################
+########################################################################################################################
 
 class RandomizeSwim(Toggle):
-    """Removes the ability to enter water, and adds a Swim Item to the pool."""
+    """
+    Removes the ability to enter water, and adds a Swim Item to the pool.
+    """
     display_name = "Randomize Swim"
     default = False
 
-class RandomizeSprint(Toggle):
-    """Removes the ability to Sprint, and adds a Sprint Item to the pool."""
-    display_name = "Randomize Sprint"
+class RandomizeChestStorage(Toggle):
+    """
+    Removes the ability to craft and use chests (and similar storage containers), and adds a Chest Item to the pool.
+    """
+    display_name = "Randomize Chests"
     default = False
 
+
+class BaseRandomizeForgiving(Choice):
+    """
+    Base Class for Forgiving Ability Randomization
+    """
+    option_false = 0
+    option_forgiving = 1
+    option_true = 2
+    default = 0
+
+class RandomizeSprint(BaseRandomizeForgiving):
+    """
+    Whether your Sprint ability should or Shouldn't be Randomized
+
+    false - Don't Randomize
+    forgiving - Randomize, but make it Achievable before Goal
+    true - Regular Randomization
+    """
+    display_name = "Randomize Sprint"
+
+class RandomizeJump(BaseRandomizeForgiving):
+    """
+    Whether your Jump ability should or Shouldn't be Randomized
+
+    false - Don't Randomize
+    forgiving - Randomize, but make it Achievable before Goal
+    true - Regular Randomization
+    """
+    display_name = "Randomize Jump"
+
+########################################################################################################################
 # TRAP STUFF ###########################################################################################################
+########################################################################################################################
 
 class TrapFillPercentage(Range):
     """
@@ -168,13 +229,18 @@ class LiteratureTrapWeight(BaseTrapWeight):
 class FMCOptions(PerGameCommonOptions):
     # Goal Related Options
     goal_condition: GoalCondition
+    advancements_required_for_goal: AdvancementsRequiredToGoal
     exclude_hard_advancements: ExcludeHardAdvancements
     exclude_exploration_advancements: ExcludeExplorationAdvancements
     speedrunner_mode: SpeedRunnerMode
-    # extra_rubies: ExtraRubyPercentage
+    percentage_of_rubies_needed: RubyPercentageNeeded
+    total_rubies: TotalRubiesInGame
+    keep_inventory: KeepInventory
     # Abilities
     randomize_swim: RandomizeSwim
+    randomize_chests: RandomizeChestStorage
     randomize_sprint: RandomizeSprint
+    randomize_jump: RandomizeJump
     # Traps
     trap_fill_percentage: TrapFillPercentage
     reverseControlsTrapWeight: ReverseControlsTrapWeight

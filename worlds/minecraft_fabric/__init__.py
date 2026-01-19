@@ -21,6 +21,9 @@ class FabricMinecraftWorld(World):
 
     location_name_to_id = location_table
 
+    # total_advancements = 0
+    max_ruby_count = 0
+
 
     def __init__(self, multiworld, player):
         super().__init__(multiworld, player)
@@ -29,23 +32,31 @@ class FabricMinecraftWorld(World):
         create_regions(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
-        from Utils import visualize_regions
-        state = self.multiworld.get_all_state()
-        state.update_reachable_regions(self.player)
-
-        reachable_regions = state.reachable_regions[self.player]
-        unreachable_regions: set[Region] = set()  # type: ignore
-        for regionb in self.multiworld.regions:
-            if regionb not in reachable_regions:
-                unreachable_regions.add(regionb)
-
-        visualize_regions(self.get_region("Menu"), f"{self.player_name}_world.puml", show_entrance_names=True,
-                          regions_to_highlight=unreachable_regions)
+        # from Utils import visualize_regions
+        # state = self.multiworld.get_all_state()
+        # state.update_reachable_regions(self.player)
+        #
+        # reachable_regions = state.reachable_regions[self.player]
+        # unreachable_regions: set[Region] = set()  # type: ignore
+        # for regionb in self.multiworld.regions:
+        #     if regionb not in reachable_regions:
+        #         unreachable_regions.add(regionb)
+        #
+        # visualize_regions(self.get_region("Menu"), f"{self.player_name}_world.puml", show_entrance_names=True,
+        #                   regions_to_highlight=unreachable_regions)
 
         return {
+            # Base
             "goal_condition": self.options.goal_condition.value,
+            # Rubies
+            "rubies_to_goal": self.options.percentage_of_rubies_needed.value,
+            "total_rubies": self.max_ruby_count,
+            # Other Options
+            "keep_inventory": self.options.keep_inventory.value,
             "randomize_swim": self.options.randomize_swim.value,
-            "randomize_sprint": self.options.randomize_sprint.value
+            "randomize_sprint": self.options.randomize_sprint.value,
+            "randomize_jump": self.options.randomize_jump.value,
+            "randomize_chests": self.options.randomize_chests.value
         }
 
     def create_item(self, name: str) -> "Item":
@@ -57,11 +68,15 @@ class FabricMinecraftWorld(World):
         # Progression Items ############################################################################################
 
         if self.options.randomize_swim:
-            total_items = self.add_to_pool(0, total_items)
-        if self.options.randomize_sprint:
             total_items = self.add_to_pool(1, total_items)
+        if self.options.randomize_sprint:
+            total_items = self.add_to_pool(2, total_items)
+        if self.options.randomize_jump:
+            total_items = self.add_to_pool(3, total_items)
+        if self.options.randomize_chests:
+            total_items = self.add_to_pool(4, total_items)
 
-        progressive_index = 2
+        progressive_index = 5
 
         # Progressive Tools
         total_items = self.add_multiple_to_pool(progressive_index, 4, total_items)
@@ -77,6 +92,12 @@ class FabricMinecraftWorld(World):
         # Single Check Progressive Items
         for i in range(bl_progression_index + 1, useful_index + 1):
             total_items = self.add_to_pool(i, total_items)
+
+        # Ruby Hunt Items
+        if self.options.goal_condition.value == 4:
+            self.max_ruby_count = min(self.options.total_rubies.value, total_items)
+            total_items = self.add_multiple_to_pool(0, self.max_ruby_count, total_items)
+
 
         # Trap Items ###################################################################################################
         trap_weights = []
