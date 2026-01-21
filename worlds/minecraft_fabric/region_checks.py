@@ -149,6 +149,9 @@ def canCompactResources(world: FabricMinecraftWorld, state: CollectionState):
 def canGetEyesOfEnder(world: FabricMinecraftWorld, state: CollectionState):
     return canAccessNether(world, state) and state.has("Eye of Ender Recipes", world.player)
 
+def canGetAndUseArmorTrims(world: FabricMinecraftWorld, state: CollectionState):
+    return canSmith(world, state) and canAccessChests(world, state) and canWearLeatherArmor(world, state)
+
 # DIMENSION CHECKS
 
 def canAccessNether(world: FabricMinecraftWorld, state: CollectionState):

@@ -135,10 +135,10 @@ def create_regions(world: FabricMinecraftWorld):
         "Cover Me with Diamonds"
     ], [], [], lambda state: canWearDiamondArmor(world, state))
 
-    # REQUIRES SMITHING
+    # REQUIRES ARMOR TRIMS
     create_locations_and_connect(world, "CanSmeltItems", "CanSmithItems", [
         "Crafting a New Look"
-    ], [], [], lambda state: canSmith(world, state))
+    ], [], [], lambda state: canGetAndUseArmorTrims(world, state))
 
     # REQUIRES NETHERITE TOOLS
     create_locations_and_connect(world, "CanSmithItems", "HasNetheriteTools", [
