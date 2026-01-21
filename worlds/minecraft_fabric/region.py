@@ -94,9 +94,9 @@ def create_regions(world: FabricMinecraftWorld):
     ], [], [],  lambda state: canUseStoneTools(world, state))
 
     # REQUIRES LEATHER ARMOR
-    create_locations_and_connect(world, "Menu", "HasLeatherArmor", [
+    create_locations_and_connect(world, "Menu", "HasLeatherArmor", [], [], [
         "Light as a Rabbit"
-    ], [], [], lambda state: canWearLeatherArmor(world, state))
+    ], lambda state: canWearLeatherArmor(world, state))
 
     # REQUIRES SMELTING
     create_locations_and_connect(world, "HasStoneTools", "CanSmeltItems", [
@@ -325,11 +325,11 @@ def create_regions(world: FabricMinecraftWorld):
         "Hired Help"
     ], [], [], lambda state: canSmelt(world, state) and canCompactResources(world, state))
 
-    # REQUIRES NETHER AND FISHING ROD
-    create_locations_and_connect(world, "NetherAccess", "NetherAccessAndFishingRod", [
+    # REQUIRES NETHER AND FISHING ROD AND CHESTS
+    create_locations_and_connect(world, "NetherAccess", "NetherAccessAndFishingRodAndChests", [
         "This Boat Has Legs",
         "Feels Like Home"
-    ], [], [], lambda state: canAccessNether(world, state) and canUseFishingRod(world, state))
+    ], [], [], lambda state: canAccessNether(world, state) and canUseFishingRod(world, state) and canAccessChests(world, state))
 
     # REQUIRES END AND SMELTING
     create_locations_and_connect(world, "EndAccess", "EndAccessAndSmelting", [
@@ -357,6 +357,11 @@ def create_regions(world: FabricMinecraftWorld):
     create_locations_and_connect(world, "NetherAccess", "NetherAccessAndChests", [
         "War Pigs"
     ], [], [], lambda state: canAccessNether(world, state) and canAccessChests(world, state))
+
+    # REQUIRES NETHER + DIAMOND TOOLS OR CHESTS
+    create_locations_and_connect(world, "NetherAccess", "NetherAccessGetDebree", [
+        "Hidden in the Depths"
+    ], [], [], lambda state: canAccessNether(world, state) and (canAccessChests(world, state) or canUseDiamondTools(world, state)))
 
     world.multiworld.completion_condition[world.player] = lambda state: get_goal_condition(world, state)
 
