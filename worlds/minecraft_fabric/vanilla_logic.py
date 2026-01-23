@@ -12,7 +12,16 @@ from BaseClasses import CollectionState
 # VANILLA ##############################################################################################################
 ########################################################################################################################
 
-# OPTIONAL ABILITY CHECKS
+# DIFFICULTY CHECK #####################################################################################################
+
+def getDifficultyRequirements(level: int, world: FabricMinecraftWorld, state: CollectionState):
+    difficulty = world.options.randomizerDifficulty.value
+    if difficulty == level:
+        return (canUseIronTools(world, state) and canWearIronArmor(world, state) and canUseBow(world, state)
+                and optionalRequireSprint(world, state)) and optionalRequireJump(world, state)
+    return True
+
+# OPTIONAL ABILITY CHECKS ##############################################################################################
 
 def optionalRequireSprint(world: FabricMinecraftWorld, state: CollectionState):
     if world.options.randomize_sprint.value == 1:
@@ -35,7 +44,7 @@ def canAccessChests(world: FabricMinecraftWorld, state: CollectionState):
 def hasOptionalGoalAbilities(world: FabricMinecraftWorld, state: CollectionState):
     return optionalRequireJump(world, state) and optionalRequireSprint(world, state)
 
-# ABILITY CHECKS
+# ABILITY CHECKS #######################################################################################################
 
 def canSwim(world: FabricMinecraftWorld, state: CollectionState):
     if world.options.randomize_swim:
@@ -58,10 +67,7 @@ def canBarter(world: FabricMinecraftWorld, state: CollectionState):
 def canSleep(world: FabricMinecraftWorld, state: CollectionState):
     return state.has("Sleeping", world.player)
 
-def canSummonWither(world: FabricMinecraftWorld, state: CollectionState):
-    return canAccessNether(world, state) and state.has("Wither Summoning", world.player)
-
-# CRAFTING STATION CHECKS
+# CRAFTING STATION CHECKS ##############################################################################################
 
 def canSmelt(world: FabricMinecraftWorld, state: CollectionState):
     return canUseStoneTools(world, state) and state.has("Progressive Smelting", world.player)
@@ -78,7 +84,7 @@ def canEnchant(world: FabricMinecraftWorld, state: CollectionState):
 def canAccessMiscJobsites(world: FabricMinecraftWorld, state: CollectionState):
     return canSmelt(world, state) and state.has("Other Crafting Stations", world.player)
 
-# MINING TOOL CHECKS
+# MINING TOOL CHECKS ###################################################################################################
 
 def canUseStoneTools(world: FabricMinecraftWorld, state: CollectionState):
     return state.has("Progressive Tools", world.player)
@@ -92,7 +98,7 @@ def canUseDiamondTools(world: FabricMinecraftWorld, state: CollectionState):
 def canUseNetheriteTools(world: FabricMinecraftWorld, state: CollectionState):
     return canUseDiamondTools(world, state) and state.has("Progressive Tools", world.player, 4) and canSmith(world, state)
 
-# ARMOR CHECKS
+# ARMOR CHECKS #########################################################################################################
 
 def canWearLeatherArmor(world: FabricMinecraftWorld, state: CollectionState):
     return state.has("Progressive Armor", world.player)
@@ -106,7 +112,7 @@ def canWearDiamondArmor(world: FabricMinecraftWorld, state: CollectionState):
 def canWearNetheriteArmor(world: FabricMinecraftWorld, state: CollectionState):
     return canWearDiamondArmor(world, state) and state.has("Progressive Armor", world.player, 5) and canSmith(world, state) and canUseDiamondTools(world, state)
 
-# OTHER TOOL CHECKS
+# OTHER TOOL CHECKS ####################################################################################################
 
 def canUseBucket(world: FabricMinecraftWorld, state: CollectionState):
     return canSmelt(world, state) and state.has("Bucket Recipes", world.player)
@@ -141,7 +147,7 @@ def canUseCrossBow(world: FabricMinecraftWorld, state: CollectionState):
 def canUseShield(world: FabricMinecraftWorld, state: CollectionState):
     return state.has("Shield Recipes", world.player) and canSmelt(world, state)
 
-# OTHER RECIPE CHECKS
+# OTHER RECIPE CHECKS ##################################################################################################
 
 def canCompactResources(world: FabricMinecraftWorld, state: CollectionState):
     return state.has("Resource Compacting Recipes", world.player)
@@ -152,37 +158,38 @@ def canGetEyesOfEnder(world: FabricMinecraftWorld, state: CollectionState):
 def canGetAndUseArmorTrims(world: FabricMinecraftWorld, state: CollectionState):
     return canSmith(world, state) and canAccessChests(world, state) and canWearLeatherArmor(world, state)
 
-# DIMENSION CHECKS
+# DIMENSION CHECKS #####################################################################################################
 
 def canAccessNether(world: FabricMinecraftWorld, state: CollectionState):
-    return (canUseDiamondTools(world, state) or canUseBucket(world, state)) and canUseFlintAndSteel(world, state)
+    return (((canUseDiamondTools(world, state) or canUseBucket(world, state)) and canUseFlintAndSteel(world, state))
+            and getDifficultyRequirements(0, world, state))
 
 def canAccessEnd(world: FabricMinecraftWorld, state: CollectionState):
-    return canGetEyesOfEnder(world, state) and speedrunnerMode(world, state)
+    return canGetEyesOfEnder(world, state) and speedrunnerMode(world, state) and getDifficultyRequirements(1, world, state)
 
-# MISC VANILLA
+# MISC VANILLA #########################################################################################################
 
 def canPlaceBeacon(world: FabricMinecraftWorld, state: CollectionState):
-    return canSummonWither(world, state) and canSmelt(world, state) and canUseDiamondTools(world, state) and canCompactResources(world, state)
+    return canGoalWither(world, state) and canSmelt(world, state) and canUseDiamondTools(world, state) and canCompactResources(world, state)
 
 def canGetCryingObsidian(world: FabricMinecraftWorld, state: CollectionState):
     return canBarter(world, state) or canUseDiamondTools(world, state)
 
 def canAccessVanillaEndGame(world: FabricMinecraftWorld, state: CollectionState):
     return ((canEnchant(world, state) and canBrew(world, state) and canPlaceBeacon(world, state)
-            and canAccessEnd(world, state) and canAccessNether(world, state) and canUseDiamondTools(world, state))
+            and canBeatDragonAndWither(world, state) and canUseDiamondTools(world, state))
             and canAccessChests(world, state))
 
-# GOAL CHECKS
+# GOAL CHECKS ##########################################################################################################
 
 def canGoalEnderDragon(world: FabricMinecraftWorld, state: CollectionState):
-    return canAccessEnd(world, state) and hasOptionalGoalAbilities(world, state)
+    return canAccessEnd(world, state)
 
 def canGoalWither(world: FabricMinecraftWorld, state: CollectionState):
-    return canSummonWither(world, state) and hasOptionalGoalAbilities(world, state)
+    return canAccessNether(world, state) and state.has("Wither Summoning", world.player) and getDifficultyRequirements(1, world, state)
 
 def canBeatDragonAndWither(world: FabricMinecraftWorld, state: CollectionState):
-    return canGoalWither(world, state) and canGoalWither(world, state)
+    return canGoalEnderDragon(world, state) and canGoalWither(world, state)
 
 def canCompleteRubyHunt(world: FabricMinecraftWorld, state: CollectionState):
     return state.has("Ruby", world.player, floor(world.max_ruby_count * (world.options.percentage_of_rubies_needed.value * 0.01)))

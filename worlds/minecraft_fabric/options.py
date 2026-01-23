@@ -24,6 +24,20 @@ class GoalCondition(Choice):
     option_ruby_hunt = 4
     default = 0
 
+class RandomizerDifficulty(Choice):
+    """
+    This determines where the placement of some items should be! The Items that will be effected by this setting are...
+    Progressive Weapons (x2), Progressive Armor (x3), Progressive Archery (x1), Jump, and Sprint
+
+    easy - These Items will appear before the player can access the Nether
+    normal - These Items will appear before beating the Wither or End Access
+    hard - Makes it so that these items can appear anywhere, potentially even outside your goal!
+    """
+    option_easy = 0
+    option_normal = 1
+    option_hard = 2
+    default = 1
+
 class AdvancementsRequiredToGoal(Range):
     """
     Determines the number of advancements needed in order to beat the game! These Advancements are required for goaling
@@ -36,9 +50,18 @@ class AdvancementsRequiredToGoal(Range):
     range_end = 1000
     default = 50
 
+class ExcludeUnreasonableAdvancements(Toggle):
+    """
+    Makes it so extremely hard Advancements (such as "How Did We Get Here?" or "Adventuring Time")
+    will not have checks
+    """
+    display_name = "Exclude Unreasonable Advancements"
+    default = True
+
 class ExcludeHardAdvancements(Toggle):
     """
-    Makes it so hard Advancements (such as "How Did We Get Here?") will not have checks
+    Makes it so hard Advancements (such as "Cover Me in Debris" or "A Complete Catalogue")
+    will not have checks
     """
     display_name = "Exclude Hard Advancements"
     default = True
@@ -111,35 +134,19 @@ class RandomizeChestStorage(Toggle):
     display_name = "Randomize Chests"
     default = False
 
-
-class BaseRandomizeForgiving(Choice):
-    """
-    Base Class for Forgiving Ability Randomization
-    """
-    option_false = 0
-    option_forgiving = 1
-    option_true = 2
-    default = 0
-
-class RandomizeSprint(BaseRandomizeForgiving):
+class RandomizeSprint(Toggle):
     """
     Whether your Sprint ability should or Shouldn't be Randomized
-
-    false - Don't Randomize
-    forgiving - Randomize, but make it Achievable before Goal
-    true - Regular Randomization
     """
     display_name = "Randomize Sprint"
+    default = False
 
-class RandomizeJump(BaseRandomizeForgiving):
+class RandomizeJump(Toggle):
     """
     Whether your Jump ability should or Shouldn't be Randomized
-
-    false - Don't Randomize
-    forgiving - Randomize, but make it Achievable before Goal
-    true - Regular Randomization
     """
     display_name = "Randomize Jump"
+    default = False
 
 ########################################################################################################################
 # TRAP STUFF ###########################################################################################################
@@ -234,7 +241,9 @@ class Deathlink(Toggle):
 class FMCOptions(PerGameCommonOptions):
     # Goal Related Options
     goal_condition: GoalCondition
+    randomizerDifficulty: RandomizerDifficulty
     advancements_required_for_goal: AdvancementsRequiredToGoal
+    exclude_unreasonable_advancements: ExcludeUnreasonableAdvancements
     exclude_hard_advancements: ExcludeHardAdvancements
     exclude_exploration_advancements: ExcludeExplorationAdvancements
     speedrunner_mode: SpeedRunnerMode
