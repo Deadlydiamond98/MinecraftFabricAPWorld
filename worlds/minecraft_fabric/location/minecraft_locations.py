@@ -1,5 +1,5 @@
-from worlds.minecraft_fabric.location.vanilla_advancements import vanilla_advancements, archipelago_advancements
-from worlds.minecraft_fabric.location.vanilla_itemsanity import vanilla_itemsanity
+from worlds.minecraft_fabric.location.vanilla.vanilla_advancements import vanilla_advancements, archipelago_advancements
+from worlds.minecraft_fabric.location.vanilla.vanilla_itemsanity import vanilla_itemsanity
 
 
 def get_location_table():

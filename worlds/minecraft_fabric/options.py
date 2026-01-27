@@ -126,10 +126,11 @@ class Itemsanity(Toggle):
 class ItemsanityLocalFill(Range):
     """
     The Percentage of Itemsanity Checks that should only contain items from your world
+    (Highly recommend setting this to a high value to prevent everyone's items from being in your game)
     """
     display_name = "Itemsanity Local Fill"
     range_start = 0
-    range_end = 100
+    range_end = 98
     default = 90
 
 
@@ -242,11 +243,18 @@ class LiteratureTrapWeight(BaseTrapWeight):
     """
     display_name = "Literature Trap Weight"
 
-class Deathlink(Toggle):
+class DeathLink(Toggle):
     """
-    Enabled Deathlink
+    Enable DeathLink
     """
-    display_name = "Deathlink"
+    display_name = "DeathLink"
+    default = False
+
+class TrapLink(Toggle):
+    """
+    Enable TrapLink
+    """
+    display_name = "TrapLink"
     default = False
 
 # class EnabledMods(OptionSet):
@@ -287,5 +295,6 @@ class FMCOptions(PerGameCommonOptions):
     teleport_trap_weight: TeleportTrapWeight
     bee_trap_weight: BeeTrapWeight
     literature_trap_weight: LiteratureTrapWeight
-    deathlink_enabled: Deathlink
+    deathlink_enabled: DeathLink
+    traplink_enabled: TrapLink
 

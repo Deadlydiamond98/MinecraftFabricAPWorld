@@ -5,9 +5,9 @@ from BaseClasses import ItemClassification, Item, Location
 from Options import OptionError
 from worlds.AutoWorld import World
 from worlds.minecraft_fabric.items import item_table, useful_index, traps_index, bl_progression_index
-from worlds.minecraft_fabric.locations import location_table
+from worlds.minecraft_fabric.location.minecraft_locations import location_table
 from worlds.minecraft_fabric.options import FMCOptions
-from worlds.minecraft_fabric.regions import create_regions
+from worlds.minecraft_fabric.region.minecraft_regions import create_regions
 
 
 class FabricMinecraftWorld(World):
@@ -28,9 +28,6 @@ class FabricMinecraftWorld(World):
         self.max_ruby_count = 0
         self.itemsanity_locations = []
         self.local_fill_amount = 0
-
-    def create_regions(self):
-        create_regions(self)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         # from Utils import visualize_regions
@@ -64,6 +61,7 @@ class FabricMinecraftWorld(World):
             "rubies_to_goal": self.options.percentage_of_rubies_needed.value,
             "total_rubies": self.max_ruby_count,
             "deathlink": self.options.deathlink_enabled.value,
+            "traplink": self.options.traplink_enabled.value,
             # Other Options
             "keep_inventory": self.options.keep_inventory.value,
             "itemsanity": self.options.itemsanity.value,
@@ -72,6 +70,9 @@ class FabricMinecraftWorld(World):
             "randomize_jump": self.options.randomize_jump.value,
             "randomize_chests": self.options.randomize_chests.value
         }
+
+    def create_regions(self):
+        create_regions(self)
 
     def create_item(self, name: str) -> "Item":
         return Item(name, ItemClassification.progression, self.item_name_to_id[name], self.player)
@@ -118,8 +119,6 @@ class FabricMinecraftWorld(World):
             self.multiworld.itempool.append(item)
 
 
-
-
     def pre_fill(self) -> None:
         location_map: List[Location] = [self.multiworld.get_location(loc, self.player) for loc in self.itemsanity_locations]
         self.random.shuffle(location_map)
@@ -128,7 +127,7 @@ class FabricMinecraftWorld(World):
 
         while filler_size > 0:
             if len(location_map) == 0:
-                raise OptionError("Another AP world is attempting to mess with Minecraft Fabric's prefill locations, please go politely inform them of this blunder")
+                raise OptionError("Another AP world is attempting to mess with Minecraft Fabric's prefill locations, please go politely inform them of this blunder posthaste!")
 
             location = location_map.pop()
             if not location.locked:

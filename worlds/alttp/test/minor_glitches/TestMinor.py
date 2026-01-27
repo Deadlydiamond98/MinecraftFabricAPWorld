@@ -15,7 +15,7 @@ class TestMinor(TestBase, LTTPTestBase):
         self.multiworld.worlds[1].options.shuffle_capacity_upgrades.value = 2
         self.multiworld.worlds[1].difficulty_requirements = difficulties['normal']
         self.world.er_seed = 0
-        self.world.create_regions()
+        self.world.create_vanilla_itemsanity_regions()
         self.world.create_items()
         self.multiworld.itempool.extend(get_dungeon_item_pool(self.multiworld))
         self.multiworld.itempool.extend(item_factory(

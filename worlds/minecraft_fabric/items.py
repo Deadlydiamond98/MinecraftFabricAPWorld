@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from BaseClasses import ItemClassification
 
-
 @dataclass
 class MCItem:
     name: str
