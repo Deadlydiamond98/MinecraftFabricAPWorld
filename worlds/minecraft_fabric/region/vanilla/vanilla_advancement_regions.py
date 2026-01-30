@@ -184,9 +184,13 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
     # REQUIRES BREWING
     create_region(world, "NetherAccess", "HasBrewing", {
         "Local Brewery": 0,
-        "Zombie Doctor": 0,
         "A Furious Cocktail": 1
     }, lambda state: canBrew(world, state))
+
+    # ZOMBIE DOCTOR
+    create_region(world, "HasBrewing", "CanCureZombieVillager", {
+        "Zombie Doctor": 0
+    }, lambda state: canCureZombieVillager(world, state))
 
     # REQUIRES BARTERING
     create_region(world, "NetherAccess", "HasBartering", {

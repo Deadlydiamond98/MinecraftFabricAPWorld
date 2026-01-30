@@ -212,6 +212,9 @@ def canDyeBlack(world: FabricMinecraftWorld, state: CollectionState):
 def canGetUpgradeTemplate(world: FabricMinecraftWorld, state: CollectionState):
     return canAccessNether(world, state) and canAccessChests(world, state)
 
+def canCureZombieVillager(world: FabricMinecraftWorld, state: CollectionState):
+    return canBrew(world, state) and canAccessNether(world, state) or canUseIronTools(world, state)
+
 # GOAL CHECKS ##########################################################################################################
 
 def canGoalEnderDragon(world: FabricMinecraftWorld, state: CollectionState):
