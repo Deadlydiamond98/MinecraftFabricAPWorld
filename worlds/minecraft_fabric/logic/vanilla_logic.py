@@ -72,6 +72,9 @@ def canSleep(world: FabricMinecraftWorld, state: CollectionState):
 def canSmelt(world: FabricMinecraftWorld, state: CollectionState):
     return canUseStoneTools(world, state) and state.has("Progressive Smelting", world.player)
 
+def canSmeltBetter(world: FabricMinecraftWorld, state: CollectionState):
+    return canUseStoneTools(world, state) and state.has("Progressive Smelting", world.player, 2)
+
 def canSmith(world: FabricMinecraftWorld, state: CollectionState):
     return canSmelt(world, state) and state.has("Smithing", world.player)
 
@@ -96,7 +99,21 @@ def canUseDiamondTools(world: FabricMinecraftWorld, state: CollectionState):
     return canUseIronTools(world, state) and state.has("Progressive Tools", world.player, 3)
 
 def canUseNetheriteTools(world: FabricMinecraftWorld, state: CollectionState):
-    return canUseDiamondTools(world, state) and state.has("Progressive Tools", world.player, 4) and canSmith(world, state)
+    return canUseDiamondTools(world, state) and state.has("Progressive Tools", world.player, 4) and canSmith(world, state) and canGetUpgradeTemplate(world, state)
+
+# WEAPON CHECKS ###################################################################################################
+
+def canUseStoneWeapons(world: FabricMinecraftWorld, state: CollectionState):
+    return state.has("Progressive Weapons", world.player)
+
+def canUseIronWeapons(world: FabricMinecraftWorld, state: CollectionState):
+    return canUseStoneTools(world, state) and canSmelt(world, state) and state.has("Progressive Weapons", world.player, 2)
+
+def canUseDiamondWeapons(world: FabricMinecraftWorld, state: CollectionState):
+    return canUseIronTools(world, state) and state.has("Progressive Weapons", world.player, 3)
+
+def canUseNetheriteWeapons(world: FabricMinecraftWorld, state: CollectionState):
+    return canUseDiamondTools(world, state) and state.has("Progressive Weapons", world.player, 4) and canSmith(world, state) and canGetUpgradeTemplate(world, state)
 
 # ARMOR CHECKS #########################################################################################################
 
@@ -113,7 +130,7 @@ def canWearDiamondArmor(world: FabricMinecraftWorld, state: CollectionState):
     return canWearIronArmor(world, state) and state.has("Progressive Armor", world.player, 4) and canUseIronTools(world, state)
 
 def canWearNetheriteArmor(world: FabricMinecraftWorld, state: CollectionState):
-    return canWearDiamondArmor(world, state) and state.has("Progressive Armor", world.player, 5) and canSmith(world, state) and canUseDiamondTools(world, state)
+    return canWearDiamondArmor(world, state) and state.has("Progressive Armor", world.player, 5) and canSmith(world, state) and canUseDiamondTools(world, state) and canGetUpgradeTemplate(world, state)
 
 # OTHER TOOL CHECKS ####################################################################################################
 
@@ -191,6 +208,9 @@ def canDyeFull(world: FabricMinecraftWorld, state: CollectionState):
 
 def canDyeBlack(world: FabricMinecraftWorld, state: CollectionState):
     return canDyeBasic(world, state) and canSwim(world, state)
+
+def canGetUpgradeTemplate(world: FabricMinecraftWorld, state: CollectionState):
+    return canAccessNether(world, state) and canAccessChests(world, state)
 
 # GOAL CHECKS ##########################################################################################################
 

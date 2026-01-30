@@ -116,7 +116,7 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
         "Serious Dedication": 1
     }, lambda state: canUseNetheriteTools(world, state))
 
-    # REQUIRES NETHERITE TOOLS
+    # REQUIRES NETHERITE Armor
     create_region(world, "CanSmithItems", "HasNetheriteArmor", {
         "Cover Me in Debris": 1
     }, lambda state: canWearNetheriteArmor(world, state))
@@ -307,7 +307,7 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
     create_region(world, "EndAccess", "VanillaEndGame", {
         "Overkill": 0,
         "Monsters Hunted": 1,
-        "Smithing with Style": 1,
+        "Smithing with Style": 3,
         "Two by Two": 1,
         "A Balanced Diet": 1,
         "Adventuring Time": 3,

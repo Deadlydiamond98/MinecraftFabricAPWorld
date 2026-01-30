@@ -42,12 +42,12 @@ vanilla_itemsanity = [
     "Dark Oak Sapling (Itemsanity)",
     "Mangrove Propagule (Itemsanity)",
     "Sand (Itemsanity)",
-    "Suspicious Sand (Itemsanity)", # TODO
-    "Suspicious Gravel (Itemsanity)", # TODO
+    "Suspicious Sand (Itemsanity)",
+    "Suspicious Gravel (Itemsanity)",
     "Red Sand (Itemsanity)",
     "Gravel (Itemsanity)",
     "Coal Ore (Itemsanity)",
-    "Deepslate Coal Ore (Itemsanity)", # TODO
+    "Deepslate Coal Ore (Itemsanity)",
     "Iron Ore (Itemsanity)",
     "Deepslate Iron Ore (Itemsanity)",
     "Copper Ore (Itemsanity)",
@@ -57,10 +57,10 @@ vanilla_itemsanity = [
     "Redstone Ore (Itemsanity)",
     "Deepslate Redstone Ore (Itemsanity)",
     "Emerald Ore (Itemsanity)",
-    "Deepslate Emerald Ore (Itemsanity)", # TODO
+    "Deepslate Emerald Ore (Itemsanity)",
     "Lapis Lazuli Ore (Itemsanity)",
     "Deepslate Lapis Lazuli Ore (Itemsanity)",
-    "Diamond Ore (Itemsanity)", # TODO
+    "Diamond Ore (Itemsanity)",
     "Deepslate Diamond Ore (Itemsanity)",
     "Nether Gold Ore (Itemsanity)",
     "Nether Quartz Ore (Itemsanity)",
@@ -74,7 +74,7 @@ vanilla_itemsanity = [
     "Block of Copper (Itemsanity)",
     "Block of Gold (Itemsanity)",
     "Block of Diamond (Itemsanity)",
-    "Block of Netherite (Itemsanity)", # TODO
+    "Block of Netherite (Itemsanity)",
     "Exposed Copper (Itemsanity)",
     "Weathered Copper (Itemsanity)",
     "Oxidized Copper (Itemsanity)",
@@ -160,8 +160,8 @@ vanilla_itemsanity = [
     "Mangrove Leaves (Itemsanity)",
     "Azalea Leaves (Itemsanity)",
     "Flowering Azalea Leaves (Itemsanity)",
-    "Sponge (Itemsanity)", # TODO
-    "Wet Sponge (Itemsanity)", # TODO
+    "Sponge (Itemsanity)",
+    "Wet Sponge (Itemsanity)",
     "Glass (Itemsanity)",
     "Tinted Glass (Itemsanity)",
     "Block of Lapis Lazuli (Itemsanity)",
@@ -205,8 +205,8 @@ vanilla_itemsanity = [
     "Cornflower (Itemsanity)",
     "Lily of the Valley (Itemsanity)",
     "Wither Rose (Itemsanity)",
-    "Torchflower (Itemsanity)", # TODO
-    "Pitcher Plant (Itemsanity)", # TODO
+    "Torchflower (Itemsanity)",
+    "Pitcher Plant (Itemsanity)",
     "Spore Blossom (Itemsanity)",
     "Brown Mushroom (Itemsanity)",
     "Red Mushroom (Itemsanity)",
@@ -222,7 +222,7 @@ vanilla_itemsanity = [
     "Moss Carpet (Itemsanity)",
     "Pink Petals (Itemsanity)",
     "Moss Block (Itemsanity)",
-    "Hanging Roots (Itemsanity)", # TODO
+    "Hanging Roots (Itemsanity)",
     "Big Dripleaf (Itemsanity)",
     "Small Dripleaf (Itemsanity)",
     "Bamboo (Itemsanity)",
@@ -251,9 +251,9 @@ vanilla_itemsanity = [
     "Red Sandstone Slab (Itemsanity)",
     "Cut Red Sandstone Slab (Itemsanity)",
     "Purpur Slab (Itemsanity)",
-    "Prismarine Slab (Itemsanity)", # TODO
-    "Prismarine Brick Slab (Itemsanity)", # TODO
-    "Dark Prismarine Slab (Itemsanity)", # TODO
+    "Prismarine Slab (Itemsanity)",
+    "Prismarine Brick Slab (Itemsanity)",
+    "Dark Prismarine Slab (Itemsanity)",
     "Smooth Quartz Block (Itemsanity)",
     "Smooth Red Sandstone (Itemsanity)",
     "Smooth Sandstone (Itemsanity)",
@@ -326,7 +326,7 @@ vanilla_itemsanity = [
     "Brick Stairs (Itemsanity)",
     "Stone Brick Stairs (Itemsanity)",
     "Mud Brick Stairs (Itemsanity)",
-    "Mycelium (Itemsanity)", # TODO
+    "Mycelium (Itemsanity)",
     "Lily Pad (Itemsanity)",
     "Nether Bricks (Itemsanity)",
     "Cracked Nether Bricks (Itemsanity)",
@@ -360,7 +360,7 @@ vanilla_itemsanity = [
     "Cobblestone Wall (Itemsanity)",
     "Mossy Cobblestone Wall (Itemsanity)",
     "Brick Wall (Itemsanity)",
-    "Prismarine Wall (Itemsanity)", # TODO
+    "Prismarine Wall (Itemsanity)",
     "Red Sandstone Wall (Itemsanity)",
     "Mossy Stone Brick Wall (Itemsanity)",
     "Granite Wall (Itemsanity)",
@@ -422,13 +422,13 @@ vanilla_itemsanity = [
     "Black Carpet (Itemsanity)",
     "Terracotta (Itemsanity)",
     "Packed Ice (Itemsanity)",
-    "Dirt Path (Itemsanity)", # TODO
+    "Dirt Path (Itemsanity)", # TODO: REMOVE
     "Sunflower (Itemsanity)",
     "Lilac (Itemsanity)",
     "Rose Bush (Itemsanity)",
     "Peony (Itemsanity)",
-    "Tall Grass (Itemsanity)", # TODO
-    "Large Fern (Itemsanity)", # TODO
+    "Tall Grass (Itemsanity)",
+    "Large Fern (Itemsanity)",
     "White Stained Glass (Itemsanity)",
     "Orange Stained Glass (Itemsanity)",
     "Magenta Stained Glass (Itemsanity)",
@@ -461,13 +461,13 @@ vanilla_itemsanity = [
     "Green Stained Glass Pane (Itemsanity)",
     "Red Stained Glass Pane (Itemsanity)",
     "Black Stained Glass Pane (Itemsanity)",
-    "Prismarine (Itemsanity)", # TODO
-    "Prismarine Bricks (Itemsanity)", # TODO
-    "Dark Prismarine (Itemsanity)", # TODO
-    "Prismarine Stairs (Itemsanity)", # TODO
-    "Prismarine Brick Stairs (Itemsanity)", # TODO
-    "Dark Prismarine Stairs (Itemsanity)", # TODO
-    "Sea Lantern (Itemsanity)", # TODO
+    "Prismarine (Itemsanity)",
+    "Prismarine Bricks (Itemsanity)",
+    "Dark Prismarine (Itemsanity)",
+    "Prismarine Stairs (Itemsanity)",
+    "Prismarine Brick Stairs (Itemsanity)",
+    "Dark Prismarine Stairs (Itemsanity)",
+    "Sea Lantern (Itemsanity)",
     "Red Sandstone (Itemsanity)",
     "Chiseled Red Sandstone (Itemsanity)",
     "Cut Red Sandstone (Itemsanity)",
@@ -542,7 +542,7 @@ vanilla_itemsanity = [
     "Green Concrete Powder (Itemsanity)",
     "Red Concrete Powder (Itemsanity)",
     "Black Concrete Powder (Itemsanity)",
-    "Turtle Egg (Itemsanity)", # TODO
+    "Turtle Egg (Itemsanity)",
     "Sniffer Egg (Itemsanity)",
     "Dead Tube Coral Block (Itemsanity)",
     "Dead Brain Coral Block (Itemsanity)",
@@ -575,7 +575,7 @@ vanilla_itemsanity = [
     "Dead Fire Coral Fan (Itemsanity)",
     "Dead Horn Coral Fan (Itemsanity)",
     "Blue Ice (Itemsanity)",
-    "Conduit (Itemsanity)", # TODO
+    "Conduit (Itemsanity)",
     "Polished Granite Stairs (Itemsanity)",
     "Smooth Red Sandstone Stairs (Itemsanity)",
     "Mossy Stone Brick Stairs (Itemsanity)",
@@ -618,8 +618,8 @@ vanilla_itemsanity = [
     "Redstone Repeater (Itemsanity)",
     "Redstone Comparator (Itemsanity)",
     "Piston (Itemsanity)",
-    "Sticky Piston (Itemsanity)", # TODO
-    "Slime Block (Itemsanity)", # TODO
+    "Sticky Piston (Itemsanity)",
+    "Slime Block (Itemsanity)",
     "Honey Block (Itemsanity)",
     "Observer (Itemsanity)",
     "Hopper (Itemsanity)",
@@ -731,8 +731,8 @@ vanilla_itemsanity = [
     "Mangrove Boat with Chest (Itemsanity)",
     "Bamboo Raft (Itemsanity)",
     "Bamboo Raft with Chest (Itemsanity)",
-    "Turtle Shell (Itemsanity)", # TODO
-    "Scute (Itemsanity)", # TODO
+    "Turtle Shell (Itemsanity)",
+    "Scute (Itemsanity)",
     "Flint and Steel (Itemsanity)",
     "Apple (Itemsanity)",
     "Bow (Itemsanity)",
@@ -750,8 +750,8 @@ vanilla_itemsanity = [
     "Copper Ingot (Itemsanity)",
     "Raw Gold (Itemsanity)",
     "Gold Ingot (Itemsanity)",
-    "Netherite Ingot (Itemsanity)", # TODO
-    "Netherite Scrap (Itemsanity)", # TODO
+    "Netherite Ingot (Itemsanity)",
+    "Netherite Scrap (Itemsanity)",
     "Wooden Sword (Itemsanity)",
     "Wooden Shovel (Itemsanity)",
     "Wooden Pickaxe (Itemsanity)",
@@ -777,11 +777,11 @@ vanilla_itemsanity = [
     "Diamond Pickaxe (Itemsanity)",
     "Diamond Axe (Itemsanity)",
     "Diamond Hoe (Itemsanity)",
-    "Netherite Sword (Itemsanity)", # TODO
-    "Netherite Shovel (Itemsanity)", # TODO
-    "Netherite Pickaxe (Itemsanity)", # TODO
-    "Netherite Axe (Itemsanity)", # TODO
-    "Netherite Hoe (Itemsanity)", # TODO
+    "Netherite Sword (Itemsanity)",
+    "Netherite Shovel (Itemsanity)",
+    "Netherite Pickaxe (Itemsanity)",
+    "Netherite Axe (Itemsanity)",
+    "Netherite Hoe (Itemsanity)",
     "Stick (Itemsanity)",
     "Bowl (Itemsanity)",
     "Mushroom Stew (Itemsanity)",
@@ -795,10 +795,10 @@ vanilla_itemsanity = [
     "Leather Tunic (Itemsanity)",
     "Leather Pants (Itemsanity)",
     "Leather Boots (Itemsanity)",
-    "Chainmail Helmet (Itemsanity)",  # TODO
-    "Chainmail Chestplate (Itemsanity)", # TODO
-    "Chainmail Leggings (Itemsanity)", # TODO
-    "Chainmail Boots (Itemsanity)", # TODO
+    "Chainmail Helmet (Itemsanity)",
+    "Chainmail Chestplate (Itemsanity)",
+    "Chainmail Leggings (Itemsanity)",
+    "Chainmail Boots (Itemsanity)",
     "Iron Helmet (Itemsanity)",
     "Iron Chestplate (Itemsanity)",
     "Iron Leggings (Itemsanity)",
@@ -811,10 +811,10 @@ vanilla_itemsanity = [
     "Golden Chestplate (Itemsanity)",
     "Golden Leggings (Itemsanity)",
     "Golden Boots (Itemsanity)",
-    "Netherite Helmet (Itemsanity)", # TODO
-    "Netherite Chestplate (Itemsanity)", # TODO
-    "Netherite Leggings (Itemsanity)", # TODO
-    "Netherite Boots (Itemsanity)", # TODO
+    "Netherite Helmet (Itemsanity)",
+    "Netherite Chestplate (Itemsanity)",
+    "Netherite Leggings (Itemsanity)",
+    "Netherite Boots (Itemsanity)",
     "Flint (Itemsanity)",
     "Raw Porkchop (Itemsanity)",
     "Cooked Porkchop (Itemsanity)",
@@ -846,7 +846,7 @@ vanilla_itemsanity = [
     "Bucket (Itemsanity)",
     "Water Bucket (Itemsanity)",
     "Lava Bucket (Itemsanity)",
-    "Powder Snow Bucket (Itemsanity)", # TODO
+    "Powder Snow Bucket (Itemsanity)",
     "Snowball (Itemsanity)",
     "Leather (Itemsanity)",
     "Milk Bucket (Itemsanity)",
@@ -855,16 +855,16 @@ vanilla_itemsanity = [
     "Bucket of Cod (Itemsanity)",
     "Bucket of Tropical Fish (Itemsanity)",
     "Bucket of Axolotl (Itemsanity)",
-    "Bucket of Tadpole (Itemsanity)", # TODO
+    "Bucket of Tadpole (Itemsanity)",
     "Brick (Itemsanity)",
     "Clay Ball (Itemsanity)",
     "Dried Kelp Block (Itemsanity)",
     "Paper (Itemsanity)",
     "Book (Itemsanity)",
-    "Slimeball (Itemsanity)", # TODO
+    "Slimeball (Itemsanity)",
     "Egg (Itemsanity)",
     "Compass (Itemsanity)",
-    "Recovery Compass (Itemsanity)", # TODO
+    "Recovery Compass (Itemsanity)",
     "Fishing Rod (Itemsanity)",
     "Clock (Itemsanity)",
     "Spyglass (Itemsanity)",
@@ -915,7 +915,7 @@ vanilla_itemsanity = [
     "Red Bed (Itemsanity)",
     "Black Bed (Itemsanity)",
     "Cookie (Itemsanity)",
-    "Map (Itemsanity)", # TODO
+    "Map (Itemsanity)",
     "Shears (Itemsanity)",
     "Melon Slice (Itemsanity)",
     "Dried Kelp (Itemsanity)",
@@ -941,7 +941,7 @@ vanilla_itemsanity = [
     "Cauldron (Itemsanity)",
     "Eye of Ender (Itemsanity)",
     "Glistering Melon Slice (Itemsanity)",
-    "Bottle o' Enchanting (Itemsanity)", # TODO
+    "Bottle o' Enchanting (Itemsanity)",
     "Fire Charge (Itemsanity)",
     "Book and Quill (Itemsanity)",
     "Item Frame (Itemsanity)",
@@ -951,20 +951,20 @@ vanilla_itemsanity = [
     "Potato (Itemsanity)",
     "Baked Potato (Itemsanity)",
     "Poisonous Potato (Itemsanity)",
-    "Empty Map (Itemsanity)", # TODO
+    "Empty Map (Itemsanity)", # TODO: REMOVE
     "Golden Carrot (Itemsanity)",
-    "Skeleton Skull (Itemsanity)", # TODO
-    "Wither Skeleton Skull (Itemsanity)", # TODO
-    "Zombie Head (Itemsanity)", # TODO
-    "Creeper Head (Itemsanity)", # TODO
-    "Dragon Head (Itemsanity)", # TODO
-    "Piglin Head (Itemsanity)", # TODO
+    "Skeleton Skull (Itemsanity)",
+    "Wither Skeleton Skull (Itemsanity)",
+    "Zombie Head (Itemsanity)",
+    "Creeper Head (Itemsanity)",
+    "Dragon Head (Itemsanity)",
+    "Piglin Head (Itemsanity)",
     "Nether Star (Itemsanity)",
     "Pumpkin Pie (Itemsanity)",
     # "Enchanted Book (Itemsanity)",
     "Nether Brick (Itemsanity)",
-    "Prismarine Shard (Itemsanity)", # TODO
-    "Prismarine Crystals (Itemsanity)", # TODO
+    "Prismarine Shard (Itemsanity)",
+    "Prismarine Crystals (Itemsanity)",
     "Raw Rabbit (Itemsanity)",
     "Cooked Rabbit (Itemsanity)",
     "Rabbit Stew (Itemsanity)",
@@ -975,7 +975,7 @@ vanilla_itemsanity = [
     "Golden Horse Armor (Itemsanity)",
     "Diamond Horse Armor (Itemsanity)",
     "Leather Horse Armor (Itemsanity)",
-    "Lead (Itemsanity)", # TODO
+    "Lead (Itemsanity)",
     "Name Tag (Itemsanity)",
     "Raw Mutton (Itemsanity)",
     "Cooked Mutton (Itemsanity)",
@@ -998,8 +998,8 @@ vanilla_itemsanity = [
     "End Crystal (Itemsanity)",
     "Chorus Fruit (Itemsanity)",
     "Popped Chorus Fruit (Itemsanity)",
-    "Torchflower Seeds (Itemsanity)", # TODO
-    "Pitcher Pod (Itemsanity)", # TODO
+    "Torchflower Seeds (Itemsanity)",
+    "Pitcher Pod (Itemsanity)",
     "Beetroot (Itemsanity)",
     "Beetroot Seeds (Itemsanity)",
     "Beetroot Soup (Itemsanity)",
@@ -1009,40 +1009,40 @@ vanilla_itemsanity = [
     # "Tipped Arrow (Itemsanity)",
     # "Lingering Potion (Itemsanity)",
     "Shield (Itemsanity)",
-    "Totem of Undying (Itemsanity)", # TODO
+    "Totem of Undying (Itemsanity)",
     "Shulker Shell (Itemsanity)",
     "Iron Nugget (Itemsanity)",
-    "Music Disc 13 (Itemsanity)", # TODO
-    "Music Disc Cat (Itemsanity)", # TODO
-    "Music Disc Blocks (Itemsanity)", # TODO
-    "Music Disc Chirp (Itemsanity)", # TODO
-    "Music Disc Far (Itemsanity)", # TODO
-    "Music Disc Mall (Itemsanity)", # TODO
-    "Music Disc Mellohi (Itemsanity)", # TODO
-    "Music Disc Stal (Itemsanity)", # TODO
-    "Music Disc Strad (Itemsanity)", # TODO
-    "Music Disc Ward (Itemsanity)", # TODO
-    "Music Disc 11 (Itemsanity)", # TODO
-    "Music Disc Wait (Itemsanity)", # TODO
-    "Music Disc Otherside (Itemsanity)", # TODO
-    "Music Disc Relic (Itemsanity)", # TODO
-    "Music Disc 5 (Itemsanity)", # TODO
-    "Music Disc Pigstep (Itemsanity)", # TODO
-    "Disc 5 Fragment (Itemsanity)", # TODO
+    "Music Disc 13 (Itemsanity)",
+    "Music Disc Cat (Itemsanity)",
+    "Music Disc Blocks (Itemsanity)",
+    "Music Disc Chirp (Itemsanity)",
+    "Music Disc Far (Itemsanity)",
+    "Music Disc Mall (Itemsanity)",
+    "Music Disc Mellohi (Itemsanity)",
+    "Music Disc Stal (Itemsanity)",
+    "Music Disc Strad (Itemsanity)",
+    "Music Disc Ward (Itemsanity)",
+    "Music Disc 11 (Itemsanity)",
+    "Music Disc Wait (Itemsanity)",
+    "Music Disc Otherside (Itemsanity)",
+    "Music Disc Relic (Itemsanity)",
+    "Music Disc 5 (Itemsanity)",
+    "Music Disc Pigstep (Itemsanity)",
+    "Disc 5 Fragment (Itemsanity)",
     "Trident (Itemsanity)",
     "Phantom Membrane (Itemsanity)",
     "Nautilus Shell (Itemsanity)",
-    "Heart of the Sea (Itemsanity)", # TODO
+    "Heart of the Sea (Itemsanity)",
     "Crossbow (Itemsanity)",
-    "Suspicious Stew (Itemsanity)", # TODO
+    "Suspicious Stew (Itemsanity)",
     "Loom (Itemsanity)",
-    "Flower Charge Banner Pattern (Itemsanity)", # TODO
-    "Creeper Charge Banner Pattern (Itemsanity)", # TODO
-    "Skull Charge Banner Pattern (Itemsanity)", # TODO
-    "Thing Banner Pattern (Itemsanity)", # TODO
-    "Globe Banner Pattern (Itemsanity)", # TODO
-    "Snout Banner Pattern (Itemsanity)", # TODO
-    "Goat Horn (Itemsanity)", # TODO
+    "Flower Charge Banner Pattern (Itemsanity)",
+    "Creeper Charge Banner Pattern (Itemsanity)",
+    "Skull Charge Banner Pattern (Itemsanity)",
+    "Thing Banner Pattern (Itemsanity)",
+    "Globe Banner Pattern (Itemsanity)",
+    "Snout Banner Pattern (Itemsanity)",
+    "Goat Horn (Itemsanity)",
     "Composter (Itemsanity)",
     "Barrel (Itemsanity)",
     "Smoker (Itemsanity)",
@@ -1065,7 +1065,7 @@ vanilla_itemsanity = [
     "Beehive (Itemsanity)",
     "Honey Bottle (Itemsanity)",
     "Honeycomb Block (Itemsanity)",
-    "Lodestone (Itemsanity)", # TODO
+    "Lodestone (Itemsanity)",
     "Crying Obsidian (Itemsanity)",
     "Blackstone (Itemsanity)",
     "Blackstone Slab (Itemsanity)",
@@ -1102,30 +1102,30 @@ vanilla_itemsanity = [
     "Large Amethyst Bud (Itemsanity)",
     "Amethyst Cluster (Itemsanity)",
     "Pointed Dripstone (Itemsanity)",
-    "Ochre Froglight (Itemsanity)", # TODO
-    "Verdant Froglight (Itemsanity)", # TODO
-    "Pearlescent Froglight (Itemsanity)", # TODO
-    "Echo Shard (Itemsanity)", # TODO
+    "Ochre Froglight (Itemsanity)",
+    "Verdant Froglight (Itemsanity)",
+    "Pearlescent Froglight (Itemsanity)",
+    "Echo Shard (Itemsanity)",
     "Brush (Itemsanity)",
-    "Netherite Smithing Template (Itemsanity)",  # TODO
-    "Sentry Armor Trim (Itemsanity)",  # TODO
-    "Dune Armor Trim (Itemsanity)",  # TODO
-    "Coast Armor Trim (Itemsanity)",  # TODO
-    "Wild Armor Trim (Itemsanity)",  # TODO
-    "Ward Armor Trim (Itemsanity)",  # TODO
-    "Eye Armor Trim (Itemsanity)",  # TODO
-    "Vex Armor Trim (Itemsanity)",  # TODO
-    "Tide Armor Trim (Itemsanity)", # TODO
-    "Snout Armor Trim (Itemsanity)",  # TODO
-    "Rib Armor Trim (Itemsanity)",  # TODO
-    "Spire Armor Trim (Itemsanity)",  # TODO
-    "Wayfinder Armor Trim (Itemsanity)",  # TODO
-    "Shaper Armor Trim (Itemsanity)", # TODO
-    "Silence Armor Trim (Itemsanity)",  # TODO
-    "Raiser Armor Trim (Itemsanity)", # TODO
-    "Host Armor Trim (Itemsanity)",  # TODO
-    "Angler Pottery Sherd (Itemsanity)", # TODO
-    "Archer Pottery Sherd (Itemsanity)", # TODO
+    "Netherite Smithing Template (Itemsanity)",
+    "Sentry Armor Trim (Itemsanity)",
+    "Dune Armor Trim (Itemsanity)",
+    "Coast Armor Trim (Itemsanity)",
+    "Wild Armor Trim (Itemsanity)",
+    "Ward Armor Trim (Itemsanity)",
+    "Eye Armor Trim (Itemsanity)",
+    "Vex Armor Trim (Itemsanity)",
+    "Tide Armor Trim (Itemsanity)",
+    "Snout Armor Trim (Itemsanity)",
+    "Rib Armor Trim (Itemsanity)",
+    "Spire Armor Trim (Itemsanity)",
+    "Wayfinder Armor Trim (Itemsanity)",
+    "Shaper Armor Trim (Itemsanity)",
+    "Silence Armor Trim (Itemsanity)",
+    "Raiser Armor Trim (Itemsanity)",
+    "Host Armor Trim (Itemsanity)",
+    "Angler Pottery Sherd (Itemsanity)",
+    "Archer Pottery Sherd (Itemsanity)",
     "Arms Up Pottery Sherd (Itemsanity)", # TODO
     "Blade Pottery Sherd (Itemsanity)", # TODO
     "Brewer Pottery Sherd (Itemsanity)",  # TODO
@@ -1136,12 +1136,14 @@ vanilla_itemsanity = [
     "Heart Pottery Sherd (Itemsanity)", # TODO
     "Heartbreak Pottery Sherd (Itemsanity)", # TODO
     "Howl Pottery Sherd (Itemsanity)",  # TODO
-    "Miner Pottery Sherd (Itemsanity)",  # TODO
+    "Miner Pottery Sherd (Itemsanity)",
     "Mourner Pottery Sherd (Itemsanity)", # TODO
     "Plenty Pottery Sherd (Itemsanity)",  # TODO
-    "Prize Pottery Sherd (Itemsanity)", # TODO
+    "Prize Pottery Sherd (Itemsanity)",
     "Sheaf Pottery Sherd (Itemsanity)", # TODO
     "Shelter Pottery Sherd (Itemsanity)",  # TODO
-    "Skull Pottery Sherd (Itemsanity)",  # TODO
-    "Snort Pottery Sherd (Itemsanity)" # TODO
+    "Skull Pottery Sherd (Itemsanity)",
+    "Snort Pottery Sherd (Itemsanity)", # TODO
+    "Firework Star (Itemsanity)",
+    "Firework Rocket (Itemsanity)"
 ]

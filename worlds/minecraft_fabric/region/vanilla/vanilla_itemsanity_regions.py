@@ -333,10 +333,29 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Beetroot Soup (Itemsanity)": 5,
         "Phantom Membrane (Itemsanity)": 5,
         "Composter (Itemsanity)": 5,
-        "Bell (Itemsanity)": 5,
         "Sweet Berries (Itemsanity)": 5,
         "Glow Berries (Itemsanity)": 5,
-        "Pointed Dripstone (Itemsanity)": 5
+        "Pointed Dripstone (Itemsanity)": 5,
+        "Firework Rocket (Itemsanity)": 5,
+        "Lead (Itemsanity)": 5,
+        "Hanging Roots (Itemsanity)": 5,
+        "Suspicious Stew (Itemsanity)": 5,
+        "Flower Charge Banner Pattern (Itemsanity)": 5,
+        "Music Disc Blocks (Itemsanity)": 5,
+        "Music Disc Chirp (Itemsanity)": 5,
+        "Music Disc Far (Itemsanity)": 5,
+        "Music Disc Mall (Itemsanity)": 5,
+        "Music Disc Mellohi (Itemsanity)": 5,
+        "Music Disc Stal (Itemsanity)": 5,
+        "Music Disc Strad (Itemsanity)": 5,
+        "Music Disc Ward (Itemsanity)": 5,
+        "Music Disc 11 (Itemsanity)": 5,
+        "Music Disc Wait (Itemsanity)": 5,
+
+        "Bell (Itemsanity)": 7,
+        "Slimeball (Itemsanity)": 7,
+        "Slime Block (Itemsanity)": 7,
+        "Totem of Undying (Itemsanity)": 7
     })
 
     # REQUIRES NETHER ACCESS
@@ -417,7 +436,13 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Chiseled Polished Blackstone (Itemsanity)": 5,
         "Polished Blackstone Bricks (Itemsanity)": 5,
         "Polished Blackstone Brick Slab (Itemsanity)": 5,
-        "Polished Blackstone Brick Stairs (Itemsanity)": 5
+        "Polished Blackstone Brick Stairs (Itemsanity)": 5,
+        "Wither Skeleton Skull (Itemsanity)": 5,
+        "Skull Charge Banner Pattern (Itemsanity)": 5,
+
+        "Ochre Froglight (Itemsanity)": 6,
+        "Verdant Froglight (Itemsanity)": 6,
+        "Pearlescent Froglight (Itemsanity)": 6
     }, lambda state: canAccessNether(world, state))
 
     # REQUIRES END ACCESS
@@ -429,6 +454,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "End Stone Brick Stairs (Itemsanity)": 5,
         "End Stone Brick Slab (Itemsanity)": 5,
         "Elytra (Itemsanity)": 5,
+        "Dragon Head (Itemsanity)": 5,
         "Eye of Ender (Itemsanity)": 5,
         "End Crystal (Itemsanity)": 5,
         "Chorus Fruit (Itemsanity)": 5,
@@ -440,12 +466,16 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Lapis Lazuli (Itemsanity)": 5,
         "Raw Iron (Itemsanity)": 5,
         "Raw Copper (Itemsanity)": 5,
-        "Stone Sword (Itemsanity)": 5,
         "Stone Shovel (Itemsanity)": 5,
         "Stone Pickaxe (Itemsanity)": 5,
-        "Stone Axe (Itemsanity)": 5,
         "Stone Hoe (Itemsanity)": 5
     }, lambda state: canUseStoneTools(world, state))
+
+    # REQUIRES STONE TOOLS
+    create_region(world, "Menu", "HasStoneWeapons", {
+        "Stone Sword (Itemsanity)": 5,
+        "Stone Axe (Itemsanity)": 5
+    }, lambda state: canUseStoneWeapons(world, state))
 
     # REQUIRES LEATHER ARMOR
     create_region(world, "Menu", "HasLeatherArmor", {
@@ -474,7 +504,6 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Cracked Stone Bricks (Itemsanity)": 5,
         "Chiseled Stone Bricks (Itemsanity)": 5,
         "Iron Bars (Itemsanity)": 5,
-        "Chain (Itemsanity)": 5,
         "Glass Pane (Itemsanity)": 5,
         "Brick Stairs (Itemsanity)": 5,
         "Stone Brick Stairs (Itemsanity)": 5,
@@ -508,19 +537,14 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Rabbit Stew (Itemsanity)": 5,
         "Armor Stand (Itemsanity)": 5,
         "Cooked Mutton (Itemsanity)": 5,
-        "Smoker (Itemsanity)": 5,
-        "Blast Furnace (Itemsanity)": 5,
-        "Campfire (Itemsanity)": 5,
-        "Oak Hanging Sign (Itemsanity)": 5,
-        "Spruce Hanging Sign (Itemsanity)": 5,
-        "Birch Hanging Sign (Itemsanity)": 5,
-        "Jungle Hanging Sign (Itemsanity)": 5,
-        "Acacia Hanging Sign (Itemsanity)": 5,
-        "Cherry Hanging Sign (Itemsanity)": 5,
-        "Dark Oak Hanging Sign (Itemsanity)": 5,
-        "Mangrove Hanging Sign (Itemsanity)": 5,
-        "Bamboo Hanging Sign (Itemsanity)": 5
+        "Campfire (Itemsanity)": 5
     }, lambda state: canSmelt(world, state))
+
+    # REQUIRES SMELTING (x2)
+    create_region(world, "CanSmeltItems", "CanSmeltItemsBetter", {
+        "Smoker (Itemsanity)": 5,
+        "Blast Furnace (Itemsanity)": 5
+    }, lambda state: canSmeltBetter(world, state))
 
     # REQUIRES SHIELD
     create_region(world, "CanSmeltItems", "HasShield", {
@@ -543,18 +567,25 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Emerald (Itemsanity)": 5,
         "Raw Gold (Itemsanity)": 5,
         "Gold Ingot (Itemsanity)": 5,
-        "Golden Sword (Itemsanity)": 5,
         "Golden Shovel (Itemsanity)": 5,
         "Golden Pickaxe (Itemsanity)": 5,
-        "Golden Axe (Itemsanity)": 5,
         "Golden Hoe (Itemsanity)": 5,
-        "Iron Sword (Itemsanity)": 5,
         "Iron Shovel (Itemsanity)": 5,
         "Iron Pickaxe (Itemsanity)": 5,
-        "Iron Axe (Itemsanity)": 5,
         "Iron Hoe (Itemsanity)": 5,
         "Compass (Itemsanity)": 5,
-        "Clock (Itemsanity)": 5
+        "Clock (Itemsanity)": 5,
+        "Map (Itemsanity)": 5,
+
+        "Sticky Piston (Itemsanity)": 7
+    }, lambda state: canUseIronTools(world, state))
+
+    # REQUIRES IRON WEAPONS
+    create_region(world, "CanSmeltItems", "HasIronWeapons", {
+        "Golden Sword (Itemsanity)": 5,
+        "Golden Axe (Itemsanity)": 5,
+        "Iron Axe (Itemsanity)": 5,
+        "Iron Sword (Itemsanity)": 5,
     }, lambda state: canUseIronTools(world, state))
 
     # REQUIRES IRON ARMOR
@@ -576,12 +607,16 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     # REQUIRES DIAMOND TOOLS
     create_region(world, "HasIronTools", "HasDiamondTools", {
         "Obsidian (Itemsanity)": 5,
-        "Diamond Sword (Itemsanity)": 5,
         "Diamond Shovel (Itemsanity)": 5,
         "Diamond Pickaxe (Itemsanity)": 5,
-        "Diamond Axe (Itemsanity)": 5,
         "Diamond Hoe (Itemsanity)": 5
     }, lambda state: canUseDiamondTools(world, state))
+
+    # REQUIRES DIAMOND WEAPONS
+    create_region(world, "HasIronTools", "HasDiamondWeapons", {
+        "Diamond Sword (Itemsanity)": 5,
+        "Diamond Axe (Itemsanity)": 5
+    }, lambda state: canUseDiamondWeapons(world, state))
 
     # REQUIRES DIAMOND ARMOR
     create_region(world, "HasIronTools", "HasDiamondArmor", {
@@ -595,6 +630,27 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     create_region(world, "CanSmeltItems", "CanSmithItems", {
         "Smithing Table (Itemsanity)": 5
     }, lambda state: canGetAndUseArmorTrims(world, state))
+
+    # REQUIRES NETHERITE TOOLS
+    create_region(world, "CanSmithItems", "HasNetheriteTools", {
+        "Netherite Shovel (Itemsanity)": 6,
+        "Netherite Pickaxe (Itemsanity)": 6,
+        "Netherite Hoe (Itemsanity)": 6
+    }, lambda state: canUseNetheriteTools(world, state))
+
+    # REQUIRES NETHERITE WEAPONS
+    create_region(world, "CanSmithItems", "HasNetheriteWeapons", {
+        "Netherite Sword (Itemsanity)": 6,
+        "Netherite Axe (Itemsanity)": 6
+    }, lambda state: canUseNetheriteWeapons(world, state))
+
+    # REQUIRES NETHERITE Armor
+    create_region(world, "CanSmithItems", "HasNetheriteArmor", {
+        "Netherite Helmet (Itemsanity)": 6,
+        "Netherite Chestplate (Itemsanity)": 6,
+        "Netherite Leggings (Itemsanity)": 6,
+        "Netherite Boots (Itemsanity)": 6
+    }, lambda state: canWearNetheriteArmor(world, state))
 
     # REQUIRES BOW
     create_region(world, "Menu", "HasBow", {
@@ -622,7 +678,27 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
 
     # REQUIRES BRUSH
     create_region(world, "CanSmeltItems", "HasBrush", {
-        "Brush (Itemsanity)": 5
+        "Brush (Itemsanity)": 5,
+
+        "Music Disc Relic (Itemsanity)": 7,
+        "Archer Pottery Sherd (Itemsanity)": 7,
+        "Miner Pottery Sherd (Itemsanity)": 7,
+        "Prize Pottery Sherd (Itemsanity)": 7,
+        "Skull Pottery Sherd (Itemsanity)": 7,
+
+        "Wayfinder Armor Trim (Itemsanity)": 8,
+        "Shaper Armor Trim (Itemsanity)": 8,
+        "Raiser Armor Trim (Itemsanity)": 8,
+        "Host Armor Trim (Itemsanity)": 8,
+        "Arms Up Pottery Sherd (Itemsanity)": 8,
+        "Brewer Pottery Sherd (Itemsanity)": 8,
+        "Burn Pottery Sherd (Itemsanity)": 8,
+        "Danger Pottery Sherd (Itemsanity)": 8,
+        "Friend Pottery Sherd (Itemsanity)": 8,
+        "Heart Pottery Sherd (Itemsanity)": 8,
+        "Heartbreak Pottery Sherd (Itemsanity)": 8,
+        "Howl Pottery Sherd (Itemsanity)": 8,
+        "Sheaf Pottery Sherd (Itemsanity)": 8
     }, lambda state: canUseBrush(world, state))
 
     # REQUIRES FLINT AND STEEL
@@ -643,12 +719,30 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Dark Oak Boat with Chest (Itemsanity)": 5,
         "Mangrove Boat with Chest (Itemsanity)": 5,
         "Bamboo Raft with Chest (Itemsanity)": 5,
-        "Enchanted Golden Apple (Itemsanity)": 5,
         "Iron Horse Armor (Itemsanity)": 5,
         "Golden Horse Armor (Itemsanity)": 5,
         "Diamond Horse Armor (Itemsanity)": 5,
         "Name Tag (Itemsanity)": 5,
-        "Barrel (Itemsanity)": 5
+        "Barrel (Itemsanity)": 5,
+        "Music Disc 13 (Itemsanity)": 5,
+        "Music Disc Cat (Itemsanity)": 5,
+
+        "Enchanted Golden Apple (Itemsanity)": 7,
+        "Thing Banner Pattern (Itemsanity)": 7,
+        "Tall Grass (Itemsanity)": 7,
+        "Large Fern (Itemsanity)": 7,
+        "Echo Shard (Itemsanity)": 7,
+        "Goat Horn (Itemsanity)": 7,
+        "Music Disc 5 (Itemsanity)": 7,
+        "Disc 5 Fragment (Itemsanity)": 7,
+        "Music Disc Otherside (Itemsanity)": 7,
+        "Sentry Armor Trim (Itemsanity)": 7,
+        "Dune Armor Trim (Itemsanity)": 7,
+        "Vex Armor Trim (Itemsanity)": 7,
+
+        "Wild Armor Trim (Itemsanity)": 8,
+        "Ward Armor Trim (Itemsanity)": 8,
+        "Silence Armor Trim (Itemsanity)": 8,
     }, lambda state: canAccessChests(world, state))
 
     # REQUIRES ENCHANTING
@@ -690,7 +784,11 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Small Amethyst Bud (Itemsanity)": 5,
         "Medium Amethyst Bud (Itemsanity)": 5,
         "Large Amethyst Bud (Itemsanity)": 5,
-        "Amethyst Cluster (Itemsanity)": 5
+        "Amethyst Cluster (Itemsanity)": 5,
+
+        "Deepslate Coal Ore (Itemsanity)": 8,
+        "Deepslate Emerald Ore (Itemsanity)": 8,
+        "Diamond Ore (Itemsanity)": 8
     }, lambda state: canEnchant(world, state))
 
     # REQUIRES BUCKET
@@ -699,7 +797,12 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Water Bucket (Itemsanity)": 5,
         "Lava Bucket (Itemsanity)": 5,
         "Milk Bucket (Itemsanity)": 5,
-        "Cake (Itemsanity)": 5
+        "Cake (Itemsanity)": 5,
+
+        "Suspicious Sand (Itemsanity)": 6,
+        "Suspicious Gravel (Itemsanity)": 6,
+
+        "Powder Snow Bucket (Itemsanity)": 7
     }, lambda state: canUseBucket(world, state))
 
     # REQUIRES BREWING
@@ -728,7 +831,24 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Book and Quill (Itemsanity)": 5,
         "Glow Item Frame (Itemsanity)": 5,
         "Trident (Itemsanity)": 5,
-        "Nautilus Shell (Itemsanity)": 5
+        "Nautilus Shell (Itemsanity)": 5,
+
+        "Prismarine Shard (Itemsanity)": 7,
+        "Prismarine Crystals (Itemsanity)": 7,
+        "Prismarine Slab (Itemsanity)": 7,
+        "Prismarine Brick Slab (Itemsanity)": 7,
+        "Dark Prismarine Slab (Itemsanity)": 7,
+        "Prismarine Wall (Itemsanity)": 7,
+        "Prismarine (Itemsanity)": 7,
+        "Prismarine Bricks (Itemsanity)": 7,
+        "Dark Prismarine (Itemsanity)": 7,
+        "Prismarine Stairs (Itemsanity)": 7,
+        "Prismarine Brick Stairs (Itemsanity)": 7,
+        "Dark Prismarine Stairs (Itemsanity)": 7,
+        "Sea Lantern (Itemsanity)": 7,
+        "Sponge (Itemsanity)": 7,
+        "Wet Sponge (Itemsanity)": 7,
+        "Tide Armor Trim (Itemsanity)": 7
     }, lambda state: canSwim(world, state))
 
     # REQUIRES WITHER SUMMONING
@@ -780,6 +900,17 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Stonecutter (Itemsanity)": 5
     }, lambda state: canAccessMiscJobsites(world, state))
 
+    # REQUIRES TRADING
+    create_region(world, "Menu", "HasTrading", {
+        "Chainmail Helmet (Itemsanity)": 6,
+        "Chainmail Chestplate (Itemsanity)": 6,
+        "Chainmail Leggings (Itemsanity)": 6,
+        "Chainmail Boots (Itemsanity)": 6,
+        "Globe Banner Pattern (Itemsanity)": 6,
+
+        "Bottle o' Enchanting (Itemsanity)": 7
+    }, lambda state: canTrade(world, state))
+
     ####################################################################################################################
     # MULTIPLE CHECKS ##################################################################################################
     ####################################################################################################################
@@ -810,18 +941,52 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Dead Brain Coral Fan (Itemsanity)": 5,
         "Dead Bubble Coral Fan (Itemsanity)": 5,
         "Dead Fire Coral Fan (Itemsanity)": 5,
-        "Dead Horn Coral Fan (Itemsanity)": 5
+        "Dead Horn Coral Fan (Itemsanity)": 5,
+
+        "Zombie Head (Itemsanity)": 6,
+        "Skeleton Skull (Itemsanity)": 6,
+        "Creeper Head (Itemsanity)": 6,
+        "Piglin Head (Itemsanity)": 6,
+        "Creeper Charge Banner Pattern (Itemsanity)": 6,
+
+        "Mycelium (Itemsanity)": 7
     }, lambda state: canSwim(world, state) and canEnchant(world, state))
 
     # REQUIRES SWIMMING AND BRUSH
     create_region(world, "HasBrush", "HasSwimAndBrush", {
-        "Sniffer Egg (Itemsanity)": 5
+        "Sniffer Egg (Itemsanity)": 5,
+        "Torchflower Seeds (Itemsanity)": 6,
+        "Pitcher Pod (Itemsanity)": 6,
+        "Torchflower (Itemsanity)": 6,
+        "Pitcher Plant (Itemsanity)": 6,
+
+        "Angler Pottery Sherd (Itemsanity)": 8,
+        "Shelter Pottery Sherd (Itemsanity)": 8,
+        "Snort Pottery Sherd (Itemsanity)": 8,
+        "Blade Pottery Sherd (Itemsanity)": 8,
+        "Explorer Pottery Sherd (Itemsanity)": 8,
+        "Mourner Pottery Sherd (Itemsanity)": 8,
+        "Plenty Pottery Sherd (Itemsanity)": 8
     }, lambda state: canSwim(world, state) and canUseBrush(world, state))
 
     # REQUIRES SWIMMING AND SHEARS
     create_region(world, "HasShears", "HasSwimAndShears", {
-        "Seagrass (Itemsanity)": 5
+        "Seagrass (Itemsanity)": 5,
+        "Scute (Itemsanity)": 6,
+        "Turtle Shell (Itemsanity)": 8
     }, lambda state: canUseShears(world, state) and canSwim(world, state))
+
+    # REQUIRES SWIMMING AND CHESTS
+    create_region(world, "HasSwim", "HasSwimAndChests", {
+        "Heart of the Sea (Itemsanity)": 7,
+        "Conduit (Itemsanity)": 7,
+        "Coast Armor Trim (Itemsanity)": 7
+    }, lambda state: canAccessChests(world, state) and canSwim(world, state))
+
+    # REQUIRES EYES OF ENDER AND CHESTS
+    create_region(world, "HasChests", "HasChestsAndEyesOfEnder", {
+        "Eye Armor Trim (Itemsanity)": 7
+    }, lambda state: canAccessChests(world, state) and canGetEyesOfEnder(world, state))
 
     # REQUIRES SWIMMING AND SMELTING
     create_region(world, "CanSmeltItems", "HasSwimAndSmelting", {
@@ -864,7 +1029,9 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Bucket of Salmon (Itemsanity)": 5,
         "Bucket of Cod (Itemsanity)": 5,
         "Bucket of Tropical Fish (Itemsanity)": 5,
-        "Bucket of Axolotl (Itemsanity)": 5
+        "Bucket of Axolotl (Itemsanity)": 5,
+
+        "Bucket of Tadpole (Itemsanity)": 7
     }, lambda state: canUseBucket(world, state) and canSwim(world, state))
 
     # REQUIRES COMPACTING AND SMELTING
@@ -887,13 +1054,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Weathered Cut Copper Slab (Itemsanity)": 5,
         "Oxidized Cut Copper Slab (Itemsanity)": 5,
         "Iron Nugget (Itemsanity)": 5,
-        "Lantern (Itemsanity)": 5
     }, lambda state: canSmelt(world, state) and canCompactResources(world, state))
-
-    # REQUIRES COMPACTING AND SMELTING AND NETHER
-    create_region(world, "CanSmeltItems", "CanSmeltAndCanCompactAndNether", {
-        "Soul Lantern (Itemsanity)": 5
-    }, lambda state: canSmelt(world, state) and canCompactResources(world, state) and canAccessNether(world, state))
 
     # REQUIRES COMPACTING AND STONE TOOLS
     create_region(world, "HasStoneTools", "CanCompactAndStoneTools", {
@@ -910,6 +1071,11 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Block of Emerald (Itemsanity)": 5,
         "Block of Redstone (Itemsanity)": 5
     }, lambda state: canCompactResources(world, state))
+
+    # REQUIRES COMPACTING AND DIAMOND TOOLS
+    create_region(world, "CanCompactAndIronTools", "CanCompactAndDiamondTools", {
+        "Block of Netherite (Itemsanity)": 5
+    }, lambda state: canCompactResources(world, state) and canUseDiamondTools(world, state))
 
     # REQUIRES COMPACTING AND IRON TOOLS AND SMELTING
     create_region(world, "HasIronTools", "CanCompactAndIronToolsAndSmelting", {
@@ -948,6 +1114,13 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Ancient Debris (Itemsanity)": 5
     }, lambda state: canAccessNether(world, state) and (canAccessChests(world, state) or canUseDiamondTools(world, state)))
 
+    # REQUIRES NETHER + DIAMOND TOOLS OR CHESTS + Smelting
+    create_region(world, "NetherAccessGetDebree", "NetherAccessGetDebreeScrap", {
+        "Netherite Scrap (Itemsanity)": 5,
+        "Netherite Ingot (Itemsanity)": 5,
+        "Lodestone (Itemsanity)": 5
+    }, lambda state: canAccessNether(world, state) and (canAccessChests(world, state) or canUseDiamondTools(world, state)) and canSmelt(world, state))
+
     # REQUIRES NETHER AND ENCHANTING
     create_region(world, "NetherAccess", "NetherAccessAndEnchanting", {
         "Crimson Nylium (Itemsanity)": 5,
@@ -974,9 +1147,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Daylight Detector (Itemsanity)": 5,
         "Red Nether Bricks (Itemsanity)": 5,
         "Nether Brick (Itemsanity)": 5,
-        "Cracked Polished Blackstone Bricks (Itemsanity)": 5,
-        "Crimson Hanging Sign (Itemsanity)": 5,
-        "Warped Hanging Sign (Itemsanity)": 5
+        "Cracked Polished Blackstone Bricks (Itemsanity)": 5
     }, lambda state: canAccessNether(world, state) and canSmelt(world, state))
 
     # REQUIRES NETHER AND SMELTING AND IRON TOOLS
@@ -1018,7 +1189,8 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
 
     # REQUIRES CHESTS AND END ACCESS
     create_region(world, "EndAccess", "EndAccessAndChests", {
-        "Shulker Box (Itemsanity)": 5
+        "Shulker Box (Itemsanity)": 5,
+        "Spire Armor Trim (Itemsanity)": 8
     }, lambda state: canAccessChests(world, state) and canAccessEnd(world, state))
 
     # REQUIRES CHESTS AND SMELTING
@@ -1038,6 +1210,12 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Detector Rail (Itemsanity)": 5,
         "Activator Rail (Itemsanity)": 5
     }, lambda state: canUseMinecart(world, state) and canUseIronTools(world, state))
+
+
+    # REQUIRES CHESTS AND IRON TOOLS
+    create_region(world, "HasIronTools", "HasIronToolsAndChests", {
+        "Recovery Compass (Itemsanity)": 7
+    }, lambda state: canAccessChests(world, state) and canUseIronTools(world, state))
 
     # REQUIRES MINECART AND CHESTS
     create_region(world, "HasMinecart", "HasMinecartAndChests", {
@@ -1092,7 +1270,9 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "White Concrete (Itemsanity)": 5,
         "White Concrete Powder (Itemsanity)": 5,
         "White Dye (Itemsanity)": 5,
-        "White Banner (Itemsanity)": 5
+        "White Banner (Itemsanity)": 5,
+
+        "Firework Star (Itemsanity)": 5
     }, lambda state: canDyeBasic(world, state))
 
     # Regular Dye and Smelt
@@ -1361,6 +1541,42 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Lime Shulker Box (Itemsanity)": 5,
         "Cyan Shulker Box (Itemsanity)": 5
     }, lambda state: canDyeFull(world, state) and canAccessChests(world, state) and canAccessEnd(world, state) and canSmelt(world, state))
+
+    # Can Smelt and Compact
+    create_region(world, "CanSmeltItems", "CanSmeltItemsAndCompact", {
+        "Lantern (Itemsanity)": 5,
+        "Chain (Itemsanity)": 5,
+        "Oak Hanging Sign (Itemsanity)": 5,
+        "Spruce Hanging Sign (Itemsanity)": 5,
+        "Birch Hanging Sign (Itemsanity)": 5,
+        "Jungle Hanging Sign (Itemsanity)": 5,
+        "Acacia Hanging Sign (Itemsanity)": 5,
+        "Cherry Hanging Sign (Itemsanity)": 5,
+        "Dark Oak Hanging Sign (Itemsanity)": 5,
+        "Mangrove Hanging Sign (Itemsanity)": 5,
+        "Bamboo Hanging Sign (Itemsanity)": 5
+    }, lambda state: canCompactResources(world, state) and canSmelt(world, state))
+
+    # Can Smelt and Compact and Has Nether
+    create_region(world, "CanSmeltItemsAndCompact", "CanSmeltItemsAndCompactAndNether", {
+        "Crimson Hanging Sign (Itemsanity)": 5,
+        "Warped Hanging Sign (Itemsanity)": 5,
+        "Soul Lantern (Itemsanity)": 5
+    }, lambda state: canCompactResources(world, state) and canSmelt(world, state) and canAccessNether(world, state))
+
+    # Can Shear and Enchant
+    create_region(world, "HasEnchanting", "HasEnchantingAndShears", {
+        "Turtle Egg (Itemsanity)": 5
+    }, lambda state: canEnchant(world, state) and canUseShears(world, state))
+
+    # Can Use Chests and Access Nether
+    create_region(world, "NetherAccess", "NetherAccessAndChests", {
+        "Netherite Smithing Template (Itemsanity)": 6,
+        "Snout Banner Pattern (Itemsanity)": 7,
+        "Music Disc Pigstep (Itemsanity)": 7,
+        "Snout Armor Trim (Itemsanity)": 8,
+        "Rib Armor Trim (Itemsanity)": 8
+    }, lambda state: canAccessChests(world, state) and canAccessNether(world, state))
 
 
 def create_region(world: FabricMinecraftWorld, region_name: str, new_region_name: str, locations: dict[str, int], rule=None):

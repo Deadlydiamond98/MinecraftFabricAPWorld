@@ -16,22 +16,38 @@ from worlds.minecraft_fabric.location.minecraft_locations import location_table
 
 # HELPER METHODS #######################################################################################################
 
+# Determines whether a location is included
+def blacklisted_location(world: FabricMinecraftWorld, location_type: int):
+    exclusions = {
+        0: False,                                           # Default Advancement
+        1: world.options.exclude_hard_advancements,         # Hard Advancement
+        2: world.options.exclude_exploration_advancements,  # Exploration Advancement
+        3: world.options.exclude_unreasonable_advancements, # Unreasonable Advancement
+
+        5: False,                                           # Default Itemsanity
+        6: world.options.exclude_hard_advancements,         # Hard Itemsanity
+        7: world.options.exclude_exploration_advancements,  # Exploration Itemsanity
+        8: world.options.exclude_unreasonable_advancements, # Unreasonable Itemsanity
+    }
+
+    if location_type in exclusions:
+        if exclusions[location_type]:
+            return True
+
+    if location_type in [5, 6, 7, 8] and not world.options.itemsanity:
+        return True
+
+    return False
+
 # Creates a Region with Locations, and Excludes Unused Locations based on settings
 def create_locations_advanced(world: FabricMinecraftWorld, region_name: str, locations: dict[str, int]):
    location_list = []
 
-   for location, type in locations.items():
-       if type == 1 and world.options.exclude_hard_advancements:
-           continue
-       if type == 2 and world.options.exclude_exploration_advancements:
-           continue
-       elif type == 3 and world.options.exclude_unreasonable_advancements:
-           continue
-       elif type == 5 and not world.options.itemsanity:
+   for location, location_type in locations.items():
+       if blacklisted_location(world, location_type):
            continue
 
        location_list.append(location)
-
 
    return create_locations(world, region_name, location_list)
 

@@ -46,8 +46,8 @@ vanilla_items = [
     useful("Redstone Dust"),
     useful("Lapis Lazuli"),
     useful("Ender Pearls"),
-    # useful("Prismarine Shards"),
-    # useful("Prismarine Crystals"),
+    useful("Prismarine Shards"),
+    useful("Prismarine Crystals"),
     # Enchants
     useful("Looting III"),
     useful("Sharpness III"),

@@ -49,26 +49,32 @@ class AdvancementsRequiredToGoal(Range):
     range_end = 1000
     default = 50
 
-class ExcludeUnreasonableAdvancements(Toggle):
+class ExcludeUnreasonableLocations(Toggle):
     """
-    Makes it so extremely hard Advancements (such as "How Did We Get Here?" or "Adventuring Time")
-    will not have checks
+    Makes it so extremely hard locations will not have checks!
+
+    A list of Unreasonable Locations can be found here:
+    https://modded.wiki/w/Fabric_Archipelago_Mod:Optional_Locations
     """
-    display_name = "Exclude Unreasonable Advancements"
+    display_name = "Exclude Unreasonable Locations"
     default = True
 
-class ExcludeHardAdvancements(Toggle):
+class ExcludeHardLocations(Toggle):
     """
-    Makes it so hard Advancements (such as "Cover Me in Debris" or "A Complete Catalogue")
-    will not have checks
+    Makes it so hard locations will not have checks!
+
+    A list of Hard Locations can be found here:
+    https://modded.wiki/w/Fabric_Archipelago_Mod:Optional_Locations
     """
-    display_name = "Exclude Hard Advancements"
+    display_name = "Exclude Hard Locations"
     default = True
 
-class ExcludeExplorationAdvancements(Toggle):
+class ExcludeExplorationLocations(Toggle):
     """
-    Makes it so Advancements that require a lot of exploration (such as "Sound of Music" or "Whatever Floats Your Goat!")
-    will not have checks
+    Makes it so locations that require a lot of exploring will not have checks!
+
+    A list of Exploration-Based Locations can be found here:
+    https://modded.wiki/w/Fabric_Archipelago_Mod:Optional_Locations
     """
     display_name = "Exclude Exploration Locations"
     default = False
@@ -262,9 +268,9 @@ class FMCOptions(PerGameCommonOptions):
     randomizerDifficulty: RandomizerDifficulty
     # Advancements
     advancements_required_for_goal: AdvancementsRequiredToGoal
-    exclude_unreasonable_advancements: ExcludeUnreasonableAdvancements
-    exclude_hard_advancements: ExcludeHardAdvancements
-    exclude_exploration_advancements: ExcludeExplorationAdvancements
+    exclude_unreasonable_advancements: ExcludeUnreasonableLocations
+    exclude_hard_advancements: ExcludeHardLocations
+    exclude_exploration_advancements: ExcludeExplorationLocations
     speedrunner_mode: SpeedRunnerMode
     percentage_of_rubies_needed: RubyPercentageNeeded
     total_rubies: TotalRubiesInGame
@@ -272,7 +278,6 @@ class FMCOptions(PerGameCommonOptions):
     # sanities
     itemsanity: Itemsanity
     itemsanity_local_fill: ItemsanityLocalFill
-    # killsanity: Killsanity
     # Abilities
     randomize_swim: RandomizeSwim
     randomize_chests: RandomizeChestStorage
