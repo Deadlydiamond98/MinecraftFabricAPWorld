@@ -14,30 +14,40 @@ from BaseClasses import CollectionState
 
 # DIFFICULTY CHECK #####################################################################################################
 
-def getDifficultyRequirements(level: int, world: FabricMinecraftWorld, state: CollectionState):
-    difficulty = world.options.randomizerDifficulty.value
-    if difficulty == level:
-        return (canUseIronTools(world, state) and canWearIronArmor(world, state) and canUseBow(world, state)
-                and optionalRequireSprint(world, state)) and optionalRequireJump(world, state)
-    return True
+def getDifficultyRequirements(required_options: set[str], world: FabricMinecraftWorld, state: CollectionState):
+    required = True
+
+    if "Iron Weapons" in required_options:
+        required = required and canUseIronWeapons(world, state)
+    if "Iron Armor" in required_options:
+        required = required and canWearIronArmor(world, state)
+    if "Bow" in required_options:
+        required = required and canUseBow(world, state)
+    if "Sprint" in required_options:
+        required = required and optionalRequireSprint(world, state)
+    if "Jump" in required_options:
+        required = required and optionalRequireJump(world, state)
+    if "Beds" in required_options:
+        required = required and canSleep(world, state)
+    return required
 
 # OPTIONAL ABILITY CHECKS ##############################################################################################
 
 def optionalRequireSprint(world: FabricMinecraftWorld, state: CollectionState):
-    if world.options.randomize_sprint.value == 1:
-        return state.has("Sprint", world.player)
-    else:
-        return True
+    return checkRandomizedAbility(world, state, "Sprint", "Sprint")
 
 def optionalRequireJump(world: FabricMinecraftWorld, state: CollectionState):
-    if world.options.randomize_jump.value == 1:
-        return state.has("Jump", world.player)
-    else:
-        return True
+    return checkRandomizedAbility(world, state, "Jump", "Jump")
 
 def canAccessChests(world: FabricMinecraftWorld, state: CollectionState):
-    if world.options.randomize_chests.value == 1:
-        return state.has("Chests & Barrels", world.player)
+    return checkRandomizedAbility(world, state, "Chests", "Chests & Barrels")
+
+def canSwim(world: FabricMinecraftWorld, state: CollectionState):
+    return checkRandomizedAbility(world, state, "Swim", "Swim")
+
+def checkRandomizedAbility(world: FabricMinecraftWorld, state: CollectionState, value: str, item: str):
+    if value in world.options.randomized_abilities.value:
+        return state.has(item, world.player)
     else:
         return True
 
@@ -45,18 +55,6 @@ def hasOptionalGoalAbilities(world: FabricMinecraftWorld, state: CollectionState
     return optionalRequireJump(world, state) and optionalRequireSprint(world, state)
 
 # ABILITY CHECKS #######################################################################################################
-
-def canSwim(world: FabricMinecraftWorld, state: CollectionState):
-    if world.options.randomize_swim:
-        return state.has("Swim", world.player)
-    else:
-        return True
-
-def speedrunnerMode(world: FabricMinecraftWorld, state: CollectionState):
-    if world.options.speedrunner_mode:
-        return canSleep(world, state)
-    else:
-        return True
 
 def canTrade(world: FabricMinecraftWorld, state: CollectionState):
     return state.has("Villager Trading", world.player)
@@ -127,10 +125,10 @@ def canWearIronArmor(world: FabricMinecraftWorld, state: CollectionState):
     return canSmelt(world, state) and state.has("Progressive Armor", world.player, 3)
 
 def canWearDiamondArmor(world: FabricMinecraftWorld, state: CollectionState):
-    return canWearIronArmor(world, state) and state.has("Progressive Armor", world.player, 4) and canUseIronTools(world, state)
+    return state.has("Progressive Armor", world.player, 4) and canUseIronTools(world, state)
 
 def canWearNetheriteArmor(world: FabricMinecraftWorld, state: CollectionState):
-    return canWearDiamondArmor(world, state) and state.has("Progressive Armor", world.player, 5) and canSmith(world, state) and canUseDiamondTools(world, state) and canGetUpgradeTemplate(world, state)
+    return state.has("Progressive Armor", world.player, 5) and canSmith(world, state) and canUseDiamondTools(world, state) and canGetUpgradeTemplate(world, state)
 
 # OTHER TOOL CHECKS ####################################################################################################
 
@@ -182,10 +180,10 @@ def canGetAndUseArmorTrims(world: FabricMinecraftWorld, state: CollectionState):
 
 def canAccessNether(world: FabricMinecraftWorld, state: CollectionState):
     return (((canUseDiamondTools(world, state) or canUseBucket(world, state)) and canUseFlintAndSteel(world, state))
-            and getDifficultyRequirements(0, world, state))
+            and getDifficultyRequirements(world.options.required_before_nether.value, world, state))
 
 def canAccessEnd(world: FabricMinecraftWorld, state: CollectionState):
-    return canGetEyesOfEnder(world, state) and speedrunnerMode(world, state) and getDifficultyRequirements(1, world, state)
+    return (canGetEyesOfEnder(world, state) and getDifficultyRequirements(world.options.required_before_bosses.value, world, state))
 
 # MISC VANILLA #########################################################################################################
 
@@ -213,7 +211,13 @@ def canGetUpgradeTemplate(world: FabricMinecraftWorld, state: CollectionState):
     return canAccessNether(world, state) and canAccessChests(world, state)
 
 def canCureZombieVillager(world: FabricMinecraftWorld, state: CollectionState):
-    return canBrew(world, state) and canAccessNether(world, state) or canUseIronTools(world, state)
+    return canBrew(world, state) and (canAccessNether(world, state) or canUseIronTools(world, state))
+
+def canGetSmoothStone(world: FabricMinecraftWorld, state: CollectionState):
+    return canSmelt(world, state) or canEnchant(world, state)
+
+def canFightRaid(world: FabricMinecraftWorld, state: CollectionState):
+    return getDifficultyRequirements(world.options.required_before_raids.value, world, state)
 
 # GOAL CHECKS ##########################################################################################################
 
@@ -221,7 +225,8 @@ def canGoalEnderDragon(world: FabricMinecraftWorld, state: CollectionState):
     return canAccessEnd(world, state)
 
 def canGoalWither(world: FabricMinecraftWorld, state: CollectionState):
-    return canAccessNether(world, state) and state.has("Wither Summoning", world.player) and getDifficultyRequirements(1, world, state)
+    return (canAccessNether(world, state) and state.has("Wither Summoning", world.player)
+            and getDifficultyRequirements(world.options.required_before_bosses.value, world, state))
 
 def canBeatDragonAndWither(world: FabricMinecraftWorld, state: CollectionState):
     return canGoalEnderDragon(world, state) and canGoalWither(world, state)

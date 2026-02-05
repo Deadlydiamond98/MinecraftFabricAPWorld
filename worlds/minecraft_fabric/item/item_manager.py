@@ -26,5 +26,8 @@ def useful(name: str):
 def filler(name: str):
     return UnprocessedMinecraftItem(name, ItemClassification.filler, 0)
 
+def blank_filler(name: str):
+    return UnprocessedMinecraftItem(name, ItemClassification.filler, 2)
+
 def trap(name: str):
     return UnprocessedMinecraftItem(name, ItemClassification.trap, 0)

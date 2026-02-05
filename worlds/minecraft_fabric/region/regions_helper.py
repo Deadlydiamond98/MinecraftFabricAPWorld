@@ -19,22 +19,29 @@ from worlds.minecraft_fabric.location.minecraft_locations import location_table
 # Determines whether a location is included
 def blacklisted_location(world: FabricMinecraftWorld, location_type: int):
     exclusions = {
-        0: False,                                           # Default Advancement
-        1: world.options.exclude_hard_advancements,         # Hard Advancement
-        2: world.options.exclude_exploration_advancements,  # Exploration Advancement
-        3: world.options.exclude_unreasonable_advancements, # Unreasonable Advancement
+        0: False,                                                                       # Default Advancement
+        1: "Hard" in world.options.excluded_locations.value,                            # Hard Advancement
+        2: "Exploration" in world.options.excluded_locations.value,                     # Exploration Advancement
+        3: "Unreasonable" in world.options.excluded_locations.value,                    # Unreasonable Advancement
 
-        5: False,                                           # Default Itemsanity
-        6: world.options.exclude_hard_advancements,         # Hard Itemsanity
-        7: world.options.exclude_exploration_advancements,  # Exploration Itemsanity
-        8: world.options.exclude_unreasonable_advancements, # Unreasonable Itemsanity
+        5: False,                                                                       # Default Itemsanity
+        6: "Hard" in world.options.excluded_locations.value,                            # Hard Itemsanity
+        7: "Exploration" in world.options.excluded_locations.value,                     # Exploration Itemsanity
+        8: "Unreasonable" in world.options.excluded_locations.value,                    # Unreasonable Itemsanity
+
+        9: "Discs" in world.options.excluded_from_itemsanity.value,                     # Music Disc Checks
+        10: "Rare Ores" in world.options.excluded_from_itemsanity.value,                # Rare Ore Checks
+        11: "Mob Heads" in world.options.excluded_from_itemsanity.value,                # Mob Head Checks
+        12: "Netherite Gear" in world.options.excluded_from_itemsanity.value,           # Netherite Gear Checks
+        13: "Trims" in world.options.excluded_from_itemsanity.value,                    # Armor Trim Checks
+        14: "Sherds" in world.options.excluded_from_itemsanity.value                    # Pottery Sherd Checks
     }
 
     if location_type in exclusions:
         if exclusions[location_type]:
             return True
 
-    if location_type in [5, 6, 7, 8] and not world.options.itemsanity:
+    if location_type in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14] and not world.options.itemsanity:
         return True
 
     return False

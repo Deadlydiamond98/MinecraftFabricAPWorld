@@ -1126,24 +1126,24 @@ vanilla_itemsanity = [
     "Host Armor Trim (Itemsanity)",
     "Angler Pottery Sherd (Itemsanity)",
     "Archer Pottery Sherd (Itemsanity)",
-    "Arms Up Pottery Sherd (Itemsanity)", # TODO
-    "Blade Pottery Sherd (Itemsanity)", # TODO
-    "Brewer Pottery Sherd (Itemsanity)",  # TODO
-    "Burn Pottery Sherd (Itemsanity)", # TODO
-    "Danger Pottery Sherd (Itemsanity)", # TODO
-    "Explorer Pottery Sherd (Itemsanity)",  # TODO
-    "Friend Pottery Sherd (Itemsanity)", # TODO
-    "Heart Pottery Sherd (Itemsanity)", # TODO
-    "Heartbreak Pottery Sherd (Itemsanity)", # TODO
-    "Howl Pottery Sherd (Itemsanity)",  # TODO
+    "Arms Up Pottery Sherd (Itemsanity)",
+    "Blade Pottery Sherd (Itemsanity)",
+    "Brewer Pottery Sherd (Itemsanity)",
+    "Burn Pottery Sherd (Itemsanity)",
+    "Danger Pottery Sherd (Itemsanity)",
+    "Explorer Pottery Sherd (Itemsanity)",
+    "Friend Pottery Sherd (Itemsanity)",
+    "Heart Pottery Sherd (Itemsanity)",
+    "Heartbreak Pottery Sherd (Itemsanity)",
+    "Howl Pottery Sherd (Itemsanity)",
     "Miner Pottery Sherd (Itemsanity)",
-    "Mourner Pottery Sherd (Itemsanity)", # TODO
-    "Plenty Pottery Sherd (Itemsanity)",  # TODO
+    "Mourner Pottery Sherd (Itemsanity)",
+    "Plenty Pottery Sherd (Itemsanity)",
     "Prize Pottery Sherd (Itemsanity)",
-    "Sheaf Pottery Sherd (Itemsanity)", # TODO
-    "Shelter Pottery Sherd (Itemsanity)",  # TODO
+    "Sheaf Pottery Sherd (Itemsanity)",
+    "Shelter Pottery Sherd (Itemsanity)",
     "Skull Pottery Sherd (Itemsanity)",
-    "Snort Pottery Sherd (Itemsanity)", # TODO
+    "Snort Pottery Sherd (Itemsanity)",
     "Firework Star (Itemsanity)",
     "Firework Rocket (Itemsanity)"
 ]

@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Optional, List
 from BaseClasses import Location
 from Options import OptionError
 from worlds.minecraft_fabric.item.items_helper import add_item_to_pool, add_items_to_pool, get_progression_bl_items, \
-    create_item, get_junk_items, get_item
+    create_item, get_junk_items, get_item, add_optional_item, get_blank_filler
 from worlds.minecraft_fabric.item.item_manager import ProcessedMinecraftItem
 
 if TYPE_CHECKING:
@@ -22,14 +22,10 @@ def create_items(world: FabricMinecraftWorld):
     # Progression Items ############################################################################################
 
     # Optional Progression Items
-    if world.options.randomize_swim:
-        total_items = add_item_to_pool(world, "Swim", total_items)
-    if world.options.randomize_sprint:
-        total_items = add_item_to_pool(world, "Sprint", total_items)
-    if world.options.randomize_jump:
-        total_items = add_item_to_pool(world, "Jump", total_items)
-    if world.options.randomize_chests:
-        total_items = add_item_to_pool(world, "Chests & Barrels", total_items)
+    total_items = add_optional_item(world, "Swim", "Swim", total_items)
+    total_items = add_optional_item(world, "Sprint", "Sprint", total_items)
+    total_items = add_optional_item(world, "Jump", "Jump", total_items)
+    total_items = add_optional_item(world, "Chests", "Chests & Barrels", total_items)
 
     # Progressive Progression Items
     total_items = add_items_to_pool(world, "Progressive Tools", 4, total_items)
@@ -93,6 +89,16 @@ def get_filler(world: FabricMinecraftWorld, total_items: int):
         trap_item = world.random.choice(trap_weights)
         junk_items.append(create_item(world, trap_item.name))
         total_items -= 1
+
+    # Blank Filler Items ###############################################################################################
+    blank_filler: list[ProcessedMinecraftItem] = get_blank_filler()
+    blank_filler_count = math.ceil(total_items * (world.options.empty_fill_percentage.value / 100.0))
+    total_items -= blank_filler_count
+
+    while blank_filler_count > 0:
+        junk_items.append(create_item(world, blank_filler[world.random.randint(0, len(blank_filler) - 1)].name))
+        blank_filler_count -= 1
+
 
     # Filler Items #####################################################################################################
     junk: list[ProcessedMinecraftItem] = get_junk_items()

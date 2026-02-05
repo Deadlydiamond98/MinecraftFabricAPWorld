@@ -1,4 +1,4 @@
-from worlds.minecraft_fabric.item.item_manager import needed, useful, filler, trap, needed_bl
+from worlds.minecraft_fabric.item.item_manager import needed, useful, filler, trap, needed_bl, blank_filler
 
 vanilla_items = [
     # PROGRESSION ######################################################################################################
@@ -114,6 +114,14 @@ vanilla_items = [
     filler("Strong Potion of Harming"),
     # Misc
     filler("Random Dye"),
+    # BLANK FILLER #####################################################################################################
+    blank_filler("Air"),
+    blank_filler("Cave Air"),
+    blank_filler("Void Air"),
+    blank_filler("Stack of 0 Items"),
+    blank_filler("Missing Item"),
+    blank_filler("Imaginary Cookie"),
+    blank_filler("Nothing"),
     # TRAPS ############################################################################################################
     trap("Reverse Controls Trap"),
     trap("Inverted Mouse Trap"),

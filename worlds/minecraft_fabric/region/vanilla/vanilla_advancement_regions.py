@@ -21,8 +21,6 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
         "You've Got a Friend in Me": 0,
         "Best Friends Forever": 0,
         "A Seedy Place": 0,
-        "Hero of the Village": 0,
-        "Postmortal": 2,
         "Getting Wood": 0,
         "Benchmarking": 0,
         "Time to Mine!": 0,
@@ -131,9 +129,7 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
     # REQUIRES CROSSBOW
     create_region(world, "CanSmeltItems", "HasCrossbow", {
         "Ol' Betsy": 0,
-        "Who's the Pillager Now?": 0,
-        "Arbalistic": 0,
-        "Two Birds, One Arrow": 1
+        "Who's the Pillager Now?": 0
     }, lambda state: canUseCrossBow(world, state))
 
     # REQUIRES MINECART
@@ -161,8 +157,7 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
 
     # REQUIRES TRADING
     create_region(world, "Menu", "HasTrading", {
-        "What a Deal!": 0,
-        "Star Trader": 0
+        "What a Deal!": 0
     }, lambda state: canTrade(world, state))
 
     # REQUIRES ENCHANTING
@@ -237,9 +232,26 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
         "Not Quite \"Nine\" Lives": 0
     }, lambda state: canGetCryingObsidian(world, state))
 
+    # REQUIRES RAIDS
+    create_locations_and_connect(world, "MenuVanillaAdvancements", "CanFightRaid", {
+        "Hero of the Village": 0,
+        "Postmortal": 2
+    }, lambda state: canFightRaid(world, state))
+
     ####################################################################################################################
     # MULTIPLE CHECKS ##################################################################################################
     ####################################################################################################################
+
+    # REQUIRES CROSSBOW AND ENCHANTING
+    create_region(world, "HasCrossbow", "HasCrossbowAndEnchanting", {
+        "Arbalistic": 1,
+        "Two Birds, One Arrow": 1
+    }, lambda state: canUseCrossBow(world, state) and canEnchant(world, state))
+
+    # REQUIRES TRADING AND BUCKETS
+    create_region(world, "HasTrading", "HasTradingAndBuckets", {
+        "Star Trader": 0
+    }, lambda state: canTrade(world, state) and canUseBucket(world, state))
 
     # REQUIRES SWIMMING AND ENCHANTING
     create_region(world, "HasEnchanting", "HasSwimAndEnchanting", {

@@ -15,7 +15,7 @@ def get_item_table():
     items = {}
     unprocessed_items: list[UnprocessedMinecraftItem] = get_all_items()
     for i, item in enumerate(unprocessed_items):
-        items.update({item.name: ProcessedMinecraftItem(item.name, item.classification, item.fill_type, i)})
+        items.update({item.name: ProcessedMinecraftItem(item.name, item.classification, item.fill_type, i + 1)})
     return items
 
 # All Items
@@ -29,7 +29,7 @@ def is_filler(item: ProcessedMinecraftItem):
 def get_junk_items():
     items_to_get = []
     for item in item_table.values():
-        if is_filler(item):
+        if is_filler(item) and item.fill_type == 0:
             items_to_get.append(item)
     return items_to_get
 
@@ -37,6 +37,13 @@ def get_progression_bl_items():
     items_to_get = []
     for item in item_table.values():
         if item.fill_type == 1:
+            items_to_get.append(item)
+    return items_to_get
+
+def get_blank_filler():
+    items_to_get = []
+    for item in item_table.values():
+        if is_filler(item) and item.fill_type == 2:
             items_to_get.append(item)
     return items_to_get
 
@@ -58,3 +65,9 @@ def add_items_to_pool(world: FabricMinecraftWorld, name: str, count: int, total_
     for i in range(count):
         total_items = add_item_to_pool(world, name, total_items)
     return total_items
+
+def add_optional_item(world: FabricMinecraftWorld, value: str, item: str, total_items: int):
+    if value in world.options.randomized_abilities.value:
+        return add_item_to_pool(world, item, total_items)
+    else:
+        return total_items
