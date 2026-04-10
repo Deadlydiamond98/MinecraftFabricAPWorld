@@ -35,16 +35,24 @@ class FabricMinecraftWorld(World):
         self.create_puml(False)
 
         advancements = 0
+        items = 0
 
         for location in self.multiworld.get_locations():
             if not location.name.endswith("(Itemsanity)") or location.name.endswith("(Killsanity)"):
                 advancements += 1
 
+        for location in self.multiworld.get_locations():
+            if location.name.endswith("(Itemsanity)"):
+                items += 1
+
         return {
+            "world_version": self.world_version.as_simple_string(),
             # Base
             "goal_condition": self.options.goal_condition.value,
             # Advancements Needed to Goal
             "advancements_to_goal": min(advancements, self.options.advancements_required_for_goal.value),
+            # Items Needed to Goal
+            "items_to_goal": min(items, self.options.items_required_for_goal.value),
             # Rubies
             "rubies_to_goal": self.options.percentage_of_rubies_needed.value,
             "total_rubies": self.max_ruby_count,

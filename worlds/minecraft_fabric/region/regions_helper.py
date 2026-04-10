@@ -34,14 +34,18 @@ def blacklisted_location(world: FabricMinecraftWorld, location_type: int):
         11: "Mob Heads" in world.options.excluded_from_itemsanity.value,                # Mob Head Checks
         12: "Netherite Gear" in world.options.excluded_from_itemsanity.value,           # Netherite Gear Checks
         13: "Trims" in world.options.excluded_from_itemsanity.value,                    # Armor Trim Checks
-        14: "Sherds" in world.options.excluded_from_itemsanity.value                    # Pottery Sherd Checks
+        14: "Sherds" in world.options.excluded_from_itemsanity.value,                   # Pottery Sherd Checks
+        15: "Dyed Items" in world.options.excluded_from_itemsanity.value,               # Dyed Item Checks
+
+        16: "Dyed Items" in world.options.excluded_from_itemsanity.value                # Exploration Dyed Item Checks
+            and "Exploration" in world.options.excluded_locations.value                 #
     }
 
     if location_type in exclusions:
         if exclusions[location_type]:
             return True
 
-    if location_type in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14] and not world.options.itemsanity:
+    if location_type in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] and not world.options.itemsanity:
         return True
 
     return False

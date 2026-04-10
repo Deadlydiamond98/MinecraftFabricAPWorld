@@ -14,13 +14,13 @@ class GoalCondition(Choice):
     ender_dragon - Goal when the Ender Dragon is defeated
     wither - Goal when the Wither is defeated
     both_bosses - Goal when the Ender Dragon and Wither is defeated
-    advancements_only - Goal when you collect a certain amount of Advancements
+    advancements_only - Goal when you collect a certain amount of Advancements and/or Items
     ruby_hunt - Goal when a certain amount of rubies are collected (McGuffin hunt)
     """
     option_ender_dragon = 0
     option_wither = 1
     option_both_bosses = 2
-    option_advancements_only = 3
+    option_advancements_and_items_only = 3
     option_ruby_hunt = 4
     default = 0
 
@@ -33,7 +33,7 @@ class AdvancementsRequiredToGoal(Range):
     """
     display_name = "Advancements to Goal"
     range_start = 0
-    range_end = 1000
+    range_end = 120
     default = 50
 
 class ExcludedLocationTypes(OptionSet):
@@ -60,13 +60,6 @@ class ExcludedLocationTypes(OptionSet):
         "Unreasonable"
     }
 
-class SpeedRunnerMode(Toggle):
-    """
-    Makes it so Beds are a required item for defeating the Ender Dragon
-    """
-    display_name = "Speedrunner Mode"
-    default = True
-
 class TotalRubiesInGame(Range):
     """
     Maximum possible number of Rubies that will be in the item pool
@@ -92,12 +85,31 @@ class RubyPercentageNeeded(Range):
     range_end = 100
     default = 100
 
+########################################################################################################################
+# Itemsanity ###########################################################################################################
+########################################################################################################################
+
 class Itemsanity(Toggle):
     """
     Enables "Itemsanity" which causes items obtainable in Survival to be checks
     """
     display_name = "Itemsanity"
     default = False
+
+class ItemsRequiredToGoal(Range):
+    """
+    Determines the number of Items needed in order to beat the game! You will need to gather this many unique items in
+    addition to your regular goal. If this is set to zero, no items will be required to goal.
+
+    If fewer available items exist than this number, the number of available items will be used instead.
+
+    This Option only takes effect if Itemsanity is enabled, it is highly recommended to set this number high (~200) in
+    order to prevent fast goals
+    """
+    display_name = "Items to Goal"
+    range_start = 0
+    range_end = 1142
+    default = 0
 
 class ItemsanityLocalFill(Range):
     """
@@ -116,6 +128,7 @@ class ExcludedFromItemsanity(OptionSet):
 
     Options:
         Discs - Music Discs
+        Dyed Items - Items that are Dyed (Concretes, Wools, etc.)
         Rare Ores - Ores that are extremely rare (such as Deepslate Emerald)
         Mob Heads - Mob Heads that're only dropped from Charged Creeper Explosions
         Netherite Gear - Netherite Tools, Armor, and Netherite Smithing Template
@@ -133,6 +146,7 @@ class ExcludedFromItemsanity(OptionSet):
     }
     valid_keys = {
         "Discs",
+        "Dyed Items",
         "Rare Ores",
         "Mob Heads",
         "Netherite Gear",
@@ -183,7 +197,9 @@ class ShouldHaveBeforeNetherAccess(DifficultyOption):
         "Beds"
     """
     display_name = "Required Before Nether"
-    default = {}
+    default = {
+        "Sprint"
+    }
 
 
 class ShouldHaveBeforeWitherOrDragon(DifficultyOption):
@@ -249,6 +265,8 @@ class RandomizedAbilities(OptionSet):
     Determines which abilities and items will be added as items in the item pool
     If an ability is not present in the list they will be treated as unlocked from the start
 
+    Some abilities (such as Jump) don't gate any content, and are meant mainly for the challenge
+
     Lockable Abilities:
         "Chests" - Removes the ability to craft and use chests (and similar storage containers), and adds Chests to the Item pool.
         "Jump" - Removes the ability to jump, and adds Jumping to the Item pool.
@@ -256,7 +274,9 @@ class RandomizedAbilities(OptionSet):
         "Swim" - Removes the ability to enter water, and adds Swim to the Item pool.
     """
     display_name = "Ability Shuffle"
-    default = {}
+    default = {
+        "Chests"
+    }
     valid_keys = {
         "Chests",
         "Jump",
@@ -383,14 +403,13 @@ class TrapLink(Toggle):
 class FMCOptions(PerGameCommonOptions):
     # Goal Related Options
     goal_condition: GoalCondition
-    # Advancements
     advancements_required_for_goal: AdvancementsRequiredToGoal
     excluded_locations: ExcludedLocationTypes
-    speedrunner_mode: SpeedRunnerMode
     percentage_of_rubies_needed: RubyPercentageNeeded
     total_rubies: TotalRubiesInGame
     # Sanity Options
     itemsanity: Itemsanity
+    items_required_for_goal: ItemsRequiredToGoal
     itemsanity_local_fill: ItemsanityLocalFill
     excluded_from_itemsanity: ExcludedFromItemsanity
     empty_fill_percentage: EmptyFillPercentage
