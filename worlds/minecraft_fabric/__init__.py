@@ -40,6 +40,9 @@ class FabricMinecraftWorld(World):
             if not location.name.endswith("(Itemsanity)") or location.name.endswith("(Killsanity)"):
                 advancements += 1
 
+        # This is used for some randomization in the game
+        randomSeed = self.random.getrandbits(32)
+
         return {
             # Base
             "goal_condition": self.options.goal_condition.value,
@@ -56,7 +59,10 @@ class FabricMinecraftWorld(World):
 
             "randomized_abilities": self.options.randomized_abilities.value,
             "possible_randomized_abilities": self.options.randomized_abilities.valid_keys,
-            "time_saving_options": self.options.time_saving_options.value
+            "time_saving_options": self.options.time_saving_options.value,
+
+            # Randomization
+            # "seed": randomSee
         }
 
     def create_item(self, name: str) -> "Item":

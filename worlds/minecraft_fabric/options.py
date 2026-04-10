@@ -60,13 +60,6 @@ class ExcludedLocationTypes(OptionSet):
         "Unreasonable"
     }
 
-class SpeedRunnerMode(Toggle):
-    """
-    Makes it so Beds are a required item for defeating the Ender Dragon
-    """
-    display_name = "Speedrunner Mode"
-    default = True
-
 class TotalRubiesInGame(Range):
     """
     Maximum possible number of Rubies that will be in the item pool
@@ -288,6 +281,28 @@ class TimeSavingOptions(OptionSet):
         "Copper Oxidation",
     }
 
+class RandomizeStructures(Toggle):
+    """
+    If enabled, Structures will have their positions randomized.
+
+    Structures will have positions swapped with other structures, except for Nether Fortresses & Strongholds,
+    which will not be able to swap with End Cities.
+
+    Due to the Way that the Structure Randomizer works, Spawn Chunks will not be effected!
+    """
+    display_name = "RandomizeStructures"
+    default = False
+
+# class RandomizeMobSpawns(Toggle):
+#     """
+#     If enabled, Mob Spawns will be randomized.
+#
+#     When a mob spawns, it can be replaced by a different Mob, however it will have the same loot
+#     """
+#     display_name = "RandomizeMobSpawns"
+#     default = False
+
+
 ########################################################################################################################
 # TRAP STUFF ###########################################################################################################
 ########################################################################################################################
@@ -386,7 +401,6 @@ class FMCOptions(PerGameCommonOptions):
     # Advancements
     advancements_required_for_goal: AdvancementsRequiredToGoal
     excluded_locations: ExcludedLocationTypes
-    speedrunner_mode: SpeedRunnerMode
     percentage_of_rubies_needed: RubyPercentageNeeded
     total_rubies: TotalRubiesInGame
     # Sanity Options
