@@ -1,3 +1,4 @@
+from worlds.minecraft_fabric.location.healpgood.healpgood_itemsanity import healpgood_itemsanity
 from worlds.minecraft_fabric.location.vanilla.vanilla_advancements import vanilla_advancements, archipelago_advancements
 from worlds.minecraft_fabric.location.vanilla.vanilla_itemsanity import vanilla_itemsanity
 
@@ -11,6 +12,8 @@ def get_location_table():
     table.update(add_locations(table, vanilla_advancements))
     table.update(add_locations(table, archipelago_advancements))
     table.update(add_locations(table, vanilla_itemsanity))
+    # HEALING PRETTY GOOD LOCATIONS
+    table.update(add_locations(table, healpgood_itemsanity))
     return table
 
 def add_locations(table: dict[str, int], locations: list[str]):

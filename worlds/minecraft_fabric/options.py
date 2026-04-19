@@ -399,6 +399,27 @@ class TrapLink(Toggle):
     display_name = "TrapLink"
     default = False
 
+########################################################################################################################
+# Mod Support Options ##################################################################################################
+########################################################################################################################
+
+class EnabledModSupport(OptionSet):
+    """
+    Allows other mods to be integrated into the randomizer if they are supported.
+    You can add a mod by putting its Mod ID here.
+
+    For a list of supported Mods, refer to here: https://modded.wiki/w/Fabric_Archipelago_Mod:Mod_Support
+    """
+    display_name = "Enabled Mods"
+    default = {
+        "minecraft"
+    }
+    valid_keys = {
+        "create",
+        "healpgood",
+        "minecraft"
+    }
+
 @dataclass
 class FMCOptions(PerGameCommonOptions):
     # Goal Related Options
@@ -431,6 +452,35 @@ class FMCOptions(PerGameCommonOptions):
     teleport_trap_weight: TeleportTrapWeight
     bee_trap_weight: BeeTrapWeight
     literature_trap_weight: LiteratureTrapWeight
+    # Link Options
     deathlink_enabled: DeathLink
     traplink_enabled: TrapLink
+    # Mod Support
+    enabled_mods: EnabledModSupport
 
+option_groups = [
+    OptionGroup(
+        "Goal Options",
+        [GoalCondition, AdvancementsRequiredToGoal, ExcludedLocationTypes, RubyPercentageNeeded, TotalRubiesInGame]
+    ),
+    OptionGroup(
+        "Itemsanty Options",
+        [Itemsanity, ItemsRequiredToGoal, ItemsanityLocalFill, ExcludedFromItemsanity, EmptyFillPercentage]
+    ),
+    OptionGroup(
+        "Difficulty Options",
+        [ShouldHaveBeforeNetherAccess, ShouldHaveBeforeWitherOrDragon, ShouldHaveBeforeRaids, KeepInventory, RandomizedAbilities, TimeSavingOptions]
+    ),
+    OptionGroup(
+        "Traps Options",
+        [TrapFillPercentage, ReverseControlsTrapWeight, InvertedMouseTrapWeight, IceTrapWeight, RandomEffectTrapWeight, StunTrapWeight, TNTTrapWeight, TeleportTrapWeight, BeeTrapWeight, LiteratureTrapWeight]
+    ),
+    OptionGroup(
+        "World Link Options",
+        [DeathLink, TrapLink]
+    ),
+    OptionGroup(
+        "Mod Support",
+        [EnabledModSupport]
+    )
+]

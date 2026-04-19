@@ -6,6 +6,7 @@ class UnprocessedMinecraftItem:
     name: str
     classification: ItemClassification
     fill_type: int
+    mod_id: str = "minecraft"
 
 @dataclass
 class ProcessedMinecraftItem:
@@ -13,6 +14,9 @@ class ProcessedMinecraftItem:
     classification: ItemClassification
     fill_type: int
     item_id: int
+    mod_id: str = "minecraft"
+
+# VANILLA
 
 def needed(name: str):
     return UnprocessedMinecraftItem(name, ItemClassification.progression, 0)
@@ -31,3 +35,8 @@ def blank_filler(name: str):
 
 def trap(name: str):
     return UnprocessedMinecraftItem(name, ItemClassification.trap, 0)
+
+# MODDED
+
+def needed_bl_modded(name: str, mod: str):
+    return UnprocessedMinecraftItem(name, ItemClassification.progression, 1, mod)

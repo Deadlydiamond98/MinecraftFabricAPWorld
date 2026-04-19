@@ -3,6 +3,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Optional
 
+from worlds.minecraft_fabric.region.create.create_advancement_regions import create_create_advancement_regions
+from worlds.minecraft_fabric.region.healpgood.healpgood_itemsanity_regions import create_healpgood_itemsanity_regions
 from worlds.minecraft_fabric.region.regions_helper import create_locations_advanced
 from worlds.minecraft_fabric.region.vanilla.vanilla_advancement_regions import create_vanilla_advancement_regions
 from worlds.minecraft_fabric.region.vanilla.vanilla_itemsanity_regions import create_vanilla_itemsanity_regions
@@ -34,6 +36,12 @@ def create_regions(world: FabricMinecraftWorld):
     # Vanilla Regions
     create_vanilla_advancement_regions(world)
     create_vanilla_itemsanity_regions(world)
+    # Healing Pretty Good Regions
+    if "healpgood" in world.options.enabled_mods.value:
+        create_healpgood_itemsanity_regions(world)
+
+    if "create" in world.options.enabled_mods.value:
+        create_create_advancement_regions()
 
     world.multiworld.completion_condition[world.player] = lambda state: get_goal_condition(world, state)
 

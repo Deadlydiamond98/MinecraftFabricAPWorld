@@ -842,23 +842,28 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
 
         "Lily Pad (Itemsanity)": 7,
 
-        "Prismarine Shard (Itemsanity)": 7,
-        "Prismarine Crystals (Itemsanity)": 7,
-        "Prismarine Slab (Itemsanity)": 7,
-        "Prismarine Brick Slab (Itemsanity)": 7,
         "Dark Prismarine Slab (Itemsanity)": 7,
-        "Prismarine Wall (Itemsanity)": 7,
-        "Prismarine (Itemsanity)": 7,
-        "Prismarine Bricks (Itemsanity)": 7,
         "Dark Prismarine (Itemsanity)": 7,
-        "Prismarine Stairs (Itemsanity)": 7,
-        "Prismarine Brick Stairs (Itemsanity)": 7,
         "Dark Prismarine Stairs (Itemsanity)": 7,
+
         "Sea Lantern (Itemsanity)": 7,
         "Sponge (Itemsanity)": 7,
         "Wet Sponge (Itemsanity)": 7,
         "Tide Armor Trim (Itemsanity)": 13
     }, lambda state: canSwim(world, state))
+
+    # REQUIRES PRISMARINE
+    create_region(world, "Menu", "CanGetPrismarine", {
+        "Prismarine Shard (Itemsanity)": 7,
+        "Prismarine Crystals (Itemsanity)": 7,
+        "Prismarine Slab (Itemsanity)": 7,
+        "Prismarine Brick Slab (Itemsanity)": 7,
+        "Prismarine Wall (Itemsanity)": 7,
+        "Prismarine (Itemsanity)": 7,
+        "Prismarine Bricks (Itemsanity)": 7,
+        "Prismarine Stairs (Itemsanity)": 7,
+        "Prismarine Brick Stairs (Itemsanity)": 7
+    }, lambda  state: canGetPrismarine(world, state))
 
     # REQUIRES WITHER SUMMONING
     create_region(world, "NetherAccess", "CanSummonWither", {
@@ -1196,7 +1201,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     # REQUIRES DIAMOND TOOLS AND EYES OF ENDER
     create_region(world, "HasDiamondTools", "HasDiamondToolsAndEyesOfEnder", {
         "Ender Chest (Itemsanity)": 5
-    }, lambda state: canUseDiamondTools(world, state) and canGetEyesOfEnder(world, state))
+    }, lambda state: canGetObsidian(world, state) and canGetEyesOfEnder(world, state))
 
     # REQUIRES SWIM OR NETHER ACCESS
     create_region(world, "Menu", "NetherAccessOrSwim", {

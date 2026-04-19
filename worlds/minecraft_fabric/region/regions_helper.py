@@ -38,7 +38,7 @@ def blacklisted_location(world: FabricMinecraftWorld, location_type: int):
         15: "Dyed Items" in world.options.excluded_from_itemsanity.value,               # Dyed Item Checks
 
         16: "Dyed Items" in world.options.excluded_from_itemsanity.value                # Exploration Dyed Item Checks
-            and "Exploration" in world.options.excluded_locations.value                 #
+            or "Exploration" in world.options.excluded_locations.value                  #
     }
 
     if location_type in exclusions:

@@ -15,7 +15,7 @@ def get_item_table():
     items = {}
     unprocessed_items: list[UnprocessedMinecraftItem] = get_all_items()
     for i, item in enumerate(unprocessed_items):
-        items.update({item.name: ProcessedMinecraftItem(item.name, item.classification, item.fill_type, i + 1)})
+        items.update({item.name: ProcessedMinecraftItem(item.name, item.classification, item.fill_type, i + 1, item.mod_id)})
     return items
 
 # All Items
@@ -56,9 +56,17 @@ def create_item(world: FabricMinecraftWorld, name: str):
     item = get_item(name)
     return Item(item.name, item.classification, item.item_id, world.player)
 
+def can_add_to_pool(world: FabricMinecraftWorld, name: str):
+    item = get_item(name)
+    if item.mod_id in world.options.enabled_mods.value:
+        return True
+    else:
+        return item.mod_id == "minecraft"
+
 def add_item_to_pool(world: FabricMinecraftWorld, name: str, total_items: int):
-    world.multiworld.itempool.append(create_item(world, name))
-    total_items -= 1
+    if can_add_to_pool(world, name):
+        world.multiworld.itempool.append(create_item(world, name))
+        total_items -= 1
     return total_items
 
 def add_items_to_pool(world: FabricMinecraftWorld, name: str, count: int, total_items: int):

@@ -1,7 +1,7 @@
 from typing import Mapping, Any
 
 from BaseClasses import ItemClassification, Item
-from worlds.AutoWorld import World
+from worlds.AutoWorld import World, WebWorld
 from worlds.minecraft_fabric.item.items_helper import item_table
 from worlds.minecraft_fabric.item.items_init import create_local_fill_items, create_items
 from worlds.minecraft_fabric.location.minecraft_locations import location_table
@@ -9,11 +9,15 @@ from worlds.minecraft_fabric.options import FMCOptions
 from worlds.minecraft_fabric.region.regions_init import create_regions
 
 
+class FMCWebWorld(WebWorld):
+    option_groups = options.option_groups
+
 class FabricMinecraftWorld(World):
     game = "Minecraft Fabric"
     options_dataclass = FMCOptions
     options: FMCOptions
     topology_present = True
+    web = FMCWebWorld()
 
     item_name_to_id = {
         item.name: item.item_id for item in item_table.values()
@@ -38,12 +42,10 @@ class FabricMinecraftWorld(World):
         items = 0
 
         for location in self.multiworld.get_locations():
-            if not location.name.endswith("(Itemsanity)") or location.name.endswith("(Killsanity)"):
-                advancements += 1
-
-        for location in self.multiworld.get_locations():
             if location.name.endswith("(Itemsanity)"):
                 items += 1
+            else:
+                advancements += 1
 
         return {
             "world_version": self.world_version.as_simple_string(),
@@ -64,7 +66,8 @@ class FabricMinecraftWorld(World):
 
             "randomized_abilities": self.options.randomized_abilities.value,
             "possible_randomized_abilities": self.options.randomized_abilities.valid_keys,
-            "time_saving_options": self.options.time_saving_options.value
+            "time_saving_options": self.options.time_saving_options.value,
+            "enabled_mods": self.options.enabled_mods.value
         }
 
     def create_item(self, name: str) -> "Item":

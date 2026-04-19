@@ -1,0 +1,20 @@
+healpgood_itemsanity = [
+    "Heart Crystal Sliver (Itemsanity)",
+    "Heart Crystal Shard (Itemsanity)",
+    "Heart Piece (Itemsanity)",
+    "Bottle O' Healing (Itemsanity)",
+    "Heart Cookie (Itemsanity)",
+    "Crystal Apple (Itemsanity)",
+    "Crystal Heart (Itemsanity)",
+    "Heart Container (Itemsanity)",
+    "Empty Heart Container (Itemsanity)",
+    "Music Disc Heartstep (Itemsanity)",
+    "Heart Crystal Block (Itemsanity)",
+    "Polished Heart Crystal (Itemsanity)",
+    "Polished Heart Crystal Stairs (Itemsanity)",
+    "Polished Heart Crystal Slab (Itemsanity)",
+    "Heart Crystal Bricks (Itemsanity)",
+    "Heart Crystal Brick Stairs (Itemsanity)",
+    "Heart Crystal Brick Slab (Itemsanity)",
+    "Heart Lantern (Itemsanity)"
+]
