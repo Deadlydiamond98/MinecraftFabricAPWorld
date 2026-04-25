@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from worlds.minecraft_fabric import FabricMinecraftWorld
 
-from vanilla_logic import *
+from .vanilla_logic import *
 from BaseClasses import CollectionState
 
 
@@ -22,7 +22,7 @@ def canCraftAndesiteAlloy(world: FabricMinecraftWorld, state: CollectionState):
     return canCompactResources(world, state) and canSmelt(world, state)
 
 def canCraftBrass(world: FabricMinecraftWorld, state: CollectionState):
-    return hasMixer(world, state) and hasBlazeBurner(world, state)
+    return hasMixer(world, state) and hasBlazeBurner(world, state) and canUseIronTools(world, state)
 
 def canCraftCardboard(world: FabricMinecraftWorld, state: CollectionState):
     return hasMixer(world, state) and canFillFluidWater(world, state) and hasPress(world, state)
@@ -37,8 +37,11 @@ def canCraftPercisionMechanism(world: FabricMinecraftWorld, state: CollectionSta
     return hasDeployer(world, state) and hasPress(world, state) and hasCogs(world, state)
 
 def canCraftSturdySheet(world: FabricMinecraftWorld, state: CollectionState):
-    return (hasCrusher(world, state) and hasPress(world, state) and hasSpout(world, state)
+    return (hasCrusher(world, state) and hasPress(world, state) and canUseSpout(world, state)
             and canUseBucket(world, state) and canGetObsidian(world, state))
+
+def canCraftTrainTracks(world: FabricMinecraftWorld, state: CollectionState):
+    return hasPress(world, state) and hasDeployer(world, state)
 
 def hasCogs(world: FabricMinecraftWorld, state: CollectionState):
     return canCraftAndesiteAlloy(world, state) and state.has("Cogwheel Recipes", world.player)
@@ -46,12 +49,19 @@ def hasCogs(world: FabricMinecraftWorld, state: CollectionState):
 def hasBlazeBurner(world: FabricMinecraftWorld, state: CollectionState):
     return canAccessNether(world, state) and hasPress(world, state)
 
+def canUseBlazeCake(world: FabricMinecraftWorld, state: CollectionState):
+    return hasBlazeBurner(world, state) and hasCrusher(world, state) and canCraftDriedKelp(world, state) and canUseSpout(world, state)
+
 def canFillFluidWater(world: FabricMinecraftWorld, state: CollectionState):
-    return canUseBucket(world, state) or hasPump(world, state) or canUseBottles(world, state)
+    return hasPump(world, state) and canUseBucket(world, state)
 
 def canMakeHeat(world: FabricMinecraftWorld, state: CollectionState):
     return (canUseFlintAndSteel(world, state) or canUseStoneTools(world, state) or canSmelt(world, state) or
             canUseBucket(world, state))
+
+def canUsePackager(world: FabricMinecraftWorld, state: CollectionState):
+    return (canCompactResources(world, state) and canSmelt(world, state) and canUseIronTools(world, state) and
+            canAccessChests(world, state) and canCraftCardboard(world, state))
 
 # POWER GENERATION #####################################################################################################
 
@@ -81,14 +91,11 @@ def hasMixer(world: FabricMinecraftWorld, state: CollectionState):
 def hasSaw(world: FabricMinecraftWorld, state: CollectionState):
     return hasPress(world, state)
 
-def hasSpout(world: FabricMinecraftWorld, state: CollectionState):
-    return canCraftDriedKelp(world, state) and canUseStoneTools(world, state)
-
 def hasDeployer(world: FabricMinecraftWorld, state: CollectionState):
     return canCraftElectronTube(world, state) and canCraftBrass(world, state)
 
 def canUseSpout(world: FabricMinecraftWorld, state: CollectionState):
-    return hasSpout(world, state) and canFillFluidWater(world, state)
+    return canCraftDriedKelp(world, state) and canUseStoneTools(world, state) and hasPump(world, state) and canUseBucket(world, state)
 
 def hasMechanicalCrafter(world: FabricMinecraftWorld, state: CollectionState):
     return hasMorePower(world, state) and canCraftElectronTube(world, state) and canCraftBrass(world, state)

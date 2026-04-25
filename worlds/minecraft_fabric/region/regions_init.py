@@ -36,12 +36,12 @@ def create_regions(world: FabricMinecraftWorld):
     # Vanilla Regions
     create_vanilla_advancement_regions(world)
     create_vanilla_itemsanity_regions(world)
+    # Create Regions
+    if "create" in world.options.enabled_mods.value:
+        create_create_advancement_regions(world)
     # Healing Pretty Good Regions
     if "healpgood" in world.options.enabled_mods.value:
         create_healpgood_itemsanity_regions(world)
-
-    if "create" in world.options.enabled_mods.value:
-        create_create_advancement_regions()
 
     world.multiworld.completion_condition[world.player] = lambda state: get_goal_condition(world, state)
 
