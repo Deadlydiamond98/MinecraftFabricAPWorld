@@ -118,9 +118,13 @@ def create_create_advancement_regions(world: FabricMinecraftWorld):
         "Shadow Sense {Create}": 0,
         "Contraption o'Clock {Create}": 0,
         "Big Data {Create}": 0,
-        "Artificial Intelligence {Create}": 0,
-        "Self-Driving Cart {Create}": 0
+        "Artificial Intelligence {Create}": 0
     }, lambda state: canCraftBrass(world, state))
+
+    # Has Brass And Minecarts
+    create_region(world, "Brass", "BrassAndMinecarts", {
+        "Self-Driving Cart {Create}": 0
+    }, lambda state: canCraftBrass(world, state) and canUseMinecart(world, state))
 
     # Has Percision Mechanism
     create_region(world, "Brass", "PercisionMechanism", {
@@ -161,7 +165,7 @@ def create_create_advancement_regions(world: FabricMinecraftWorld):
     create_region(world, "AndesiteAlloy", "TrainTracks", {
         "A New Gauge {Create}": 0,
         "Track Factory {Create}": 3
-    }, lambda state: canCraftSturdySheet(world, state))
+    }, lambda state: canCraftTrainTracks(world, state))
 
     # Has Percision Mechanism And Mechanical Crafter
     create_region(world, "PercisionMechanism", "PercisionMechanismAndMechanicalCrafter", {

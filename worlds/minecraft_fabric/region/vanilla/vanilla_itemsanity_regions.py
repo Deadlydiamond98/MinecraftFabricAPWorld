@@ -509,7 +509,6 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Iron Ingot (Itemsanity)": 5,
         "Copper Ingot (Itemsanity)": 5,
         "Cooked Porkchop (Itemsanity)": 5,
-        "Golden Apple (Itemsanity)": 5,
         "Brick (Itemsanity)": 5,
         "Steak (Itemsanity)": 5,
         "Cooked Chicken (Itemsanity)": 5,
@@ -547,11 +546,9 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Target (Itemsanity)": 5,
         "Lightning Rod (Itemsanity)": 5,
         "Note Block (Itemsanity)": 5,
-        "Light Weighted Pressure Plate (Itemsanity)": 5,
         "Diamond (Itemsanity)": 5,
         "Emerald (Itemsanity)": 5,
         "Raw Gold (Itemsanity)": 5,
-        "Gold Ingot (Itemsanity)": 5,
         "Golden Shovel (Itemsanity)": 5,
         "Golden Pickaxe (Itemsanity)": 5,
         "Golden Hoe (Itemsanity)": 5,
@@ -565,13 +562,31 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Sticky Piston (Itemsanity)": 7
     }, lambda state: canUseIronTools(world, state))
 
+    # CAN GET GOLD
+    create_region(world, "Menu", "CanGetGold", {
+        "Gold Ingot (Itemsanity)": 5,
+        "Golden Apple (Itemsanity)": 5,
+        "Light Weighted Pressure Plate (Itemsanity)": 5
+    }, lambda state: canGetGold(world, state))
+
+    # CAN GET GOLD Nugget
+    create_region(world, "Menu", "CanGetGoldNugget", {
+        "Gold Nugget (Itemsanity)": 5,
+        "Glistering Melon Slice (Itemsanity)": 7,
+        "Golden Carrot (Itemsanity)": 5
+    }, lambda state: canGetGoldNugget(world, state))
+
     # REQUIRES IRON WEAPONS
     create_region(world, "CanSmeltItems", "HasIronWeapons", {
-        "Golden Sword (Itemsanity)": 5,
-        "Golden Axe (Itemsanity)": 5,
         "Iron Axe (Itemsanity)": 5,
-        "Iron Sword (Itemsanity)": 5,
-    }, lambda state: canUseIronTools(world, state))
+        "Iron Sword (Itemsanity)": 5
+    }, lambda state: canUseIronWeapons(world, state))
+
+    # REQUIRES IRON WEAPONS AND GOLD
+    create_region(world, "HasIronWeapons", "HasIronWeaponsAndGold", {
+        "Golden Sword (Itemsanity)": 5,
+        "Golden Axe (Itemsanity)": 5
+    }, lambda state: canUseIronWeapons(world, state) and canGetGold(world, state))
 
     # REQUIRES IRON ARMOR
     create_region(world, "CanSmeltItems", "HasIronArmor", {
@@ -1100,10 +1115,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
 
     # REQUIRES COMPACTING AND IRON TOOLS AND SMELTING
     create_region(world, "HasIronTools", "CanCompactAndIronToolsAndSmelting", {
-        "Block of Gold (Itemsanity)": 5,
-        "Gold Nugget (Itemsanity)": 5,
-        "Glistering Melon Slice (Itemsanity)": 7,
-        "Golden Carrot (Itemsanity)": 5
+        "Block of Gold (Itemsanity)": 5
     }, lambda state: canCompactResources(world, state) and canSmelt(world, state) and canUseIronTools(world, state))
 
     # REQUIRES NETHER AND FISHING ROD
@@ -1403,22 +1415,22 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Green Concrete Powder (Itemsanity)": 16,
         "Green Dye (Itemsanity)": 7,
         "Green Banner (Itemsanity)": 16
-    }, lambda state: canSmelt(world, state))
+    }, lambda state: canDyeGreen(world, state))
 
     # Green Dye and Shears
     create_region(world, "RegularDye", "GreenDyeAndShears", {
         "Green Candle (Itemsanity)": 16
-    }, lambda state: canUseShears(world, state) and canSmelt(world, state))
+    }, lambda state: canUseShears(world, state) and canDyeGreen(world, state))
 
     # Green Dye and Sleep
     create_region(world, "RegularDye", "GreenDyeAndSleep", {
         "Green Bed (Itemsanity)": 16
-    }, lambda state: canSleep(world, state) and canSmelt(world, state))
+    }, lambda state: canSleep(world, state) and canDyeGreen(world, state))
 
     # Green Dye and End and Chests
     create_region(world, "RegularDye", "GreenDyeAndShulker", {
         "Green Shulker Box (Itemsanity)": 16
-    }, lambda state: canAccessChests(world, state) and canAccessEnd(world, state) and canSmelt(world, state))
+    }, lambda state: canAccessChests(world, state) and canAccessEnd(world, state) and canDyeGreen(world, state))
 
     # Full Dye
     create_region(world, "RegularDye", "FullDye", {
@@ -1566,25 +1578,25 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Cyan Concrete Powder (Itemsanity)": 16,
         "Cyan Dye (Itemsanity)": 7,
         "Cyan Banner (Itemsanity)": 16
-    }, lambda state: canDyeFull(world, state) and canSmelt(world, state))
+    }, lambda state: canDyeFull(world, state) and canDyeGreen(world, state))
 
     # Lime and Cyan Dye and Shears
     create_region(world, "RegularDye", "LimeAndCyanDyeAndShears", {
         "Lime Candle (Itemsanity)": 16,
         "Cyan Candle (Itemsanity)": 16
-    }, lambda state: canDyeFull(world, state) and canUseShears(world, state) and canSmelt(world, state))
+    }, lambda state: canDyeFull(world, state) and canUseShears(world, state) and canDyeGreen(world, state))
 
     # Lime and Cyan Dye and Sleep
     create_region(world, "RegularDye", "LimeAndCyanDyeAndSleep", {
         "Lime Bed (Itemsanity)": 16,
         "Cyan Bed (Itemsanity)": 16
-    }, lambda state: canDyeFull(world, state) and canSleep(world, state) and canSmelt(world, state))
+    }, lambda state: canDyeFull(world, state) and canSleep(world, state) and canDyeGreen(world, state))
 
     # Lime and Cyan Dye and End and Chests
     create_region(world, "RegularDye", "LimeAndCyanDyeAndShulker", {
         "Lime Shulker Box (Itemsanity)": 16,
         "Cyan Shulker Box (Itemsanity)": 16
-    }, lambda state: canDyeFull(world, state) and canAccessChests(world, state) and canAccessEnd(world, state) and canSmelt(world, state))
+    }, lambda state: canDyeFull(world, state) and canAccessChests(world, state) and canAccessEnd(world, state) and canDyeGreen(world, state))
 
     # Can Smelt and Compact
     create_region(world, "CanSmeltItems", "CanSmeltItemsAndCompact", {

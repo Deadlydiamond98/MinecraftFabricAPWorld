@@ -11,33 +11,33 @@ if TYPE_CHECKING:
 
 def create_healpgood_itemsanity_regions(world: FabricMinecraftWorld):
     create_locations_and_connect(world, "Menu", "MenuHealPGoodItemsanity", {
-        "Heart Crystal Sliver (Itemsanity)": 7,
-        "Heart Crystal Shard (Itemsanity)": 7,
-        "Heart Piece (Itemsanity)": 7,
-        "Heart Cookie (Itemsanity)": 7,
-        "Crystal Apple (Itemsanity)": 7,
-        "Empty Heart Container (Itemsanity)": 7,
-        "Music Disc Heartstep (Itemsanity)": 7,
-        "Heart Crystal Block (Itemsanity)": 7,
-        "Polished Heart Crystal (Itemsanity)": 7,
-        "Polished Heart Crystal Stairs (Itemsanity)": 7,
-        "Polished Heart Crystal Slab (Itemsanity)": 7,
-        "Heart Crystal Bricks (Itemsanity)": 7,
-        "Heart Crystal Brick Stairs (Itemsanity)": 7,
-        "Heart Crystal Brick Slab (Itemsanity)": 7
+        "Heart Crystal Sliver (Itemsanity) {Healing Pretty Good}": 7,
+        "Heart Crystal Shard (Itemsanity) {Healing Pretty Good}": 7,
+        "Heart Piece (Itemsanity) {Healing Pretty Good}": 7,
+        "Heart Cookie (Itemsanity) {Healing Pretty Good}": 7,
+        "Crystal Apple (Itemsanity) {Healing Pretty Good}": 7,
+        "Empty Heart Container (Itemsanity) {Healing Pretty Good}": 7,
+        "Music Disc Heartstep (Itemsanity) {Healing Pretty Good}": 7,
+        "Heart Crystal Block (Itemsanity) {Healing Pretty Good}": 7,
+        "Polished Heart Crystal (Itemsanity) {Healing Pretty Good}": 7,
+        "Polished Heart Crystal Stairs (Itemsanity) {Healing Pretty Good}": 7,
+        "Polished Heart Crystal Slab (Itemsanity) {Healing Pretty Good}": 7,
+        "Heart Crystal Bricks (Itemsanity) {Healing Pretty Good}": 7,
+        "Heart Crystal Brick Stairs (Itemsanity) {Healing Pretty Good}": 7,
+        "Heart Crystal Brick Slab (Itemsanity) {Healing Pretty Good}": 7
     }, lambda state: canUseDiamondTools(world, state))
 
     create_locations_and_connect(world, "Menu", "TradingHealPGoodItemsanity", {
-        "Bottle O' Healing (Itemsanity)": 7
+        "Bottle O' Healing (Itemsanity) {Healing Pretty Good}": 7
     }, lambda state: canTrade(world, state))
 
     create_region(world, "Menu", "HasNetherAccess", {
-        "Heart Lantern (Itemsanity)": 7,
-        "Crystal Heart (Itemsanity)": 7
+        "Heart Lantern (Itemsanity) {Healing Pretty Good}": 7,
+        "Crystal Heart (Itemsanity) {Healing Pretty Good}": 7
     }, lambda state: canAccessNether(world, state))
 
     create_region(world, "HasNetherAccess", "HasNetherAndEndAccess", {
-        "Heart Container (Itemsanity)": 7
+        "Heart Container (Itemsanity) {Healing Pretty Good}": 7
     }, lambda state: canAccessEnd(world, state))
 
 

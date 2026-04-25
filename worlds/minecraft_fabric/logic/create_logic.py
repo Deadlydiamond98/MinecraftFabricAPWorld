@@ -21,6 +21,9 @@ from BaseClasses import CollectionState
 def canCraftAndesiteAlloy(world: FabricMinecraftWorld, state: CollectionState):
     return canCompactResources(world, state) and canSmelt(world, state)
 
+def canGetZinc(world: FabricMinecraftWorld, state: CollectionState):
+    return canSmelt(world, state) and canUseIronTools(world, state)
+
 def canCraftBrass(world: FabricMinecraftWorld, state: CollectionState):
     return hasMixer(world, state) and hasBlazeBurner(world, state) and canUseIronTools(world, state)
 
@@ -72,8 +75,9 @@ def hasWindmill(world: FabricMinecraftWorld, state: CollectionState):
     return canCraftAndesiteAlloy(world, state) and state.has("Windmill Recipes", world.player)
 
 def hasSteamEngine(world: FabricMinecraftWorld, state: CollectionState):
-    return (canCraftAndesiteAlloy(world, state) and state.has("Steam Engine Recipes", world.player)
+    return ((canCraftAndesiteAlloy(world, state) and state.has("Steam Engine Recipes", world.player)
             and canCompactResources(world, state) and canFillFluidTankWater(world, state) and canMakeHeat(world, state))
+            and canUseIronTools(world, state))
 
 def hasMorePower(world: FabricMinecraftWorld, state: CollectionState):
     return hasWaterWheel(world, state) or hasWindmill(world, state) or hasSteamEngine(world, state)
@@ -106,7 +110,7 @@ def hasCrusher(world: FabricMinecraftWorld, state: CollectionState):
 # FAN CRAFTING #########################################################################################################
 
 def canWash(world: FabricMinecraftWorld, state: CollectionState):
-    return hasPress(world, state) and canUseBucket(world, state)
+    return hasPress(world, state)
 
 def canHaunt(world: FabricMinecraftWorld, state: CollectionState):
     return hasPress(world, state) and canAccessNether(world, state)
@@ -124,5 +128,5 @@ def hasPump(world: FabricMinecraftWorld, state: CollectionState):
 
 # OTHER CHECKS #########################################################################################################
 
-def canCraftDecorativeStone(world: FabricMinecraftWorld, state: CollectionState):
+def canCraftSPDecorativeStone(world: FabricMinecraftWorld, state: CollectionState):
     return hasSaw(world, state) or canAccessMiscJobsites(world, state)
