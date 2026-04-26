@@ -405,7 +405,9 @@ class TrapLink(Toggle):
 
 class EnabledModSupport(OptionSet):
     """
-    Allows other mods to be integrated into the randomizer if they are supported.
+    WARNING: Fabric Archipelago's Mod support is still in a very early stage, so do keep in mind that playing with mods can lead to unbeatable games!
+
+    This option allows other mods to be integrated into the randomizer if they are supported.
     You can add a mod by putting its Mod ID here.
 
     For a list of supported Mods, refer to here: https://modded.wiki/w/Fabric_Archipelago_Mod:Mod_Support
@@ -417,6 +419,7 @@ class EnabledModSupport(OptionSet):
     valid_keys = {
         "create",
         "healpgood",
+        "ironchests",
         "minecraft"
     }
 

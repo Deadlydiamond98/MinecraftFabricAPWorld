@@ -7,6 +7,7 @@ from worlds.minecraft_fabric.region.create.create_advancement_regions import cre
 from worlds.minecraft_fabric.region.create.create_itemsanity_regions import create_create_itemsanity_regions
 from worlds.minecraft_fabric.region.healpgood.healpgood_advancement_regions import create_healpgood_advancements_regions
 from worlds.minecraft_fabric.region.healpgood.healpgood_itemsanity_regions import create_healpgood_itemsanity_regions
+from worlds.minecraft_fabric.region.ironchests.ironchests_itemsanity_regions import create_ironchests_itemsanity_regions
 from worlds.minecraft_fabric.region.regions_helper import create_locations_advanced
 from worlds.minecraft_fabric.region.vanilla.vanilla_advancement_regions import create_vanilla_advancement_regions
 from worlds.minecraft_fabric.region.vanilla.vanilla_itemsanity_regions import create_vanilla_itemsanity_regions
@@ -46,6 +47,9 @@ def create_regions(world: FabricMinecraftWorld):
     if "healpgood" in world.options.enabled_mods.value:
         create_healpgood_advancements_regions(world)
         create_healpgood_itemsanity_regions(world)
+    # Iron Chests: Restocked Regions
+    if "ironchests" in world.options.enabled_mods.value:
+        create_ironchests_itemsanity_regions(world)
 
     world.multiworld.completion_condition[world.player] = lambda state: get_goal_condition(world, state)
 
