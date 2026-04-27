@@ -1,5 +1,6 @@
 from worlds.minecraft_fabric.location.create.create_advancements import create_advancements
 from worlds.minecraft_fabric.location.create.create_itemsanity import create_itemsanity
+from worlds.minecraft_fabric.location.healpgood.healpgood_advancements import healpgood_advancements
 from worlds.minecraft_fabric.location.healpgood.healpgood_itemsanity import healpgood_itemsanity
 from worlds.minecraft_fabric.location.ironchests.ironchests_itemsanity import ironchests_itemsanity
 from worlds.minecraft_fabric.location.vanilla.vanilla_advancements import vanilla_advancements, archipelago_advancements
@@ -19,6 +20,7 @@ def get_location_table():
     table.update(add_locations(table, create_advancements))
     table.update(add_locations(table, create_itemsanity))
     # HEALING PRETTY GOOD LOCATIONS
+    table.update(add_locations(table, healpgood_advancements))
     table.update(add_locations(table, healpgood_itemsanity))
     # IRON CHESTS: RESTOCKED LOCATIONS
     table.update(add_locations(table, ironchests_itemsanity))

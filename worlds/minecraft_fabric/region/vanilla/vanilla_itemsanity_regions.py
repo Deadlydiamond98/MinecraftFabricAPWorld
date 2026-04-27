@@ -3,8 +3,10 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Optional
 
+from worlds.minecraft_fabric.region.mc_regions_consts import *
 from worlds.minecraft_fabric.region.regions_helper import create_locations_and_connect
 from worlds.minecraft_fabric.logic.vanilla_logic import *
+
 
 
 if TYPE_CHECKING:
@@ -12,938 +14,938 @@ if TYPE_CHECKING:
 
 def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     create_locations_and_connect(world, "Menu", "MenuVanillaItemsanity", {
-        "Dirt (Itemsanity)": 5,
-        "Coarse Dirt (Itemsanity)": 5,
-        "Rooted Dirt (Itemsanity)": 5,
-        "Oak Planks (Itemsanity)": 5,
-        "Spruce Planks (Itemsanity)": 5,
-        "Birch Planks (Itemsanity)": 5,
-        "Acacia Planks (Itemsanity)": 5,
-        "Oak Sapling (Itemsanity)": 5,
-        "Spruce Sapling (Itemsanity)": 5,
-        "Birch Sapling (Itemsanity)": 5,
-        "Acacia Sapling (Itemsanity)": 5,
-        "Sand (Itemsanity)": 5,
-        "Gravel (Itemsanity)": 5,
-        "Oak Log (Itemsanity)": 5,
-        "Spruce Log (Itemsanity)": 5,
-        "Birch Log (Itemsanity)": 5,
-        "Acacia Log (Itemsanity)": 5,
-        "Stripped Oak Log (Itemsanity)": 5,
-        "Stripped Spruce Log (Itemsanity)": 5,
-        "Stripped Birch Log (Itemsanity)": 5,
-        "Stripped Acacia Log (Itemsanity)": 5,
-        "Stripped Oak Wood (Itemsanity)": 5,
-        "Stripped Spruce Wood (Itemsanity)": 5,
-        "Stripped Birch Wood (Itemsanity)": 5,
-        "Stripped Acacia Wood (Itemsanity)": 5,
-        "Oak Wood (Itemsanity)": 5,
-        "Spruce Wood (Itemsanity)": 5,
-        "Birch Wood (Itemsanity)": 5,
-        "Acacia Wood (Itemsanity)": 5,
-        "Sandstone (Itemsanity)": 5,
-        "Chiseled Sandstone (Itemsanity)": 5,
-        "Cut Sandstone (Itemsanity)": 5,
-        "Dandelion (Itemsanity)": 5,
-        "Poppy (Itemsanity)": 5,
-        "Allium (Itemsanity)": 5,
-        "Azure Bluet (Itemsanity)": 5,
-        "Red Tulip (Itemsanity)": 5,
-        "Orange Tulip (Itemsanity)": 5,
-        "White Tulip (Itemsanity)": 5,
-        "Pink Tulip (Itemsanity)": 5,
-        "Oxeye Daisy (Itemsanity)": 5,
-        "Cornflower (Itemsanity)": 5,
-        "Lily of the Valley (Itemsanity)": 5,
-        "Brown Mushroom (Itemsanity)": 5,
-        "Red Mushroom (Itemsanity)": 5,
-        "Sugar Cane (Itemsanity)": 5,
-        "Oak Slab (Itemsanity)": 5,
-        "Spruce Slab (Itemsanity)": 5,
-        "Birch Slab (Itemsanity)": 5,
-        "Acacia Slab (Itemsanity)": 5,
-        "Chiseled Bookshelf (Itemsanity)": 5,
-        "Torch (Itemsanity)": 5,
-        "Crafting Table (Itemsanity)": 5,
-        "Ladder (Itemsanity)": 5,
-        "Granite (Itemsanity)": 5,
-        "Polished Granite (Itemsanity)": 5,
-        "Diorite (Itemsanity)": 5,
-        "Polished Diorite (Itemsanity)": 5,
-        "Andesite (Itemsanity)": 5,
-        "Polished Andesite (Itemsanity)": 5,
-        "Cobbled Deepslate (Itemsanity)": 5,
-        "Polished Deepslate (Itemsanity)": 5,
-        "Calcite (Itemsanity)": 5,
-        "Tuff (Itemsanity)": 5,
-        "Dripstone Block (Itemsanity)": 5,
-        "Cobblestone (Itemsanity)": 5,
-        "Block of Amethyst (Itemsanity)": 5,
-        "Moss Carpet (Itemsanity)": 5,
-        "Moss Block (Itemsanity)": 5,
-        "Big Dripleaf (Itemsanity)": 5,
-        "Spore Blossom (Itemsanity)": 5,
-        "Azalea (Itemsanity)": 5,
-        "Flowering Azalea (Itemsanity)": 5,
-        "Sandstone Slab (Itemsanity)": 5,
-        "Cut Sandstone Slab (Itemsanity)": 5,
-        "Cobblestone Slab (Itemsanity)": 5,
-        "Cobblestone Stairs (Itemsanity)": 5,
-        "Snow (Itemsanity)": 5,
-        "Snow Block (Itemsanity)": 5,
-        "Clay (Itemsanity)": 5,
-        "Oak Fence (Itemsanity)": 5,
-        "Spruce Fence (Itemsanity)": 5,
-        "Birch Fence (Itemsanity)": 5,
-        "Acacia Fence (Itemsanity)": 5,
-        "Pumpkin (Itemsanity)": 5,
-        "Carved Pumpkin (Itemsanity)": 5,
-        "Jack o'Lantern (Itemsanity)": 5,
-        "Deepslate Bricks (Itemsanity)": 5,
-        "Deepslate Tiles (Itemsanity)": 5,
-        "Chiseled Deepslate (Itemsanity)": 5,
-        "Melon (Itemsanity)": 7,
-        "Sandstone Stairs (Itemsanity)": 5,
-        "Oak Stairs (Itemsanity)": 5,
-        "Spruce Stairs (Itemsanity)": 5,
-        "Birch Stairs (Itemsanity)": 5,
-        "Acacia Stairs (Itemsanity)": 5,
-        "Cobblestone Wall (Itemsanity)": 5,
-        "Granite Wall (Itemsanity)": 5,
-        "Andesite Wall (Itemsanity)": 5,
-        "Sandstone Wall (Itemsanity)": 5,
-        "Diorite Wall (Itemsanity)": 5,
-        "Cobbled Deepslate Wall (Itemsanity)": 5,
-        "Polished Deepslate Wall (Itemsanity)": 5,
-        "Deepslate Brick Wall (Itemsanity)": 5,
-        "Deepslate Tile Wall (Itemsanity)": 5,
-        "Hay Bale (Itemsanity)": 5,
-        "Lilac (Itemsanity)": 5,
-        "Rose Bush (Itemsanity)": 5,
-        "Peony (Itemsanity)": 5,
-        "Bone Block (Itemsanity)": 5,
-        "Polished Granite Stairs (Itemsanity)": 5,
-        "Polished Diorite Stairs (Itemsanity)": 5,
-        "Granite Stairs (Itemsanity)": 5,
-        "Andesite Stairs (Itemsanity)": 5,
-        "Polished Andesite Stairs (Itemsanity)": 5,
-        "Diorite Stairs (Itemsanity)": 5,
-        "Cobbled Deepslate Stairs (Itemsanity)": 5,
-        "Polished Deepslate Stairs (Itemsanity)": 5,
-        "Deepslate Brick Stairs (Itemsanity)": 5,
-        "Deepslate Tile Stairs (Itemsanity)": 5,
-        "Polished Granite Slab (Itemsanity)": 5,
-        "Polished Diorite Slab (Itemsanity)": 5,
-        "Granite Slab (Itemsanity)": 5,
-        "Andesite Slab (Itemsanity)": 5,
-        "Polished Andesite Slab (Itemsanity)": 5,
-        "Diorite Slab (Itemsanity)": 5,
-        "Cobbled Deepslate Slab (Itemsanity)": 5,
-        "Polished Deepslate Slab (Itemsanity)": 5,
-        "Deepslate Brick Slab (Itemsanity)": 5,
-        "Deepslate Tile Slab (Itemsanity)": 5,
-        "Scaffolding (Itemsanity)": 5,
-        "Lever (Itemsanity)": 5,
-        "TNT (Itemsanity)": 5,
-        "Oak Button (Itemsanity)": 5,
-        "Spruce Button (Itemsanity)": 5,
-        "Birch Button (Itemsanity)": 5,
-        "Acacia Button (Itemsanity)": 5,
-        "Oak Pressure Plate (Itemsanity)": 5,
-        "Spruce Pressure Plate (Itemsanity)": 5,
-        "Birch Pressure Plate (Itemsanity)": 5,
-        "Acacia Pressure Plate (Itemsanity)": 5,
-        "Oak Door (Itemsanity)": 5,
-        "Spruce Door (Itemsanity)": 5,
-        "Birch Door (Itemsanity)": 5,
-        "Acacia Door (Itemsanity)": 5,
-        "Oak Trapdoor (Itemsanity)": 5,
-        "Spruce Trapdoor (Itemsanity)": 5,
-        "Birch Trapdoor (Itemsanity)": 5,
-        "Acacia Trapdoor (Itemsanity)": 5,
-        "Oak Fence Gate (Itemsanity)": 5,
-        "Spruce Fence Gate (Itemsanity)": 5,
-        "Birch Fence Gate (Itemsanity)": 5,
-        "Acacia Fence Gate (Itemsanity)": 5,
-        "Oak Boat (Itemsanity)": 5,
-        "Spruce Boat (Itemsanity)": 5,
-        "Birch Boat (Itemsanity)": 5,
-        "Acacia Boat (Itemsanity)": 5,
-        "Apple (Itemsanity)": 5,
-        "Arrow (Itemsanity)": 5,
-        "Coal (Itemsanity)": 5,
-        "Amethyst Shard (Itemsanity)": 5,
-        "Wooden Sword (Itemsanity)": 5,
-        "Wooden Shovel (Itemsanity)": 5,
-        "Wooden Pickaxe (Itemsanity)": 5,
-        "Wooden Axe (Itemsanity)": 5,
-        "Wooden Hoe (Itemsanity)": 5,
-        "Stick (Itemsanity)": 5,
-        "Bowl (Itemsanity)": 5,
-        "Mushroom Stew (Itemsanity)": 5,
-        "String (Itemsanity)": 5,
-        "Feather (Itemsanity)": 5,
-        "Gunpowder (Itemsanity)": 5,
-        "Wheat Seeds (Itemsanity)": 5,
-        "Wheat (Itemsanity)": 5,
-        "Bread (Itemsanity)": 5,
-        "Flint (Itemsanity)": 5,
-        "Raw Porkchop (Itemsanity)": 5,
-        "Painting (Itemsanity)": 5,
-        "Oak Sign (Itemsanity)": 5,
-        "Spruce Sign (Itemsanity)": 5,
-        "Birch Sign (Itemsanity)": 5,
-        "Acacia Sign (Itemsanity)": 5,
-        "Snowball (Itemsanity)": 5,
-        "Leather (Itemsanity)": 5,
-        "Paper (Itemsanity)": 5,
-        "Book (Itemsanity)": 5,
-        "Egg (Itemsanity)": 5,
-        "Bone Meal (Itemsanity)": 5,
-        "Bone (Itemsanity)": 5,
-        "Sugar (Itemsanity)": 5,
-        "Cookie (Itemsanity)": 5,
-        "Melon Slice (Itemsanity)": 7,
-        "Pumpkin Seeds (Itemsanity)": 5,
-        "Melon Seeds (Itemsanity)": 7,
-        "Raw Beef (Itemsanity)": 5,
-        "Raw Chicken (Itemsanity)": 5,
-        "Rotten Flesh (Itemsanity)": 5,
-        "Ender Pearl (Itemsanity)": 5,
-        "Spider Eye (Itemsanity)": 5,
-        "Fermented Spider Eye (Itemsanity)": 5,
-        "Item Frame (Itemsanity)": 5,
-        "Carrot (Itemsanity)": 5,
-        "Potato (Itemsanity)": 5,
-        "Poisonous Potato (Itemsanity)": 5,
-        "Pumpkin Pie (Itemsanity)": 5,
-        "Raw Rabbit (Itemsanity)": 5,
-        "Rabbit's Foot (Itemsanity)": 5,
-        "Rabbit Hide (Itemsanity)": 5,
-        "Leather Horse Armor (Itemsanity)": 5,
-        "Raw Mutton (Itemsanity)": 5,
-        "Beetroot (Itemsanity)": 5,
-        "Beetroot Seeds (Itemsanity)": 5,
-        "Beetroot Soup (Itemsanity)": 5,
-        "Phantom Membrane (Itemsanity)": 5,
-        "Composter (Itemsanity)": 5,
-        "Glow Berries (Itemsanity)": 5,
-        "Pointed Dripstone (Itemsanity)": 5,
-        "Firework Rocket (Itemsanity)": 5,
-        "Lead (Itemsanity)": 5,
-        "Suspicious Stew (Itemsanity)": 5,
-        "Flower Charge Banner Pattern (Itemsanity)": 5,
-        "Music Disc Blocks (Itemsanity)": 9,
-        "Music Disc Chirp (Itemsanity)": 9,
-        "Music Disc Far (Itemsanity)": 9,
-        "Music Disc Mall (Itemsanity)": 9,
-        "Music Disc Mellohi (Itemsanity)": 9,
-        "Music Disc Stal (Itemsanity)": 9,
-        "Music Disc Strad (Itemsanity)": 9,
-        "Music Disc Ward (Itemsanity)": 9,
-        "Music Disc 11 (Itemsanity)": 9,
-        "Music Disc Wait (Itemsanity)": 9,
+        "Dirt (Itemsanity)": ITEMSANITY,
+        "Coarse Dirt (Itemsanity)": ITEMSANITY,
+        "Rooted Dirt (Itemsanity)": ITEMSANITY,
+        "Oak Planks (Itemsanity)": ITEMSANITY,
+        "Spruce Planks (Itemsanity)": ITEMSANITY,
+        "Birch Planks (Itemsanity)": ITEMSANITY,
+        "Acacia Planks (Itemsanity)": ITEMSANITY,
+        "Oak Sapling (Itemsanity)": ITEMSANITY,
+        "Spruce Sapling (Itemsanity)": ITEMSANITY,
+        "Birch Sapling (Itemsanity)": ITEMSANITY,
+        "Acacia Sapling (Itemsanity)": ITEMSANITY,
+        "Sand (Itemsanity)": ITEMSANITY,
+        "Gravel (Itemsanity)": ITEMSANITY,
+        "Oak Log (Itemsanity)": ITEMSANITY,
+        "Spruce Log (Itemsanity)": ITEMSANITY,
+        "Birch Log (Itemsanity)": ITEMSANITY,
+        "Acacia Log (Itemsanity)": ITEMSANITY,
+        "Stripped Oak Log (Itemsanity)": ITEMSANITY,
+        "Stripped Spruce Log (Itemsanity)": ITEMSANITY,
+        "Stripped Birch Log (Itemsanity)": ITEMSANITY,
+        "Stripped Acacia Log (Itemsanity)": ITEMSANITY,
+        "Stripped Oak Wood (Itemsanity)": ITEMSANITY,
+        "Stripped Spruce Wood (Itemsanity)": ITEMSANITY,
+        "Stripped Birch Wood (Itemsanity)": ITEMSANITY,
+        "Stripped Acacia Wood (Itemsanity)": ITEMSANITY,
+        "Oak Wood (Itemsanity)": ITEMSANITY,
+        "Spruce Wood (Itemsanity)": ITEMSANITY,
+        "Birch Wood (Itemsanity)": ITEMSANITY,
+        "Acacia Wood (Itemsanity)": ITEMSANITY,
+        "Sandstone (Itemsanity)": ITEMSANITY,
+        "Chiseled Sandstone (Itemsanity)": ITEMSANITY,
+        "Cut Sandstone (Itemsanity)": ITEMSANITY,
+        "Dandelion (Itemsanity)": FLOWER,
+        "Poppy (Itemsanity)": FLOWER,
+        "Allium (Itemsanity)": FLOWER,
+        "Azure Bluet (Itemsanity)": FLOWER,
+        "Red Tulip (Itemsanity)": FLOWER,
+        "Orange Tulip (Itemsanity)": FLOWER,
+        "White Tulip (Itemsanity)": FLOWER,
+        "Pink Tulip (Itemsanity)": FLOWER,
+        "Oxeye Daisy (Itemsanity)": FLOWER,
+        "Cornflower (Itemsanity)": FLOWER,
+        "Lily of the Valley (Itemsanity)": FLOWER,
+        "Brown Mushroom (Itemsanity)": ITEMSANITY,
+        "Red Mushroom (Itemsanity)": ITEMSANITY,
+        "Sugar Cane (Itemsanity)": ITEMSANITY,
+        "Oak Slab (Itemsanity)": ITEMSANITY,
+        "Spruce Slab (Itemsanity)": ITEMSANITY,
+        "Birch Slab (Itemsanity)": ITEMSANITY,
+        "Acacia Slab (Itemsanity)": ITEMSANITY,
+        "Chiseled Bookshelf (Itemsanity)": ITEMSANITY,
+        "Torch (Itemsanity)": ITEMSANITY,
+        "Crafting Table (Itemsanity)": ITEMSANITY,
+        "Ladder (Itemsanity)": ITEMSANITY,
+        "Granite (Itemsanity)": ITEMSANITY,
+        "Polished Granite (Itemsanity)": ITEMSANITY,
+        "Diorite (Itemsanity)": ITEMSANITY,
+        "Polished Diorite (Itemsanity)": ITEMSANITY,
+        "Andesite (Itemsanity)": ITEMSANITY,
+        "Polished Andesite (Itemsanity)": ITEMSANITY,
+        "Cobbled Deepslate (Itemsanity)": ITEMSANITY,
+        "Polished Deepslate (Itemsanity)": ITEMSANITY,
+        "Calcite (Itemsanity)": ITEMSANITY,
+        "Tuff (Itemsanity)": ITEMSANITY,
+        "Dripstone Block (Itemsanity)": ITEMSANITY,
+        "Cobblestone (Itemsanity)": ITEMSANITY,
+        "Block of Amethyst (Itemsanity)": ITEMSANITY,
+        "Moss Carpet (Itemsanity)": ITEMSANITY,
+        "Moss Block (Itemsanity)": ITEMSANITY,
+        "Big Dripleaf (Itemsanity)": ITEMSANITY,
+        "Spore Blossom (Itemsanity)": ITEMSANITY,
+        "Azalea (Itemsanity)": ITEMSANITY,
+        "Flowering Azalea (Itemsanity)": ITEMSANITY,
+        "Sandstone Slab (Itemsanity)": ITEMSANITY,
+        "Cut Sandstone Slab (Itemsanity)": ITEMSANITY,
+        "Cobblestone Slab (Itemsanity)": ITEMSANITY,
+        "Cobblestone Stairs (Itemsanity)": ITEMSANITY,
+        "Snow (Itemsanity)": ITEMSANITY,
+        "Snow Block (Itemsanity)": ITEMSANITY,
+        "Clay (Itemsanity)": ITEMSANITY,
+        "Oak Fence (Itemsanity)": ITEMSANITY,
+        "Spruce Fence (Itemsanity)": ITEMSANITY,
+        "Birch Fence (Itemsanity)": ITEMSANITY,
+        "Acacia Fence (Itemsanity)": ITEMSANITY,
+        "Pumpkin (Itemsanity)": ITEMSANITY,
+        "Carved Pumpkin (Itemsanity)": ITEMSANITY,
+        "Jack o'Lantern (Itemsanity)": ITEMSANITY,
+        "Deepslate Bricks (Itemsanity)": ITEMSANITY,
+        "Deepslate Tiles (Itemsanity)": ITEMSANITY,
+        "Chiseled Deepslate (Itemsanity)": ITEMSANITY,
+        "Melon (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Sandstone Stairs (Itemsanity)": ITEMSANITY,
+        "Oak Stairs (Itemsanity)": ITEMSANITY,
+        "Spruce Stairs (Itemsanity)": ITEMSANITY,
+        "Birch Stairs (Itemsanity)": ITEMSANITY,
+        "Acacia Stairs (Itemsanity)": ITEMSANITY,
+        "Cobblestone Wall (Itemsanity)": ITEMSANITY,
+        "Granite Wall (Itemsanity)": ITEMSANITY,
+        "Andesite Wall (Itemsanity)": ITEMSANITY,
+        "Sandstone Wall (Itemsanity)": ITEMSANITY,
+        "Diorite Wall (Itemsanity)": ITEMSANITY,
+        "Cobbled Deepslate Wall (Itemsanity)": ITEMSANITY,
+        "Polished Deepslate Wall (Itemsanity)": ITEMSANITY,
+        "Deepslate Brick Wall (Itemsanity)": ITEMSANITY,
+        "Deepslate Tile Wall (Itemsanity)": ITEMSANITY,
+        "Hay Bale (Itemsanity)": ITEMSANITY,
+        "Lilac (Itemsanity)": FLOWER,
+        "Rose Bush (Itemsanity)": FLOWER,
+        "Peony (Itemsanity)": FLOWER,
+        "Bone Block (Itemsanity)": ITEMSANITY,
+        "Polished Granite Stairs (Itemsanity)": ITEMSANITY,
+        "Polished Diorite Stairs (Itemsanity)": ITEMSANITY,
+        "Granite Stairs (Itemsanity)": ITEMSANITY,
+        "Andesite Stairs (Itemsanity)": ITEMSANITY,
+        "Polished Andesite Stairs (Itemsanity)": ITEMSANITY,
+        "Diorite Stairs (Itemsanity)": ITEMSANITY,
+        "Cobbled Deepslate Stairs (Itemsanity)": ITEMSANITY,
+        "Polished Deepslate Stairs (Itemsanity)": ITEMSANITY,
+        "Deepslate Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Deepslate Tile Stairs (Itemsanity)": ITEMSANITY,
+        "Polished Granite Slab (Itemsanity)": ITEMSANITY,
+        "Polished Diorite Slab (Itemsanity)": ITEMSANITY,
+        "Granite Slab (Itemsanity)": ITEMSANITY,
+        "Andesite Slab (Itemsanity)": ITEMSANITY,
+        "Polished Andesite Slab (Itemsanity)": ITEMSANITY,
+        "Diorite Slab (Itemsanity)": ITEMSANITY,
+        "Cobbled Deepslate Slab (Itemsanity)": ITEMSANITY,
+        "Polished Deepslate Slab (Itemsanity)": ITEMSANITY,
+        "Deepslate Brick Slab (Itemsanity)": ITEMSANITY,
+        "Deepslate Tile Slab (Itemsanity)": ITEMSANITY,
+        "Scaffolding (Itemsanity)": ITEMSANITY,
+        "Lever (Itemsanity)": ITEMSANITY,
+        "TNT (Itemsanity)": ITEMSANITY,
+        "Oak Button (Itemsanity)": ITEMSANITY,
+        "Spruce Button (Itemsanity)": ITEMSANITY,
+        "Birch Button (Itemsanity)": ITEMSANITY,
+        "Acacia Button (Itemsanity)": ITEMSANITY,
+        "Oak Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Spruce Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Birch Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Acacia Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Oak Door (Itemsanity)": ITEMSANITY,
+        "Spruce Door (Itemsanity)": ITEMSANITY,
+        "Birch Door (Itemsanity)": ITEMSANITY,
+        "Acacia Door (Itemsanity)": ITEMSANITY,
+        "Oak Trapdoor (Itemsanity)": ITEMSANITY,
+        "Spruce Trapdoor (Itemsanity)": ITEMSANITY,
+        "Birch Trapdoor (Itemsanity)": ITEMSANITY,
+        "Acacia Trapdoor (Itemsanity)": ITEMSANITY,
+        "Oak Fence Gate (Itemsanity)": ITEMSANITY,
+        "Spruce Fence Gate (Itemsanity)": ITEMSANITY,
+        "Birch Fence Gate (Itemsanity)": ITEMSANITY,
+        "Acacia Fence Gate (Itemsanity)": ITEMSANITY,
+        "Oak Boat (Itemsanity)": ITEMSANITY,
+        "Spruce Boat (Itemsanity)": ITEMSANITY,
+        "Birch Boat (Itemsanity)": ITEMSANITY,
+        "Acacia Boat (Itemsanity)": ITEMSANITY,
+        "Apple (Itemsanity)": ITEMSANITY,
+        "Arrow (Itemsanity)": ITEMSANITY,
+        "Coal (Itemsanity)": ITEMSANITY,
+        "Amethyst Shard (Itemsanity)": ITEMSANITY,
+        "Wooden Sword (Itemsanity)": ITEMSANITY,
+        "Wooden Shovel (Itemsanity)": ITEMSANITY,
+        "Wooden Pickaxe (Itemsanity)": ITEMSANITY,
+        "Wooden Axe (Itemsanity)": ITEMSANITY,
+        "Wooden Hoe (Itemsanity)": ITEMSANITY,
+        "Stick (Itemsanity)": ITEMSANITY,
+        "Bowl (Itemsanity)": ITEMSANITY,
+        "Mushroom Stew (Itemsanity)": ITEMSANITY,
+        "String (Itemsanity)": ITEMSANITY,
+        "Feather (Itemsanity)": ITEMSANITY,
+        "Gunpowder (Itemsanity)": ITEMSANITY,
+        "Wheat Seeds (Itemsanity)": ITEMSANITY,
+        "Wheat (Itemsanity)": ITEMSANITY,
+        "Bread (Itemsanity)": ITEMSANITY,
+        "Flint (Itemsanity)": ITEMSANITY,
+        "Raw Porkchop (Itemsanity)": ITEMSANITY,
+        "Painting (Itemsanity)": ITEMSANITY,
+        "Oak Sign (Itemsanity)": ITEMSANITY,
+        "Spruce Sign (Itemsanity)": ITEMSANITY,
+        "Birch Sign (Itemsanity)": ITEMSANITY,
+        "Acacia Sign (Itemsanity)": ITEMSANITY,
+        "Snowball (Itemsanity)": ITEMSANITY,
+        "Leather (Itemsanity)": ITEMSANITY,
+        "Paper (Itemsanity)": ITEMSANITY,
+        "Book (Itemsanity)": ITEMSANITY,
+        "Egg (Itemsanity)": ITEMSANITY,
+        "Bone Meal (Itemsanity)": ITEMSANITY,
+        "Bone (Itemsanity)": ITEMSANITY,
+        "Sugar (Itemsanity)": ITEMSANITY,
+        "Cookie (Itemsanity)": ITEMSANITY,
+        "Melon Slice (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Pumpkin Seeds (Itemsanity)": ITEMSANITY,
+        "Melon Seeds (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Raw Beef (Itemsanity)": ITEMSANITY,
+        "Raw Chicken (Itemsanity)": ITEMSANITY,
+        "Rotten Flesh (Itemsanity)": ITEMSANITY,
+        "Ender Pearl (Itemsanity)": ITEMSANITY,
+        "Spider Eye (Itemsanity)": ITEMSANITY,
+        "Fermented Spider Eye (Itemsanity)": ITEMSANITY,
+        "Item Frame (Itemsanity)": ITEMSANITY,
+        "Carrot (Itemsanity)": ITEMSANITY,
+        "Potato (Itemsanity)": ITEMSANITY,
+        "Poisonous Potato (Itemsanity)": ITEMSANITY,
+        "Pumpkin Pie (Itemsanity)": ITEMSANITY,
+        "Raw Rabbit (Itemsanity)": ITEMSANITY,
+        "Rabbit's Foot (Itemsanity)": ITEMSANITY,
+        "Rabbit Hide (Itemsanity)": ITEMSANITY,
+        "Leather Horse Armor (Itemsanity)": ITEMSANITY,
+        "Raw Mutton (Itemsanity)": ITEMSANITY,
+        "Beetroot (Itemsanity)": ITEMSANITY,
+        "Beetroot Seeds (Itemsanity)": ITEMSANITY,
+        "Beetroot Soup (Itemsanity)": ITEMSANITY,
+        "Phantom Membrane (Itemsanity)": ITEMSANITY,
+        "Composter (Itemsanity)": ITEMSANITY,
+        "Glow Berries (Itemsanity)": ITEMSANITY,
+        "Pointed Dripstone (Itemsanity)": ITEMSANITY,
+        "Firework Rocket (Itemsanity)": ITEMSANITY,
+        "Lead (Itemsanity)": ITEMSANITY,
+        "Suspicious Stew (Itemsanity)": ITEMSANITY,
+        "Flower Charge Banner Pattern (Itemsanity)": ITEMSANITY,
+        "Music Disc Blocks (Itemsanity)": DISCS,
+        "Music Disc Chirp (Itemsanity)": DISCS,
+        "Music Disc Far (Itemsanity)": DISCS,
+        "Music Disc Mall (Itemsanity)": DISCS,
+        "Music Disc Mellohi (Itemsanity)": DISCS,
+        "Music Disc Stal (Itemsanity)": DISCS,
+        "Music Disc Strad (Itemsanity)": DISCS,
+        "Music Disc Ward (Itemsanity)": DISCS,
+        "Music Disc 11 (Itemsanity)": DISCS,
+        "Music Disc Wait (Itemsanity)": DISCS,
 
-        "Bell (Itemsanity)": 7,
-        "Slimeball (Itemsanity)": 7,
-        "Slime Block (Itemsanity)": 7,
-        "Red Sandstone (Itemsanity)": 7,
-        "Chiseled Red Sandstone (Itemsanity)": 7,
-        "Cut Red Sandstone (Itemsanity)": 7,
-        "Red Sandstone Stairs (Itemsanity)": 7,
-        "Red Sandstone Wall (Itemsanity)": 7,
-        "Red Sand (Itemsanity)": 7,
-        "Red Sandstone Slab (Itemsanity)": 7,
-        "Cut Red Sandstone Slab (Itemsanity)": 7,
-        "Pink Petals (Itemsanity)": 7,
-        "Blue Orchid (Itemsanity)": 7,
-        "Cactus (Itemsanity)": 7,
-        "Sunflower (Itemsanity)": 7,
-        "Sweet Berries (Itemsanity)": 7,
-        "Cocoa Beans (Itemsanity)": 7,
+        "Bell (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Slimeball (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Slime Block (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Red Sandstone (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Chiseled Red Sandstone (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cut Red Sandstone (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Red Sandstone Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Red Sandstone Wall (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Red Sand (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Red Sandstone Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cut Red Sandstone Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Pink Petals (Itemsanity)": FLOWER_AND_EXPLORATION,
+        "Blue Orchid (Itemsanity)": FLOWER_AND_EXPLORATION,
+        "Cactus (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Sunflower (Itemsanity)": FLOWER_AND_EXPLORATION,
+        "Sweet Berries (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cocoa Beans (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Bamboo Sign (Itemsanity)": 7,
-        "Bamboo Raft (Itemsanity)": 7,
-        "Bamboo Fence Gate (Itemsanity)": 7,
-        "Bamboo Trapdoor (Itemsanity)": 7,
-        "Bamboo Door (Itemsanity)": 7,
-        "Bamboo Pressure Plate (Itemsanity)": 7,
-        "Bamboo Button (Itemsanity)": 7,
-        "Bamboo Stairs (Itemsanity)": 7,
-        "Bamboo Mosaic Stairs (Itemsanity)": 7,
-        "Bamboo Fence (Itemsanity)": 7,
-        "Bamboo Slab (Itemsanity)": 7,
-        "Bamboo Mosaic Slab (Itemsanity)": 7,
-        "Bamboo (Itemsanity)": 7,
-        "Block of Stripped Bamboo (Itemsanity)": 7,
-        "Block of Bamboo (Itemsanity)": 7,
-        "Bamboo Planks (Itemsanity)": 7,
-        "Bamboo Mosaic (Itemsanity)": 7,
+        "Bamboo Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Raft (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Fence Gate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Trapdoor (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Door (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Pressure Plate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Button (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Mosaic Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Fence (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Mosaic Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Block of Stripped Bamboo (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Block of Bamboo (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Planks (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Mosaic (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Jungle Sign (Itemsanity)": 7,
-        "Jungle Boat (Itemsanity)": 7,
-        "Jungle Fence Gate (Itemsanity)": 7,
-        "Jungle Trapdoor (Itemsanity)": 7,
-        "Jungle Door (Itemsanity)": 7,
-        "Jungle Pressure Plate (Itemsanity)": 7,
-        "Jungle Button (Itemsanity)": 7,
-        "Jungle Stairs (Itemsanity)": 7,
-        "Jungle Fence (Itemsanity)": 7,
-        "Jungle Slab (Itemsanity)": 7,
-        "Jungle Wood (Itemsanity)": 7,
-        "Stripped Jungle Wood (Itemsanity)": 7,
-        "Stripped Jungle Log (Itemsanity)": 7,
-        "Jungle Log (Itemsanity)": 7,
-        "Jungle Planks (Itemsanity)": 7,
-        "Jungle Sapling (Itemsanity)": 7,
+        "Jungle Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Boat (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Fence Gate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Trapdoor (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Door (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Pressure Plate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Button (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Fence (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Jungle Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Jungle Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Planks (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Jungle Sapling (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Dark Oak Sign (Itemsanity)": 7,
-        "Dark Oak Boat (Itemsanity)": 7,
-        "Dark Oak Fence Gate (Itemsanity)": 7,
-        "Dark Oak Trapdoor (Itemsanity)": 7,
-        "Dark Oak Door (Itemsanity)": 7,
-        "Dark Oak Pressure Plate (Itemsanity)": 7,
-        "Dark Oak Button (Itemsanity)": 7,
-        "Dark Oak Stairs (Itemsanity)": 7,
-        "Dark Oak Fence (Itemsanity)": 7,
-        "Dark Oak Slab (Itemsanity)": 7,
-        "Dark Oak Wood (Itemsanity)": 7,
-        "Stripped Dark Oak Wood (Itemsanity)": 7,
-        "Stripped Dark Oak Log (Itemsanity)": 7,
-        "Dark Oak Log (Itemsanity)": 7,
-        "Dark Oak Planks (Itemsanity)": 7,
-        "Dark Oak Sapling (Itemsanity)": 7,
+        "Dark Oak Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Boat (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Fence Gate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Trapdoor (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Door (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Pressure Plate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Button (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Fence (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Dark Oak Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Dark Oak Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Planks (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Sapling (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Mangrove Sign (Itemsanity)": 7,
-        "Mangrove Boat (Itemsanity)": 7,
-        "Mangrove Fence Gate (Itemsanity)": 7,
-        "Mangrove Trapdoor (Itemsanity)": 7,
-        "Mangrove Door (Itemsanity)": 7,
-        "Mangrove Pressure Plate (Itemsanity)": 7,
-        "Mangrove Button (Itemsanity)": 7,
-        "Mangrove Stairs (Itemsanity)": 7,
-        "Mangrove Fence (Itemsanity)": 7,
-        "Mangrove Slab (Itemsanity)": 7,
-        "Mangrove Wood (Itemsanity)": 7,
-        "Stripped Mangrove Wood (Itemsanity)": 7,
-        "Stripped Mangrove Log (Itemsanity)": 7,
-        "Mangrove Log (Itemsanity)": 7,
-        "Mangrove Planks (Itemsanity)": 7,
-        "Mangrove Propagule (Itemsanity)": 7,
-        "Mangrove Roots (Itemsanity)": 7,
-        "Muddy Mangrove Roots (Itemsanity)": 7,
+        "Mangrove Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Boat (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Fence Gate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Trapdoor (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Door (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Pressure Plate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Button (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Fence (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Mangrove Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Mangrove Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Planks (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Propagule (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Roots (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Muddy Mangrove Roots (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Cherry Sign (Itemsanity)": 7,
-        "Cherry Boat (Itemsanity)": 7,
-        "Cherry Fence Gate (Itemsanity)": 7,
-        "Cherry Trapdoor (Itemsanity)": 7,
-        "Cherry Door (Itemsanity)": 7,
-        "Cherry Pressure Plate (Itemsanity)": 7,
-        "Cherry Button (Itemsanity)": 7,
-        "Cherry Stairs (Itemsanity)": 7,
-        "Cherry Fence (Itemsanity)": 7,
-        "Cherry Slab (Itemsanity)": 7,
-        "Cherry Wood (Itemsanity)": 7,
-        "Stripped Cherry Wood (Itemsanity)": 7,
-        "Stripped Cherry Log (Itemsanity)": 7,
-        "Cherry Log (Itemsanity)": 7,
-        "Cherry Planks (Itemsanity)": 7,
-        "Cherry Sapling (Itemsanity)": 7
+        "Cherry Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Boat (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Fence Gate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Trapdoor (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Door (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Pressure Plate (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Button (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Fence (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Cherry Wood (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Stripped Cherry Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Log (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Planks (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cherry Sapling (Itemsanity)": ITEMSANITY_EXPLORATION
     })
 
     # REQUIRES NETHER ACCESS
     create_region(world, "Menu", "NetherAccess", {
-        "Crimson Planks (Itemsanity)": 5,
-        "Warped Planks (Itemsanity)": 5,
-        "Crimson Stem (Itemsanity)": 5,
-        "Warped Stem (Itemsanity)": 5,
-        "Stripped Crimson Stem (Itemsanity)": 5,
-        "Stripped Warped Stem (Itemsanity)": 5,
-        "Stripped Crimson Hyphae (Itemsanity)": 5,
-        "Stripped Warped Hyphae (Itemsanity)": 5,
-        "Crimson Hyphae (Itemsanity)": 5,
-        "Warped Hyphae (Itemsanity)": 5,
-        "Crimson Fungus (Itemsanity)": 5,
-        "Warped Fungus (Itemsanity)": 5,
-        "Crimson Roots (Itemsanity)": 5,
-        "Warped Roots (Itemsanity)": 5,
-        "Weeping Vines (Itemsanity)": 5,
-        "Twisting Vines (Itemsanity)": 5,
-        "Crimson Slab (Itemsanity)": 5,
-        "Warped Slab (Itemsanity)": 5,
-        "Quartz Slab (Itemsanity)": 5,
-        "Crimson Fence (Itemsanity)": 5,
-        "Warped Fence (Itemsanity)": 5,
-        "Netherrack (Itemsanity)": 5,
-        "Soul Sand (Itemsanity)": 5,
-        "Soul Soil (Itemsanity)": 5,
-        "Basalt (Itemsanity)": 5,
-        "Polished Basalt (Itemsanity)": 5,
-        "Soul Torch (Itemsanity)": 5,
-        "Glowstone (Itemsanity)": 5,
-        "Crimson Stairs (Itemsanity)": 5,
-        "Warped Stairs (Itemsanity)": 5,
-        "Blackstone Wall (Itemsanity)": 5,
-        "Polished Blackstone Wall (Itemsanity)": 5,
-        "Polished Blackstone Brick Wall (Itemsanity)": 5,
-        "Chiseled Quartz Block (Itemsanity)": 5,
-        "Block of Quartz (Itemsanity)": 5,
-        "Quartz Bricks (Itemsanity)": 5,
-        "Quartz Pillar (Itemsanity)": 5,
-        "Quartz Stairs (Itemsanity)": 5,
-        "Nether Wart Block (Itemsanity)": 5,
-        "Warped Wart Block (Itemsanity)": 5,
-        "Polished Blackstone Button (Itemsanity)": 5,
-        "Crimson Button (Itemsanity)": 5,
-        "Warped Button (Itemsanity)": 5,
-        "Polished Blackstone Pressure Plate (Itemsanity)": 5,
-        "Crimson Pressure Plate (Itemsanity)": 5,
-        "Warped Pressure Plate (Itemsanity)": 5,
-        "Crimson Door (Itemsanity)": 5,
-        "Warped Door (Itemsanity)": 5,
-        "Crimson Trapdoor (Itemsanity)": 5,
-        "Warped Trapdoor (Itemsanity)": 5,
-        "Crimson Fence Gate (Itemsanity)": 5,
-        "Warped Fence Gate (Itemsanity)": 5,
-        "Nether Quartz (Itemsanity)": 5,
-        "Crimson Sign (Itemsanity)": 5,
-        "Warped Sign (Itemsanity)": 5,
-        "Clay Ball (Itemsanity)": 5,
-        "Glowstone Dust (Itemsanity)": 5,
-        "Blaze Rod (Itemsanity)": 5,
-        "Ghast Tear (Itemsanity)": 5,
-        "Nether Wart (Itemsanity)": 5,
-        "Blaze Powder (Itemsanity)": 5,
-        "Magma Cream (Itemsanity)": 5,
-        "Fire Charge (Itemsanity)": 5,
-        "Spectral Arrow (Itemsanity)": 5,
-        "Soul Campfire (Itemsanity)": 5,
-        "Shroomlight (Itemsanity)": 5,
-        "Blackstone (Itemsanity)": 5,
-        "Blackstone Slab (Itemsanity)": 5,
-        "Blackstone Stairs (Itemsanity)": 5,
-        "Gilded Blackstone (Itemsanity)": 5,
-        "Polished Blackstone (Itemsanity)": 5,
-        "Polished Blackstone Slab (Itemsanity)": 5,
-        "Polished Blackstone Stairs (Itemsanity)": 5,
-        "Chiseled Polished Blackstone (Itemsanity)": 5,
-        "Polished Blackstone Bricks (Itemsanity)": 5,
-        "Polished Blackstone Brick Slab (Itemsanity)": 5,
-        "Polished Blackstone Brick Stairs (Itemsanity)": 5,
-        "Wither Skeleton Skull (Itemsanity)": 5,
-        "Skull Charge Banner Pattern (Itemsanity)": 5,
+        "Crimson Planks (Itemsanity)": ITEMSANITY,
+        "Warped Planks (Itemsanity)": ITEMSANITY,
+        "Crimson Stem (Itemsanity)": ITEMSANITY,
+        "Warped Stem (Itemsanity)": ITEMSANITY,
+        "Stripped Crimson Stem (Itemsanity)": ITEMSANITY,
+        "Stripped Warped Stem (Itemsanity)": ITEMSANITY,
+        "Stripped Crimson Hyphae (Itemsanity)": ITEMSANITY,
+        "Stripped Warped Hyphae (Itemsanity)": ITEMSANITY,
+        "Crimson Hyphae (Itemsanity)": ITEMSANITY,
+        "Warped Hyphae (Itemsanity)": ITEMSANITY,
+        "Crimson Fungus (Itemsanity)": ITEMSANITY,
+        "Warped Fungus (Itemsanity)": ITEMSANITY,
+        "Crimson Roots (Itemsanity)": ITEMSANITY,
+        "Warped Roots (Itemsanity)": ITEMSANITY,
+        "Weeping Vines (Itemsanity)": ITEMSANITY,
+        "Twisting Vines (Itemsanity)": ITEMSANITY,
+        "Crimson Slab (Itemsanity)": ITEMSANITY,
+        "Warped Slab (Itemsanity)": ITEMSANITY,
+        "Quartz Slab (Itemsanity)": ITEMSANITY,
+        "Crimson Fence (Itemsanity)": ITEMSANITY,
+        "Warped Fence (Itemsanity)": ITEMSANITY,
+        "Netherrack (Itemsanity)": ITEMSANITY,
+        "Soul Sand (Itemsanity)": ITEMSANITY,
+        "Soul Soil (Itemsanity)": ITEMSANITY,
+        "Basalt (Itemsanity)": ITEMSANITY,
+        "Polished Basalt (Itemsanity)": ITEMSANITY,
+        "Soul Torch (Itemsanity)": ITEMSANITY,
+        "Glowstone (Itemsanity)": ITEMSANITY,
+        "Crimson Stairs (Itemsanity)": ITEMSANITY,
+        "Warped Stairs (Itemsanity)": ITEMSANITY,
+        "Blackstone Wall (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Wall (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Brick Wall (Itemsanity)": ITEMSANITY,
+        "Chiseled Quartz Block (Itemsanity)": ITEMSANITY,
+        "Block of Quartz (Itemsanity)": ITEMSANITY,
+        "Quartz Bricks (Itemsanity)": ITEMSANITY,
+        "Quartz Pillar (Itemsanity)": ITEMSANITY,
+        "Quartz Stairs (Itemsanity)": ITEMSANITY,
+        "Nether Wart Block (Itemsanity)": ITEMSANITY,
+        "Warped Wart Block (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Button (Itemsanity)": ITEMSANITY,
+        "Crimson Button (Itemsanity)": ITEMSANITY,
+        "Warped Button (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Crimson Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Warped Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Crimson Door (Itemsanity)": ITEMSANITY,
+        "Warped Door (Itemsanity)": ITEMSANITY,
+        "Crimson Trapdoor (Itemsanity)": ITEMSANITY,
+        "Warped Trapdoor (Itemsanity)": ITEMSANITY,
+        "Crimson Fence Gate (Itemsanity)": ITEMSANITY,
+        "Warped Fence Gate (Itemsanity)": ITEMSANITY,
+        "Nether Quartz (Itemsanity)": ITEMSANITY,
+        "Crimson Sign (Itemsanity)": ITEMSANITY,
+        "Warped Sign (Itemsanity)": ITEMSANITY,
+        "Clay Ball (Itemsanity)": ITEMSANITY,
+        "Glowstone Dust (Itemsanity)": ITEMSANITY,
+        "Blaze Rod (Itemsanity)": ITEMSANITY,
+        "Ghast Tear (Itemsanity)": ITEMSANITY,
+        "Nether Wart (Itemsanity)": ITEMSANITY,
+        "Blaze Powder (Itemsanity)": ITEMSANITY,
+        "Magma Cream (Itemsanity)": ITEMSANITY,
+        "Fire Charge (Itemsanity)": ITEMSANITY,
+        "Spectral Arrow (Itemsanity)": ITEMSANITY,
+        "Soul Campfire (Itemsanity)": ITEMSANITY,
+        "Shroomlight (Itemsanity)": ITEMSANITY,
+        "Blackstone (Itemsanity)": ITEMSANITY,
+        "Blackstone Slab (Itemsanity)": ITEMSANITY,
+        "Blackstone Stairs (Itemsanity)": ITEMSANITY,
+        "Gilded Blackstone (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Slab (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Stairs (Itemsanity)": ITEMSANITY,
+        "Chiseled Polished Blackstone (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Bricks (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Brick Slab (Itemsanity)": ITEMSANITY,
+        "Polished Blackstone Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Wither Skeleton Skull (Itemsanity)": ITEMSANITY,
+        "Skull Charge Banner Pattern (Itemsanity)": ITEMSANITY,
 
-        "Ochre Froglight (Itemsanity)": 6,
-        "Verdant Froglight (Itemsanity)": 6,
-        "Pearlescent Froglight (Itemsanity)": 6
+        "Ochre Froglight (Itemsanity)": ITEMSANITY_HARD,
+        "Verdant Froglight (Itemsanity)": ITEMSANITY_HARD,
+        "Pearlescent Froglight (Itemsanity)": ITEMSANITY_HARD
     }, lambda state: canAccessNether(world, state))
 
     # REQUIRES END ACCESS
     create_region(world, "NetherAccess", "EndAccess", {
-        "Dragon Egg (Itemsanity)": 5,
-        "End Stone (Itemsanity)": 5,
-        "End Stone Bricks (Itemsanity)": 5,
-        "End Stone Brick Wall (Itemsanity)": 5,
-        "End Stone Brick Stairs (Itemsanity)": 5,
-        "End Stone Brick Slab (Itemsanity)": 5,
-        "Elytra (Itemsanity)": 5,
-        "Dragon Head (Itemsanity)": 5,
-        "Eye of Ender (Itemsanity)": 5,
-        "End Crystal (Itemsanity)": 5,
-        "Chorus Fruit (Itemsanity)": 5,
-        "Shulker Shell (Itemsanity)": 5
+        "Dragon Egg (Itemsanity)": ITEMSANITY,
+        "End Stone (Itemsanity)": ITEMSANITY,
+        "End Stone Bricks (Itemsanity)": ITEMSANITY,
+        "End Stone Brick Wall (Itemsanity)": ITEMSANITY,
+        "End Stone Brick Stairs (Itemsanity)": ITEMSANITY,
+        "End Stone Brick Slab (Itemsanity)": ITEMSANITY,
+        "Elytra (Itemsanity)": ITEMSANITY,
+        "Dragon Head (Itemsanity)": ITEMSANITY,
+        "Eye of Ender (Itemsanity)": ITEMSANITY,
+        "End Crystal (Itemsanity)": ITEMSANITY,
+        "Chorus Fruit (Itemsanity)": ITEMSANITY,
+        "Shulker Shell (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessEnd(world, state))
 
     # REQUIRES STONE TOOLS
     create_region(world, "Menu", "HasStoneTools", {
-        "Lapis Lazuli (Itemsanity)": 5,
-        "Raw Iron (Itemsanity)": 5,
-        "Raw Copper (Itemsanity)": 5,
-        "Stone Shovel (Itemsanity)": 5,
-        "Stone Pickaxe (Itemsanity)": 5,
-        "Stone Hoe (Itemsanity)": 5
+        "Lapis Lazuli (Itemsanity)": ITEMSANITY,
+        "Raw Iron (Itemsanity)": ITEMSANITY,
+        "Raw Copper (Itemsanity)": ITEMSANITY,
+        "Stone Shovel (Itemsanity)": ITEMSANITY,
+        "Stone Pickaxe (Itemsanity)": ITEMSANITY,
+        "Stone Hoe (Itemsanity)": ITEMSANITY
     }, lambda state: canUseStoneTools(world, state))
 
     # REQUIRES STONE TOOLS
     create_region(world, "Menu", "HasStoneWeapons", {
-        "Stone Sword (Itemsanity)": 5,
-        "Stone Axe (Itemsanity)": 5
+        "Stone Sword (Itemsanity)": ITEMSANITY,
+        "Stone Axe (Itemsanity)": ITEMSANITY
     }, lambda state: canUseStoneWeapons(world, state))
 
     # REQUIRES LEATHER ARMOR
     create_region(world, "Menu", "HasLeatherArmor", {
-        "Leather Cap (Itemsanity)": 5,
-        "Leather Tunic (Itemsanity)": 5,
-        "Leather Pants (Itemsanity)": 5,
-        "Leather Boots (Itemsanity)": 5
+        "Leather Cap (Itemsanity)": ITEMSANITY,
+        "Leather Tunic (Itemsanity)": ITEMSANITY,
+        "Leather Pants (Itemsanity)": ITEMSANITY,
+        "Leather Boots (Itemsanity)": ITEMSANITY
     }, lambda state: canWearLeatherArmor(world, state))
 
     # REQUIRES SMELTING
     create_region(world, "HasStoneTools", "CanSmeltItems", {
-        "Glass (Itemsanity)": 5,
-        "Tinted Glass (Itemsanity)": 5,
-        "Smooth Stone Slab (Itemsanity)": 5,
-        "Brick Slab (Itemsanity)": 5,
-        "Bricks (Itemsanity)": 5,
-        "Smooth Red Sandstone (Itemsanity)": 7,
-        "Smooth Sandstone (Itemsanity)": 5,
-        "Smooth Stone (Itemsanity)": 5,
-        "Decorated Pot (Itemsanity)": 5,
-        "Furnace (Itemsanity)": 5,
-        "Cracked Stone Bricks (Itemsanity)": 5,
-        "Iron Bars (Itemsanity)": 5,
-        "Glass Pane (Itemsanity)": 5,
-        "Brick Stairs (Itemsanity)": 5,
-        "Smooth Basalt (Itemsanity)": 5,
-        "Brick Wall (Itemsanity)": 5,
-        "Terracotta (Itemsanity)": 5,
-        "Smooth Sandstone Stairs (Itemsanity)": 5,
-        "Smooth Red Sandstone Stairs (Itemsanity)": 7,
-        "Smooth Red Sandstone Slab (Itemsanity)": 7,
-        "Smooth Sandstone Slab (Itemsanity)": 5,
-        "Tripwire Hook (Itemsanity)": 5,
-        "Heavy Weighted Pressure Plate (Itemsanity)": 5,
-        "Iron Door (Itemsanity)": 5,
-        "Iron Trapdoor (Itemsanity)": 5,
-        "Charcoal (Itemsanity)": 5,
-        "Iron Ingot (Itemsanity)": 5,
-        "Copper Ingot (Itemsanity)": 5,
-        "Cooked Porkchop (Itemsanity)": 5,
-        "Brick (Itemsanity)": 5,
-        "Steak (Itemsanity)": 5,
-        "Cooked Chicken (Itemsanity)": 5,
-        "Cauldron (Itemsanity)": 5,
-        "Flower Pot (Itemsanity)": 5,
-        "Baked Potato (Itemsanity)": 5,
-        "Cooked Rabbit (Itemsanity)": 5,
-        "Rabbit Stew (Itemsanity)": 5,
-        "Armor Stand (Itemsanity)": 5,
-        "Cooked Mutton (Itemsanity)": 5,
-        "Campfire (Itemsanity)": 5,
-        "Cracked Deepslate Bricks (Itemsanity)": 5,
-        "Cracked Deepslate Tiles (Itemsanity)": 5
+        "Glass (Itemsanity)": ITEMSANITY,
+        "Tinted Glass (Itemsanity)": ITEMSANITY,
+        "Smooth Stone Slab (Itemsanity)": ITEMSANITY,
+        "Brick Slab (Itemsanity)": ITEMSANITY,
+        "Bricks (Itemsanity)": ITEMSANITY,
+        "Smooth Red Sandstone (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Smooth Sandstone (Itemsanity)": ITEMSANITY,
+        "Smooth Stone (Itemsanity)": ITEMSANITY,
+        "Decorated Pot (Itemsanity)": ITEMSANITY,
+        "Furnace (Itemsanity)": ITEMSANITY,
+        "Cracked Stone Bricks (Itemsanity)": ITEMSANITY,
+        "Iron Bars (Itemsanity)": ITEMSANITY,
+        "Glass Pane (Itemsanity)": ITEMSANITY,
+        "Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Smooth Basalt (Itemsanity)": ITEMSANITY,
+        "Brick Wall (Itemsanity)": ITEMSANITY,
+        "Terracotta (Itemsanity)": ITEMSANITY,
+        "Smooth Sandstone Stairs (Itemsanity)": ITEMSANITY,
+        "Smooth Red Sandstone Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Smooth Red Sandstone Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Smooth Sandstone Slab (Itemsanity)": ITEMSANITY,
+        "Tripwire Hook (Itemsanity)": ITEMSANITY,
+        "Heavy Weighted Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Iron Door (Itemsanity)": ITEMSANITY,
+        "Iron Trapdoor (Itemsanity)": ITEMSANITY,
+        "Charcoal (Itemsanity)": ITEMSANITY,
+        "Iron Ingot (Itemsanity)": ITEMSANITY,
+        "Copper Ingot (Itemsanity)": ITEMSANITY,
+        "Cooked Porkchop (Itemsanity)": ITEMSANITY,
+        "Brick (Itemsanity)": ITEMSANITY,
+        "Steak (Itemsanity)": ITEMSANITY,
+        "Cooked Chicken (Itemsanity)": ITEMSANITY,
+        "Cauldron (Itemsanity)": ITEMSANITY,
+        "Flower Pot (Itemsanity)": ITEMSANITY,
+        "Baked Potato (Itemsanity)": ITEMSANITY,
+        "Cooked Rabbit (Itemsanity)": ITEMSANITY,
+        "Rabbit Stew (Itemsanity)": ITEMSANITY,
+        "Armor Stand (Itemsanity)": ITEMSANITY,
+        "Cooked Mutton (Itemsanity)": ITEMSANITY,
+        "Campfire (Itemsanity)": ITEMSANITY,
+        "Cracked Deepslate Bricks (Itemsanity)": ITEMSANITY,
+        "Cracked Deepslate Tiles (Itemsanity)": ITEMSANITY
     }, lambda state: canSmelt(world, state))
 
     # REQUIRES SMELTING (x2)
     create_region(world, "CanSmeltItems", "CanSmeltItemsBetter", {
-        "Smoker (Itemsanity)": 5,
-        "Blast Furnace (Itemsanity)": 5
+        "Smoker (Itemsanity)": ITEMSANITY,
+        "Blast Furnace (Itemsanity)": ITEMSANITY
     }, lambda state: canSmeltBetter(world, state))
 
     # REQUIRES SHIELD
     create_region(world, "CanSmeltItems", "HasShield", {
-        "Shield (Itemsanity)": 5
+        "Shield (Itemsanity)": ITEMSANITY
     }, lambda state: canUseShield(world, state))
 
     # REQUIRES IRON TOOLS
     create_region(world, "CanSmeltItems", "HasIronTools", {
-        "Jukebox (Itemsanity)": 5,
-        "Redstone Dust (Itemsanity)": 5,
-        "Redstone Torch (Itemsanity)": 5,
-        "Redstone Repeater (Itemsanity)": 5,
-        "Piston (Itemsanity)": 5,
-        "Dropper (Itemsanity)": 5,
-        "Target (Itemsanity)": 5,
-        "Lightning Rod (Itemsanity)": 5,
-        "Note Block (Itemsanity)": 5,
-        "Diamond (Itemsanity)": 5,
-        "Emerald (Itemsanity)": 5,
-        "Raw Gold (Itemsanity)": 5,
-        "Golden Shovel (Itemsanity)": 5,
-        "Golden Pickaxe (Itemsanity)": 5,
-        "Golden Hoe (Itemsanity)": 5,
-        "Iron Shovel (Itemsanity)": 5,
-        "Iron Pickaxe (Itemsanity)": 5,
-        "Iron Hoe (Itemsanity)": 5,
-        "Compass (Itemsanity)": 5,
-        "Clock (Itemsanity)": 5,
-        "Map (Itemsanity)": 5,
+        "Jukebox (Itemsanity)": ITEMSANITY,
+        "Redstone Dust (Itemsanity)": ITEMSANITY,
+        "Redstone Torch (Itemsanity)": ITEMSANITY,
+        "Redstone Repeater (Itemsanity)": ITEMSANITY,
+        "Piston (Itemsanity)": ITEMSANITY,
+        "Dropper (Itemsanity)": ITEMSANITY,
+        "Target (Itemsanity)": ITEMSANITY,
+        "Lightning Rod (Itemsanity)": ITEMSANITY,
+        "Note Block (Itemsanity)": ITEMSANITY,
+        "Diamond (Itemsanity)": ITEMSANITY,
+        "Emerald (Itemsanity)": ITEMSANITY,
+        "Raw Gold (Itemsanity)": ITEMSANITY,
+        "Golden Shovel (Itemsanity)": ITEMSANITY,
+        "Golden Pickaxe (Itemsanity)": ITEMSANITY,
+        "Golden Hoe (Itemsanity)": ITEMSANITY,
+        "Iron Shovel (Itemsanity)": ITEMSANITY,
+        "Iron Pickaxe (Itemsanity)": ITEMSANITY,
+        "Iron Hoe (Itemsanity)": ITEMSANITY,
+        "Compass (Itemsanity)": ITEMSANITY,
+        "Clock (Itemsanity)": ITEMSANITY,
+        "Map (Itemsanity)": ITEMSANITY,
 
-        "Sticky Piston (Itemsanity)": 7
+        "Sticky Piston (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canUseIronTools(world, state))
 
     # CAN GET GOLD
     create_region(world, "Menu", "CanGetGold", {
-        "Gold Ingot (Itemsanity)": 5,
-        "Golden Apple (Itemsanity)": 5,
-        "Light Weighted Pressure Plate (Itemsanity)": 5
+        "Gold Ingot (Itemsanity)": ITEMSANITY,
+        "Golden Apple (Itemsanity)": ITEMSANITY,
+        "Light Weighted Pressure Plate (Itemsanity)": ITEMSANITY
     }, lambda state: canGetGold(world, state))
 
     # CAN GET GOLD Nugget
     create_region(world, "Menu", "CanGetGoldNugget", {
-        "Gold Nugget (Itemsanity)": 5,
-        "Glistering Melon Slice (Itemsanity)": 7,
-        "Golden Carrot (Itemsanity)": 5
+        "Gold Nugget (Itemsanity)": ITEMSANITY,
+        "Glistering Melon Slice (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Golden Carrot (Itemsanity)": ITEMSANITY
     }, lambda state: canGetGoldNugget(world, state))
 
     # REQUIRES IRON WEAPONS
     create_region(world, "CanSmeltItems", "HasIronWeapons", {
-        "Iron Axe (Itemsanity)": 5,
-        "Iron Sword (Itemsanity)": 5
+        "Iron Axe (Itemsanity)": ITEMSANITY,
+        "Iron Sword (Itemsanity)": ITEMSANITY
     }, lambda state: canUseIronWeapons(world, state))
 
     # REQUIRES IRON WEAPONS AND GOLD
     create_region(world, "HasIronWeapons", "HasIronWeaponsAndGold", {
-        "Golden Sword (Itemsanity)": 5,
-        "Golden Axe (Itemsanity)": 5
+        "Golden Sword (Itemsanity)": ITEMSANITY,
+        "Golden Axe (Itemsanity)": ITEMSANITY
     }, lambda state: canUseIronWeapons(world, state) and canGetGold(world, state))
 
     # REQUIRES IRON ARMOR
     create_region(world, "CanSmeltItems", "HasIronArmor", {
-        "Iron Helmet (Itemsanity)": 5,
-        "Iron Chestplate (Itemsanity)": 5,
-        "Iron Leggings (Itemsanity)": 5,
-        "Iron Boots (Itemsanity)": 5
+        "Iron Helmet (Itemsanity)": ITEMSANITY,
+        "Iron Chestplate (Itemsanity)": ITEMSANITY,
+        "Iron Leggings (Itemsanity)": ITEMSANITY,
+        "Iron Boots (Itemsanity)": ITEMSANITY
     }, lambda state: canWearIronArmor(world, state))
 
     # REQUIRES GOLD ARMOR
     create_region(world, "CanSmeltItems", "HasGoldArmor", {
-        "Golden Helmet (Itemsanity)": 5,
-        "Golden Chestplate (Itemsanity)": 5,
-        "Golden Leggings (Itemsanity)": 5,
-        "Golden Boots (Itemsanity)": 5
+        "Golden Helmet (Itemsanity)": ITEMSANITY,
+        "Golden Chestplate (Itemsanity)": ITEMSANITY,
+        "Golden Leggings (Itemsanity)": ITEMSANITY,
+        "Golden Boots (Itemsanity)": ITEMSANITY
     }, lambda state: canWearGoldArmor(world, state))
 
     # REQUIRES DIAMOND TOOLS
     create_region(world, "HasIronTools", "HasDiamondTools", {
-        "Obsidian (Itemsanity)": 5,
-        "Diamond Shovel (Itemsanity)": 5,
-        "Diamond Pickaxe (Itemsanity)": 5,
-        "Diamond Hoe (Itemsanity)": 5
+        "Obsidian (Itemsanity)": ITEMSANITY,
+        "Diamond Shovel (Itemsanity)": ITEMSANITY,
+        "Diamond Pickaxe (Itemsanity)": ITEMSANITY,
+        "Diamond Hoe (Itemsanity)": ITEMSANITY
     }, lambda state: canUseDiamondTools(world, state))
 
     # REQUIRES DIAMOND WEAPONS
     create_region(world, "HasIronTools", "HasDiamondWeapons", {
-        "Diamond Sword (Itemsanity)": 5,
-        "Diamond Axe (Itemsanity)": 5
+        "Diamond Sword (Itemsanity)": ITEMSANITY,
+        "Diamond Axe (Itemsanity)": ITEMSANITY
     }, lambda state: canUseDiamondWeapons(world, state))
 
     # REQUIRES DIAMOND ARMOR
     create_region(world, "HasIronTools", "HasDiamondArmor", {
-        "Diamond Helmet (Itemsanity)": 5,
-        "Diamond Chestplate (Itemsanity)": 5,
-        "Diamond Leggings (Itemsanity)": 5,
-        "Diamond Boots (Itemsanity)": 5
+        "Diamond Helmet (Itemsanity)": ITEMSANITY,
+        "Diamond Chestplate (Itemsanity)": ITEMSANITY,
+        "Diamond Leggings (Itemsanity)": ITEMSANITY,
+        "Diamond Boots (Itemsanity)": ITEMSANITY
     }, lambda state: canWearDiamondArmor(world, state))
 
     # REQUIRES ARMOR TRIMS
     create_region(world, "CanSmeltItems", "CanSmithItems", {
-        "Smithing Table (Itemsanity)": 5
+        "Smithing Table (Itemsanity)": ITEMSANITY
     }, lambda state: canGetAndUseArmorTrims(world, state))
 
     # REQUIRES NETHERITE TOOLS
     create_region(world, "CanSmithItems", "HasNetheriteTools", {
-        "Netherite Shovel (Itemsanity)": 12,
-        "Netherite Pickaxe (Itemsanity)": 12,
-        "Netherite Hoe (Itemsanity)": 12
+        "Netherite Shovel (Itemsanity)": NETHERITE,
+        "Netherite Pickaxe (Itemsanity)": NETHERITE,
+        "Netherite Hoe (Itemsanity)": NETHERITE
     }, lambda state: canUseNetheriteTools(world, state))
 
     # REQUIRES NETHERITE WEAPONS
     create_region(world, "CanSmithItems", "HasNetheriteWeapons", {
-        "Netherite Sword (Itemsanity)": 12,
-        "Netherite Axe (Itemsanity)": 12
+        "Netherite Sword (Itemsanity)": NETHERITE,
+        "Netherite Axe (Itemsanity)": NETHERITE
     }, lambda state: canUseNetheriteWeapons(world, state))
 
     # REQUIRES NETHERITE Armor
     create_region(world, "CanSmithItems", "HasNetheriteArmor", {
-        "Netherite Helmet (Itemsanity)": 12,
-        "Netherite Chestplate (Itemsanity)": 12,
-        "Netherite Leggings (Itemsanity)": 12,
-        "Netherite Boots (Itemsanity)": 12
+        "Netherite Helmet (Itemsanity)": NETHERITE,
+        "Netherite Chestplate (Itemsanity)": NETHERITE,
+        "Netherite Leggings (Itemsanity)": NETHERITE,
+        "Netherite Boots (Itemsanity)": NETHERITE
     }, lambda state: canWearNetheriteArmor(world, state))
 
     # REQUIRES BOW
     create_region(world, "Menu", "HasBow", {
-        "Bow (Itemsanity)": 5
+        "Bow (Itemsanity)": ITEMSANITY
     }, lambda state: canUseBow(world, state))
 
     # REQUIRES CROSSBOW
     create_region(world, "CanSmeltItems", "HasCrossbow", {
-        "Crossbow (Itemsanity)": 5
+        "Crossbow (Itemsanity)": ITEMSANITY
     }, lambda state: canUseCrossBow(world, state))
 
     # REQUIRES MINECART
     create_region(world, "CanSmeltItems", "HasMinecart", {
-        "Rail (Itemsanity)": 5,
-        "Minecart (Itemsanity)": 5,
-        "Minecart with TNT (Itemsanity)": 5,
-        "Minecart with Furnace (Itemsanity)": 5
+        "Rail (Itemsanity)": ITEMSANITY,
+        "Minecart (Itemsanity)": ITEMSANITY,
+        "Minecart with TNT (Itemsanity)": ITEMSANITY,
+        "Minecart with Furnace (Itemsanity)": ITEMSANITY
     }, lambda state: canUseMinecart(world, state))
 
     # REQUIRES FISHING
     create_region(world, "Menu", "HasFishing", {
-        "Carrot on a Stick (Itemsanity)": 5,
-        "Fishing Rod (Itemsanity)": 5
+        "Carrot on a Stick (Itemsanity)": ITEMSANITY,
+        "Fishing Rod (Itemsanity)": ITEMSANITY
     }, lambda state: canUseFishingRod(world, state))
 
     # REQUIRES BRUSH
     create_region(world, "CanSmeltItems", "HasBrush", {
-        "Brush (Itemsanity)": 5,
+        "Brush (Itemsanity)": ITEMSANITY,
 
-        "Music Disc Relic (Itemsanity)": 9,
-        "Archer Pottery Sherd (Itemsanity)": 14,
-        "Miner Pottery Sherd (Itemsanity)": 14,
-        "Prize Pottery Sherd (Itemsanity)": 14,
-        "Skull Pottery Sherd (Itemsanity)": 14,
+        "Music Disc Relic (Itemsanity)": DISCS,
+        "Archer Pottery Sherd (Itemsanity)": SHERD,
+        "Miner Pottery Sherd (Itemsanity)": SHERD,
+        "Prize Pottery Sherd (Itemsanity)": SHERD,
+        "Skull Pottery Sherd (Itemsanity)": SHERD,
 
-        "Wayfinder Armor Trim (Itemsanity)": 13,
-        "Shaper Armor Trim (Itemsanity)": 13,
-        "Raiser Armor Trim (Itemsanity)": 13,
-        "Host Armor Trim (Itemsanity)": 13,
-        "Arms Up Pottery Sherd (Itemsanity)": 14,
-        "Brewer Pottery Sherd (Itemsanity)": 14,
-        "Burn Pottery Sherd (Itemsanity)": 14,
-        "Danger Pottery Sherd (Itemsanity)": 14,
-        "Friend Pottery Sherd (Itemsanity)": 14,
-        "Heart Pottery Sherd (Itemsanity)": 14,
-        "Heartbreak Pottery Sherd (Itemsanity)": 14,
-        "Howl Pottery Sherd (Itemsanity)": 14,
-        "Sheaf Pottery Sherd (Itemsanity)": 14
+        "Wayfinder Armor Trim (Itemsanity)": TRIM,
+        "Shaper Armor Trim (Itemsanity)": TRIM,
+        "Raiser Armor Trim (Itemsanity)": TRIM,
+        "Host Armor Trim (Itemsanity)": TRIM,
+        "Arms Up Pottery Sherd (Itemsanity)": SHERD,
+        "Brewer Pottery Sherd (Itemsanity)": SHERD,
+        "Burn Pottery Sherd (Itemsanity)": SHERD,
+        "Danger Pottery Sherd (Itemsanity)": SHERD,
+        "Friend Pottery Sherd (Itemsanity)": SHERD,
+        "Heart Pottery Sherd (Itemsanity)": SHERD,
+        "Heartbreak Pottery Sherd (Itemsanity)": SHERD,
+        "Howl Pottery Sherd (Itemsanity)": SHERD,
+        "Sheaf Pottery Sherd (Itemsanity)": SHERD
     }, lambda state: canUseBrush(world, state))
 
     # REQUIRES FLINT AND STEEL
     create_region(world, "CanSmeltItems", "HasFlintAndSteel", {
-        "Flint and Steel (Itemsanity)": 5
+        "Flint and Steel (Itemsanity)": ITEMSANITY
     }, lambda state: canUseFlintAndSteel(world, state))
 
     # REQUIRES CHESTS
     create_region(world, "Menu", "HasChests", {
-        "Chest (Itemsanity)": 5,
-        "Saddle (Itemsanity)": 5,
-        "Oak Boat with Chest (Itemsanity)": 5,
-        "Spruce Boat with Chest (Itemsanity)": 5,
-        "Birch Boat with Chest (Itemsanity)": 5,
-        "Jungle Boat with Chest (Itemsanity)": 7,
-        "Acacia Boat with Chest (Itemsanity)": 5,
-        "Cherry Boat with Chest (Itemsanity)": 7,
-        "Dark Oak Boat with Chest (Itemsanity)": 7,
-        "Mangrove Boat with Chest (Itemsanity)": 7,
-        "Bamboo Raft with Chest (Itemsanity)": 7,
-        "Iron Horse Armor (Itemsanity)": 5,
-        "Golden Horse Armor (Itemsanity)": 5,
-        "Diamond Horse Armor (Itemsanity)": 5,
-        "Name Tag (Itemsanity)": 5,
-        "Barrel (Itemsanity)": 5,
-        "Music Disc 13 (Itemsanity)": 9,
-        "Music Disc Cat (Itemsanity)": 9,
+        "Chest (Itemsanity)": ITEMSANITY,
+        "Saddle (Itemsanity)": ITEMSANITY,
+        "Oak Boat with Chest (Itemsanity)": ITEMSANITY,
+        "Spruce Boat with Chest (Itemsanity)": ITEMSANITY,
+        "Birch Boat with Chest (Itemsanity)": ITEMSANITY,
+        "Jungle Boat with Chest (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Acacia Boat with Chest (Itemsanity)": ITEMSANITY,
+        "Cherry Boat with Chest (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Boat with Chest (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Boat with Chest (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Raft with Chest (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Iron Horse Armor (Itemsanity)": ITEMSANITY,
+        "Golden Horse Armor (Itemsanity)": ITEMSANITY,
+        "Diamond Horse Armor (Itemsanity)": ITEMSANITY,
+        "Name Tag (Itemsanity)": ITEMSANITY,
+        "Barrel (Itemsanity)": ITEMSANITY,
+        "Music Disc 13 (Itemsanity)": DISCS,
+        "Music Disc Cat (Itemsanity)": DISCS,
 
-        "Enchanted Golden Apple (Itemsanity)": 7,
-        "Thing Banner Pattern (Itemsanity)": 7,
-        "Tall Grass (Itemsanity)": 8,
-        "Large Fern (Itemsanity)": 8,
-        "Echo Shard (Itemsanity)": 7,
-        "Goat Horn (Itemsanity)": 7,
-        "Music Disc 5 (Itemsanity)": 9,
-        "Disc 5 Fragment (Itemsanity)": 9,
-        "Music Disc Otherside (Itemsanity)": 9,
-        "Sentry Armor Trim (Itemsanity)": 13,
-        "Dune Armor Trim (Itemsanity)": 13,
-        "Vex Armor Trim (Itemsanity)": 13,
+        "Enchanted Golden Apple (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Thing Banner Pattern (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Tall Grass (Itemsanity)": ITEMSANITY_UNREASONABLE,
+        "Large Fern (Itemsanity)": ITEMSANITY_UNREASONABLE,
+        "Echo Shard (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Goat Horn (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Music Disc 5 (Itemsanity)": DISCS,
+        "Disc 5 Fragment (Itemsanity)": DISCS,
+        "Music Disc Otherside (Itemsanity)": DISCS,
+        "Sentry Armor Trim (Itemsanity)": TRIM,
+        "Dune Armor Trim (Itemsanity)": TRIM,
+        "Vex Armor Trim (Itemsanity)": TRIM,
 
-        "Wild Armor Trim (Itemsanity)": 13,
-        "Ward Armor Trim (Itemsanity)": 13,
-        "Silence Armor Trim (Itemsanity)": 13,
+        "Wild Armor Trim (Itemsanity)": TRIM,
+        "Ward Armor Trim (Itemsanity)": TRIM,
+        "Silence Armor Trim (Itemsanity)": TRIM,
     }, lambda state: canAccessChests(world, state))
 
     # REQUIRES ENCHANTING
     create_region(world, "HasDiamondTools", "HasEnchanting", {
-        "Grass Block (Itemsanity)": 5,
-        "Podzol (Itemsanity)": 5,
-        "Coal Ore (Itemsanity)": 5,
-        "Iron Ore (Itemsanity)": 5,
-        "Deepslate Iron Ore (Itemsanity)": 5,
-        "Copper Ore (Itemsanity)": 5,
-        "Deepslate Copper Ore (Itemsanity)": 5,
-        "Gold Ore (Itemsanity)": 5,
-        "Deepslate Gold Ore (Itemsanity)": 5,
-        "Redstone Ore (Itemsanity)": 5,
-        "Deepslate Redstone Ore (Itemsanity)": 5,
-        "Emerald Ore (Itemsanity)": 5,
-        "Lapis Lazuli Ore (Itemsanity)": 5,
-        "Deepslate Lapis Lazuli Ore (Itemsanity)": 5,
-        "Deepslate Diamond Ore (Itemsanity)": 5,
-        "Bookshelf (Itemsanity)": 5,
-        "Ice (Itemsanity)": 5,
-        "Brown Mushroom Block (Itemsanity)": 5,
-        "Red Mushroom Block (Itemsanity)": 5,
-        "Mushroom Stem (Itemsanity)": 5,
-        "Sculk (Itemsanity)": 5,
-        "Sculk Vein (Itemsanity)": 5,
-        "Sculk Catalyst (Itemsanity)": 5,
-        "Sculk Shrieker (Itemsanity)": 5,
-        "Enchanting Table (Itemsanity)": 5,
-        "Anvil (Itemsanity)": 5,
-        "Chipped Anvil (Itemsanity)": 5,
-        "Damaged Anvil (Itemsanity)": 5,
-        "Packed Ice (Itemsanity)": 5,
-        "Blue Ice (Itemsanity)": 5,
-        "Lectern (Itemsanity)": 5,
-        "Sculk Sensor (Itemsanity)": 5,
-        "Calibrated Sculk Sensor (Itemsanity)": 5,
-        "Bee Nest (Itemsanity)": 5,
-        "Small Amethyst Bud (Itemsanity)": 5,
-        "Medium Amethyst Bud (Itemsanity)": 5,
-        "Large Amethyst Bud (Itemsanity)": 5,
-        "Amethyst Cluster (Itemsanity)": 5,
+        "Grass Block (Itemsanity)": ITEMSANITY,
+        "Podzol (Itemsanity)": ITEMSANITY,
+        "Coal Ore (Itemsanity)": ITEMSANITY,
+        "Iron Ore (Itemsanity)": ITEMSANITY,
+        "Deepslate Iron Ore (Itemsanity)": ITEMSANITY,
+        "Copper Ore (Itemsanity)": ITEMSANITY,
+        "Deepslate Copper Ore (Itemsanity)": ITEMSANITY,
+        "Gold Ore (Itemsanity)": ITEMSANITY,
+        "Deepslate Gold Ore (Itemsanity)": ITEMSANITY,
+        "Redstone Ore (Itemsanity)": ITEMSANITY,
+        "Deepslate Redstone Ore (Itemsanity)": ITEMSANITY,
+        "Emerald Ore (Itemsanity)": ITEMSANITY,
+        "Lapis Lazuli Ore (Itemsanity)": ITEMSANITY,
+        "Deepslate Lapis Lazuli Ore (Itemsanity)": ITEMSANITY,
+        "Deepslate Diamond Ore (Itemsanity)": ITEMSANITY,
+        "Bookshelf (Itemsanity)": ITEMSANITY,
+        "Ice (Itemsanity)": ITEMSANITY,
+        "Brown Mushroom Block (Itemsanity)": ITEMSANITY,
+        "Red Mushroom Block (Itemsanity)": ITEMSANITY,
+        "Mushroom Stem (Itemsanity)": ITEMSANITY,
+        "Sculk (Itemsanity)": ITEMSANITY,
+        "Sculk Vein (Itemsanity)": ITEMSANITY,
+        "Sculk Catalyst (Itemsanity)": ITEMSANITY,
+        "Sculk Shrieker (Itemsanity)": ITEMSANITY,
+        "Enchanting Table (Itemsanity)": ITEMSANITY,
+        "Anvil (Itemsanity)": ITEMSANITY,
+        "Chipped Anvil (Itemsanity)": ITEMSANITY,
+        "Damaged Anvil (Itemsanity)": ITEMSANITY,
+        "Packed Ice (Itemsanity)": ITEMSANITY,
+        "Blue Ice (Itemsanity)": ITEMSANITY,
+        "Lectern (Itemsanity)": ITEMSANITY,
+        "Sculk Sensor (Itemsanity)": ITEMSANITY,
+        "Calibrated Sculk Sensor (Itemsanity)": ITEMSANITY,
+        "Bee Nest (Itemsanity)": ITEMSANITY,
+        "Small Amethyst Bud (Itemsanity)": ITEMSANITY,
+        "Medium Amethyst Bud (Itemsanity)": ITEMSANITY,
+        "Large Amethyst Bud (Itemsanity)": ITEMSANITY,
+        "Amethyst Cluster (Itemsanity)": ITEMSANITY,
 
-        "Deepslate Coal Ore (Itemsanity)": 10,
-        "Deepslate Emerald Ore (Itemsanity)": 10,
-        "Diamond Ore (Itemsanity)": 10
+        "Deepslate Coal Ore (Itemsanity)": RARE_ORE,
+        "Deepslate Emerald Ore (Itemsanity)": RARE_ORE,
+        "Diamond Ore (Itemsanity)": RARE_ORE
     }, lambda state: canEnchant(world, state))
 
     # REQUIRES BUCKET
     create_region(world, "CanSmeltItems", "HasBucket", {
-        "Bucket (Itemsanity)": 5,
-        "Water Bucket (Itemsanity)": 5,
-        "Lava Bucket (Itemsanity)": 5,
-        "Milk Bucket (Itemsanity)": 5,
-        "Cake (Itemsanity)": 5,
+        "Bucket (Itemsanity)": ITEMSANITY,
+        "Water Bucket (Itemsanity)": ITEMSANITY,
+        "Lava Bucket (Itemsanity)": ITEMSANITY,
+        "Milk Bucket (Itemsanity)": ITEMSANITY,
+        "Cake (Itemsanity)": ITEMSANITY,
 
-        "Suspicious Sand (Itemsanity)": 6,
-        "Suspicious Gravel (Itemsanity)": 6,
+        "Suspicious Sand (Itemsanity)": ITEMSANITY_HARD,
+        "Suspicious Gravel (Itemsanity)": ITEMSANITY_HARD,
 
-        "Powder Snow Bucket (Itemsanity)": 7
+        "Powder Snow Bucket (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canUseBucket(world, state))
 
     # REQUIRES SMOOTH STONE OBTAINING
     create_region(world, "Menu", "CanGetSmoothStone", {
-        "Stone (Itemsanity)": 5,
-        "Stone Slab (Itemsanity)": 5,
-        "Stone Brick Slab (Itemsanity)": 5,
-        "Chiseled Stone Bricks (Itemsanity)": 5,
-        "Stone Bricks (Itemsanity)": 5,
-        "Stone Brick Stairs (Itemsanity)": 5,
-        "Stone Brick Wall (Itemsanity)": 5,
-        "Stone Stairs (Itemsanity)": 5,
-        "Stone Button (Itemsanity)": 5,
-        "Stone Pressure Plate (Itemsanity)": 5,
-        "Deepslate (Itemsanity)": 5
+        "Stone (Itemsanity)": ITEMSANITY,
+        "Stone Slab (Itemsanity)": ITEMSANITY,
+        "Stone Brick Slab (Itemsanity)": ITEMSANITY,
+        "Chiseled Stone Bricks (Itemsanity)": ITEMSANITY,
+        "Stone Bricks (Itemsanity)": ITEMSANITY,
+        "Stone Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Stone Brick Wall (Itemsanity)": ITEMSANITY,
+        "Stone Stairs (Itemsanity)": ITEMSANITY,
+        "Stone Button (Itemsanity)": ITEMSANITY,
+        "Stone Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Deepslate (Itemsanity)": ITEMSANITY
     }, lambda state: canUseBucket(world, state))
 
     # REQUIRES BREWING
     create_region(world, "NetherAccess", "HasBrewing", {
-        "Brewing Stand (Itemsanity)": 5
+        "Brewing Stand (Itemsanity)": ITEMSANITY
     }, lambda state: canBrew(world, state))
 
     # REQUIRES SPYGLASS
     create_region(world, "CanSmeltItems", "HasSpyglass", {
-        "Spyglass (Itemsanity)": 5
+        "Spyglass (Itemsanity)": ITEMSANITY
     }, lambda state: canUseSpyglass(world, state))
 
     # REQUIRES GLASS BOTTLES
     create_region(world, "CanSmeltItems", "HasBottles", {
-        "Honey Block (Itemsanity)": 5,
-        "Glass Bottle (Itemsanity)": 5,
-        "Honey Bottle (Itemsanity)": 5,
+        "Honey Block (Itemsanity)": ITEMSANITY,
+        "Glass Bottle (Itemsanity)": ITEMSANITY,
+        "Honey Bottle (Itemsanity)": ITEMSANITY,
 
-        "Mud Brick Wall (Itemsanity)": 5,
-        "Mud Brick Stairs (Itemsanity)": 5,
-        "Packed Mud (Itemsanity)": 5,
-        "Mud Bricks (Itemsanity)": 5,
-        "Mud (Itemsanity)": 5,
-        "Mud Brick Slab (Itemsanity)": 5,
+        "Mud Brick Wall (Itemsanity)": ITEMSANITY,
+        "Mud Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Packed Mud (Itemsanity)": ITEMSANITY,
+        "Mud Bricks (Itemsanity)": ITEMSANITY,
+        "Mud (Itemsanity)": ITEMSANITY,
+        "Mud Brick Slab (Itemsanity)": ITEMSANITY,
     }, lambda state: canUseBottles(world, state))
 
     # REQUIRES SWIMMING
     create_region(world, "Menu", "HasSwim", {
-        "Sea Pickle (Itemsanity)": 5,
-        "Kelp (Itemsanity)": 5,
-        "Ink Sac (Itemsanity)": 5,
-        "Glow Ink Sac (Itemsanity)": 5,
-        "Book and Quill (Itemsanity)": 5,
-        "Glow Item Frame (Itemsanity)": 5,
-        "Trident (Itemsanity)": 5,
-        "Nautilus Shell (Itemsanity)": 5,
+        "Sea Pickle (Itemsanity)": ITEMSANITY,
+        "Kelp (Itemsanity)": ITEMSANITY,
+        "Ink Sac (Itemsanity)": ITEMSANITY,
+        "Glow Ink Sac (Itemsanity)": ITEMSANITY,
+        "Book and Quill (Itemsanity)": ITEMSANITY,
+        "Glow Item Frame (Itemsanity)": ITEMSANITY,
+        "Trident (Itemsanity)": ITEMSANITY,
+        "Nautilus Shell (Itemsanity)": ITEMSANITY,
 
-        "Lily Pad (Itemsanity)": 7,
+        "Lily Pad (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Dark Prismarine Slab (Itemsanity)": 7,
-        "Dark Prismarine (Itemsanity)": 7,
-        "Dark Prismarine Stairs (Itemsanity)": 7,
+        "Dark Prismarine Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Prismarine (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Prismarine Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Sea Lantern (Itemsanity)": 7,
-        "Sponge (Itemsanity)": 7,
-        "Wet Sponge (Itemsanity)": 7,
-        "Tide Armor Trim (Itemsanity)": 13
+        "Sea Lantern (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Sponge (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Wet Sponge (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Tide Armor Trim (Itemsanity)": TRIM
     }, lambda state: canSwim(world, state))
 
     # REQUIRES PRISMARINE
     create_region(world, "Menu", "CanGetPrismarine", {
-        "Prismarine Shard (Itemsanity)": 7,
-        "Prismarine Crystals (Itemsanity)": 7,
-        "Prismarine Slab (Itemsanity)": 7,
-        "Prismarine Brick Slab (Itemsanity)": 7,
-        "Prismarine Wall (Itemsanity)": 7,
-        "Prismarine (Itemsanity)": 7,
-        "Prismarine Bricks (Itemsanity)": 7,
-        "Prismarine Stairs (Itemsanity)": 7,
-        "Prismarine Brick Stairs (Itemsanity)": 7
+        "Prismarine Shard (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine Crystals (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine Brick Slab (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine Wall (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine Bricks (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine Stairs (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Prismarine Brick Stairs (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda  state: canGetPrismarine(world, state))
 
     # REQUIRES WITHER SUMMONING
     create_region(world, "NetherAccess", "CanSummonWither", {
-        "Wither Rose (Itemsanity)": 5,
-        "Nether Star (Itemsanity)": 5
+        "Wither Rose (Itemsanity)": ITEMSANITY,
+        "Nether Star (Itemsanity)": ITEMSANITY
     }, lambda state: canGoalWither(world, state))
 
     # REQUIRES BEACON
     create_region(world, "CanSummonWither", "CanUseBeacon", {
-        "Beacon (Itemsanity)": 5
+        "Beacon (Itemsanity)": ITEMSANITY
     }, lambda state: canPlaceBeacon(world, state))
 
     # REQUIRES CRYING OBSIDIAN
     create_region(world, "NetherAccess", "CanGetCryingObsidian", {
-        "Crying Obsidian (Itemsanity)": 5,
-        "Respawn Anchor (Itemsanity)": 5
+        "Crying Obsidian (Itemsanity)": ITEMSANITY,
+        "Respawn Anchor (Itemsanity)": ITEMSANITY
     }, lambda state: canGetCryingObsidian(world, state))
 
     # REQUIRES SHEARS
     create_region(world, "CanSmeltItems", "HasShears", {
-        "Grass (Itemsanity)": 5,
-        "Fern (Itemsanity)": 5,
-        "Dead Bush (Itemsanity)": 5,
-        "Small Dripleaf (Itemsanity)": 5,
-        "Mossy Cobblestone (Itemsanity)": 5,
-        "Mossy Stone Bricks (Itemsanity)": 5,
-        "Vines (Itemsanity)": 5,
-        "Glow Lichen (Itemsanity)": 5,
-        "Mossy Cobblestone Wall (Itemsanity)": 5,
-        "Mossy Stone Brick Wall (Itemsanity)": 5,
-        "Mossy Stone Brick Stairs (Itemsanity)": 5,
-        "Mossy Cobblestone Stairs (Itemsanity)": 5,
-        "Mossy Stone Brick Slab (Itemsanity)": 5,
-        "Mossy Cobblestone Slab (Itemsanity)": 5,
-        "Shears (Itemsanity)": 5,
-        "Honeycomb (Itemsanity)": 5,
-        "Beehive (Itemsanity)": 5,
-        "Honeycomb Block (Itemsanity)": 5,
-        "Hanging Roots (Itemsanity)": 5,
-        "Candle (Itemsanity)": 5
+        "Grass (Itemsanity)": ITEMSANITY,
+        "Fern (Itemsanity)": ITEMSANITY,
+        "Dead Bush (Itemsanity)": ITEMSANITY,
+        "Small Dripleaf (Itemsanity)": ITEMSANITY,
+        "Mossy Cobblestone (Itemsanity)": ITEMSANITY,
+        "Mossy Stone Bricks (Itemsanity)": ITEMSANITY,
+        "Vines (Itemsanity)": ITEMSANITY,
+        "Glow Lichen (Itemsanity)": ITEMSANITY,
+        "Mossy Cobblestone Wall (Itemsanity)": ITEMSANITY,
+        "Mossy Stone Brick Wall (Itemsanity)": ITEMSANITY,
+        "Mossy Stone Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Mossy Cobblestone Stairs (Itemsanity)": ITEMSANITY,
+        "Mossy Stone Brick Slab (Itemsanity)": ITEMSANITY,
+        "Mossy Cobblestone Slab (Itemsanity)": ITEMSANITY,
+        "Shears (Itemsanity)": ITEMSANITY,
+        "Honeycomb (Itemsanity)": ITEMSANITY,
+        "Beehive (Itemsanity)": ITEMSANITY,
+        "Honeycomb Block (Itemsanity)": ITEMSANITY,
+        "Hanging Roots (Itemsanity)": ITEMSANITY,
+        "Candle (Itemsanity)": ITEMSANITY
     }, lambda state: canUseShears(world, state))
 
     # REQUIRES MISC CRAFTING
     create_region(world, "CanSmeltItems", "CanCraftMiscStations", {
-        "Loom (Itemsanity)": 5,
-        "Cartography Table (Itemsanity)": 5,
-        "Fletching Table (Itemsanity)": 5,
-        "Grindstone (Itemsanity)": 5,
-        "Stonecutter (Itemsanity)": 5
+        "Loom (Itemsanity)": ITEMSANITY,
+        "Cartography Table (Itemsanity)": ITEMSANITY,
+        "Fletching Table (Itemsanity)": ITEMSANITY,
+        "Grindstone (Itemsanity)": ITEMSANITY,
+        "Stonecutter (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessMiscJobsites(world, state))
 
     # REQUIRES TRADING
     create_region(world, "Menu", "HasTrading", {
-        "Chainmail Helmet (Itemsanity)": 6,
-        "Chainmail Chestplate (Itemsanity)": 6,
-        "Chainmail Leggings (Itemsanity)": 6,
-        "Chainmail Boots (Itemsanity)": 6,
-        "Globe Banner Pattern (Itemsanity)": 6,
+        "Chainmail Helmet (Itemsanity)": ITEMSANITY_HARD,
+        "Chainmail Chestplate (Itemsanity)": ITEMSANITY_HARD,
+        "Chainmail Leggings (Itemsanity)": ITEMSANITY_HARD,
+        "Chainmail Boots (Itemsanity)": ITEMSANITY_HARD,
+        "Globe Banner Pattern (Itemsanity)": ITEMSANITY_HARD,
 
-        "Bottle o' Enchanting (Itemsanity)": 7
+        "Bottle o' Enchanting (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canTrade(world, state))
 
     # REQUIRES RAIDS
     create_region(world, "Menu", "CanFightRaids", {
-        "Totem of Undying (Itemsanity)": 7
+        "Totem of Undying (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canFightRaid(world, state))
 
 
@@ -953,685 +955,685 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
 
     # REQUIRES SWIMMING AND ENCHANTING
     create_region(world, "HasEnchanting", "HasSwimAndEnchanting", {
-        "Tube Coral Block (Itemsanity)": 7,
-        "Brain Coral Block (Itemsanity)": 7,
-        "Bubble Coral Block (Itemsanity)": 7,
-        "Fire Coral Block (Itemsanity)": 7,
-        "Horn Coral Block (Itemsanity)": 7,
-        "Tube Coral (Itemsanity)": 7,
-        "Brain Coral (Itemsanity)": 7,
-        "Bubble Coral (Itemsanity)": 7,
-        "Fire Coral (Itemsanity)": 7,
-        "Horn Coral (Itemsanity)": 7,
-        "Dead Brain Coral (Itemsanity)": 7,
-        "Dead Bubble Coral (Itemsanity)": 7,
-        "Dead Fire Coral (Itemsanity)": 7,
-        "Dead Horn Coral (Itemsanity)": 7,
-        "Dead Tube Coral (Itemsanity)": 7,
-        "Tube Coral Fan (Itemsanity)": 7,
-        "Brain Coral Fan (Itemsanity)": 7,
-        "Bubble Coral Fan (Itemsanity)": 7,
-        "Fire Coral Fan (Itemsanity)": 7,
-        "Horn Coral Fan (Itemsanity)": 7,
-        "Dead Tube Coral Fan (Itemsanity)": 7,
-        "Dead Brain Coral Fan (Itemsanity)": 7,
-        "Dead Bubble Coral Fan (Itemsanity)": 7,
-        "Dead Fire Coral Fan (Itemsanity)": 7,
-        "Dead Horn Coral Fan (Itemsanity)": 7,
+        "Tube Coral Block (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Brain Coral Block (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bubble Coral Block (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Fire Coral Block (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Horn Coral Block (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Tube Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Brain Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bubble Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Fire Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Horn Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Brain Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Bubble Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Fire Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Horn Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Tube Coral (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Tube Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Brain Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bubble Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Fire Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Horn Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Tube Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Brain Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Bubble Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Fire Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dead Horn Coral Fan (Itemsanity)": ITEMSANITY_EXPLORATION,
 
-        "Zombie Head (Itemsanity)": 11,
-        "Skeleton Skull (Itemsanity)": 11,
-        "Creeper Head (Itemsanity)": 11,
-        "Piglin Head (Itemsanity)": 11,
-        "Creeper Charge Banner Pattern (Itemsanity)": 11,
+        "Zombie Head (Itemsanity)": MOB_HEADS,
+        "Skeleton Skull (Itemsanity)": MOB_HEADS,
+        "Creeper Head (Itemsanity)": MOB_HEADS,
+        "Piglin Head (Itemsanity)": MOB_HEADS,
+        "Creeper Charge Banner Pattern (Itemsanity)": MOB_HEADS,
 
-        "Mycelium (Itemsanity)": 7
+        "Mycelium (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canSwim(world, state) and canEnchant(world, state))
 
     # REQUIRES SWIMMING AND BRUSH
     create_region(world, "HasBrush", "HasSwimAndBrush", {
-        "Sniffer Egg (Itemsanity)": 5,
-        "Torchflower Seeds (Itemsanity)": 6,
-        "Pitcher Pod (Itemsanity)": 6,
-        "Torchflower (Itemsanity)": 6,
-        "Pitcher Plant (Itemsanity)": 6,
+        "Sniffer Egg (Itemsanity)": ITEMSANITY,
+        "Torchflower Seeds (Itemsanity)": FLOWER_AND_HARD,
+        "Pitcher Pod (Itemsanity)": FLOWER_AND_HARD,
+        "Torchflower (Itemsanity)": FLOWER_AND_HARD,
+        "Pitcher Plant (Itemsanity)": FLOWER_AND_HARD,
 
-        "Angler Pottery Sherd (Itemsanity)": 14,
-        "Shelter Pottery Sherd (Itemsanity)": 14,
-        "Snort Pottery Sherd (Itemsanity)": 14,
-        "Blade Pottery Sherd (Itemsanity)": 14,
-        "Explorer Pottery Sherd (Itemsanity)": 14,
-        "Mourner Pottery Sherd (Itemsanity)": 14,
-        "Plenty Pottery Sherd (Itemsanity)": 14
+        "Angler Pottery Sherd (Itemsanity)": SHERD,
+        "Shelter Pottery Sherd (Itemsanity)": SHERD,
+        "Snort Pottery Sherd (Itemsanity)": SHERD,
+        "Blade Pottery Sherd (Itemsanity)": SHERD,
+        "Explorer Pottery Sherd (Itemsanity)": SHERD,
+        "Mourner Pottery Sherd (Itemsanity)": SHERD,
+        "Plenty Pottery Sherd (Itemsanity)": SHERD
     }, lambda state: canSwim(world, state) and canUseBrush(world, state))
 
     # REQUIRES SWIMMING AND SHEARS
     create_region(world, "HasShears", "HasSwimAndShears", {
-        "Seagrass (Itemsanity)": 5,
-        "Scute (Itemsanity)": 6,
-        "Turtle Shell (Itemsanity)": 8
+        "Seagrass (Itemsanity)": ITEMSANITY,
+        "Scute (Itemsanity)": ITEMSANITY_HARD,
+        "Turtle Shell (Itemsanity)": ITEMSANITY_UNREASONABLE
     }, lambda state: canUseShears(world, state) and canSwim(world, state))
 
     # REQUIRES SWIMMING AND CHESTS
     create_region(world, "HasSwim", "HasSwimAndChests", {
-        "Heart of the Sea (Itemsanity)": 7,
-        "Conduit (Itemsanity)": 7,
-        "Coast Armor Trim (Itemsanity)": 13
+        "Heart of the Sea (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Conduit (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Coast Armor Trim (Itemsanity)": TRIM
     }, lambda state: canAccessChests(world, state) and canSwim(world, state))
 
     # REQUIRES EYES OF ENDER AND CHESTS
     create_region(world, "HasChests", "HasChestsAndEyesOfEnder", {
-        "Eye Armor Trim (Itemsanity)": 13
+        "Eye Armor Trim (Itemsanity)": TRIM
     }, lambda state: canAccessChests(world, state) and canGetEyesOfEnder(world, state))
 
     # REQUIRES SWIMMING AND SMELTING
     create_region(world, "CanSmeltItems", "HasSwimAndSmelting", {
-        "Dried Kelp Block (Itemsanity)": 5,
-        "Dried Kelp (Itemsanity)": 5
+        "Dried Kelp Block (Itemsanity)": ITEMSANITY,
+        "Dried Kelp (Itemsanity)": ITEMSANITY
     }, lambda state: canSmelt(world, state) and canSwim(world, state))
 
     # REQUIRES SWIMMING AND STONE TOOLS
     create_region(world, "HasStoneTools", "HasSwimAndStoneTools", {
-        "Dead Tube Coral Block (Itemsanity)": 5,
-        "Dead Brain Coral Block (Itemsanity)": 5,
-        "Dead Bubble Coral Block (Itemsanity)": 5,
-        "Dead Fire Coral Block (Itemsanity)": 5,
-        "Dead Horn Coral Block (Itemsanity)": 5
+        "Dead Tube Coral Block (Itemsanity)": ITEMSANITY,
+        "Dead Brain Coral Block (Itemsanity)": ITEMSANITY,
+        "Dead Bubble Coral Block (Itemsanity)": ITEMSANITY,
+        "Dead Fire Coral Block (Itemsanity)": ITEMSANITY,
+        "Dead Horn Coral Block (Itemsanity)": ITEMSANITY
     }, lambda state: canSmelt(world, state) and canSwim(world, state))
 
     # REQUIRES SHEARS AND COMPACTING
     create_region(world, "CanSmeltItems", "HasShearsAndCompacting", {
-        "Waxed Block of Copper (Itemsanity)": 5,
-        "Waxed Exposed Copper (Itemsanity)": 5,
-        "Waxed Weathered Copper (Itemsanity)": 5,
-        "Waxed Oxidized Copper (Itemsanity)": 5,
-        "Waxed Cut Copper (Itemsanity)": 5,
-        "Waxed Exposed Cut Copper (Itemsanity)": 5,
-        "Waxed Weathered Cut Copper (Itemsanity)": 5,
-        "Waxed Oxidized Cut Copper (Itemsanity)": 5,
-        "Waxed Cut Copper Stairs (Itemsanity)": 5,
-        "Waxed Exposed Cut Copper Stairs (Itemsanity)": 5,
-        "Waxed Weathered Cut Copper Stairs (Itemsanity)": 5,
-        "Waxed Oxidized Cut Copper Stairs (Itemsanity)": 5,
-        "Waxed Cut Copper Slab (Itemsanity)": 5,
-        "Waxed Exposed Cut Copper Slab (Itemsanity)": 5,
-        "Waxed Weathered Cut Copper Slab (Itemsanity)": 5,
-        "Waxed Oxidized Cut Copper Slab (Itemsanity)": 5
+        "Waxed Block of Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Exposed Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Weathered Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Oxidized Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Cut Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Exposed Cut Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Weathered Cut Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Oxidized Cut Copper (Itemsanity)": ITEMSANITY,
+        "Waxed Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Waxed Exposed Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Waxed Weathered Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Waxed Oxidized Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Waxed Cut Copper Slab (Itemsanity)": ITEMSANITY,
+        "Waxed Exposed Cut Copper Slab (Itemsanity)": ITEMSANITY,
+        "Waxed Weathered Cut Copper Slab (Itemsanity)": ITEMSANITY,
+        "Waxed Oxidized Cut Copper Slab (Itemsanity)": ITEMSANITY
     }, lambda state: canUseShears(world, state) and canCompactResources(world, state))
 
     # REQUIRES BUCKET AND SWIM
     create_region(world, "HasBucket", "HasBucketAndSwim", {
-        "Bucket of Pufferfish (Itemsanity)": 5,
-        "Bucket of Salmon (Itemsanity)": 5,
-        "Bucket of Cod (Itemsanity)": 5,
-        "Bucket of Tropical Fish (Itemsanity)": 5,
-        "Bucket of Axolotl (Itemsanity)": 5,
+        "Bucket of Pufferfish (Itemsanity)": ITEMSANITY,
+        "Bucket of Salmon (Itemsanity)": ITEMSANITY,
+        "Bucket of Cod (Itemsanity)": ITEMSANITY,
+        "Bucket of Tropical Fish (Itemsanity)": ITEMSANITY,
+        "Bucket of Axolotl (Itemsanity)": ITEMSANITY,
 
-        "Bucket of Tadpole (Itemsanity)": 7
+        "Bucket of Tadpole (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canUseBucket(world, state) and canSwim(world, state))
 
     # REQUIRES COMPACTING AND SMELTING
     create_region(world, "CanSmeltItems", "CanSmeltAndCanCompact", {
-        "Block of Iron (Itemsanity)": 5,
-        "Block of Copper (Itemsanity)": 5,
-        "Exposed Copper (Itemsanity)": 5,
-        "Weathered Copper (Itemsanity)": 5,
-        "Oxidized Copper (Itemsanity)": 5,
-        "Cut Copper (Itemsanity)": 5,
-        "Exposed Cut Copper (Itemsanity)": 5,
-        "Weathered Cut Copper (Itemsanity)": 5,
-        "Oxidized Cut Copper (Itemsanity)": 5,
-        "Cut Copper Stairs (Itemsanity)": 5,
-        "Exposed Cut Copper Stairs (Itemsanity)": 5,
-        "Weathered Cut Copper Stairs (Itemsanity)": 5,
-        "Oxidized Cut Copper Stairs (Itemsanity)": 5,
-        "Cut Copper Slab (Itemsanity)": 5,
-        "Exposed Cut Copper Slab (Itemsanity)": 5,
-        "Weathered Cut Copper Slab (Itemsanity)": 5,
-        "Oxidized Cut Copper Slab (Itemsanity)": 5,
-        "Iron Nugget (Itemsanity)": 5,
+        "Block of Iron (Itemsanity)": ITEMSANITY,
+        "Block of Copper (Itemsanity)": ITEMSANITY,
+        "Exposed Copper (Itemsanity)": ITEMSANITY,
+        "Weathered Copper (Itemsanity)": ITEMSANITY,
+        "Oxidized Copper (Itemsanity)": ITEMSANITY,
+        "Cut Copper (Itemsanity)": ITEMSANITY,
+        "Exposed Cut Copper (Itemsanity)": ITEMSANITY,
+        "Weathered Cut Copper (Itemsanity)": ITEMSANITY,
+        "Oxidized Cut Copper (Itemsanity)": ITEMSANITY,
+        "Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Exposed Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Weathered Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Oxidized Cut Copper Stairs (Itemsanity)": ITEMSANITY,
+        "Cut Copper Slab (Itemsanity)": ITEMSANITY,
+        "Exposed Cut Copper Slab (Itemsanity)": ITEMSANITY,
+        "Weathered Cut Copper Slab (Itemsanity)": ITEMSANITY,
+        "Oxidized Cut Copper Slab (Itemsanity)": ITEMSANITY,
+        "Iron Nugget (Itemsanity)": ITEMSANITY,
     }, lambda state: canSmelt(world, state) and canCompactResources(world, state))
 
     # REQUIRES COMPACTING AND STONE TOOLS
     create_region(world, "HasStoneTools", "CanCompactAndStoneTools", {
-        "Block of Coal (Itemsanity)": 5,
-        "Block of Raw Iron (Itemsanity)": 5,
-        "Block of Raw Copper (Itemsanity)": 5,
-        "Block of Lapis Lazuli (Itemsanity)": 5
+        "Block of Coal (Itemsanity)": ITEMSANITY,
+        "Block of Raw Iron (Itemsanity)": ITEMSANITY,
+        "Block of Raw Copper (Itemsanity)": ITEMSANITY,
+        "Block of Lapis Lazuli (Itemsanity)": ITEMSANITY
     }, lambda state: canCompactResources(world, state))
 
     # REQUIRES COMPACTING AND IRON TOOLS
     create_region(world, "HasIronTools", "CanCompactAndIronTools", {
-        "Block of Raw Gold (Itemsanity)": 5,
-        "Block of Diamond (Itemsanity)": 5,
-        "Block of Emerald (Itemsanity)": 5,
-        "Block of Redstone (Itemsanity)": 5
+        "Block of Raw Gold (Itemsanity)": ITEMSANITY,
+        "Block of Diamond (Itemsanity)": ITEMSANITY,
+        "Block of Emerald (Itemsanity)": ITEMSANITY,
+        "Block of Redstone (Itemsanity)": ITEMSANITY
     }, lambda state: canCompactResources(world, state))
 
     # REQUIRES COMPACTING AND DIAMOND TOOLS
     create_region(world, "CanCompactAndIronTools", "CanCompactAndDiamondTools", {
-        "Block of Netherite (Itemsanity)": 5
+        "Block of Netherite (Itemsanity)": ITEMSANITY
     }, lambda state: canCompactResources(world, state) and canUseDiamondTools(world, state))
 
     # REQUIRES COMPACTING AND IRON TOOLS AND SMELTING
     create_region(world, "HasIronTools", "CanCompactAndIronToolsAndSmelting", {
-        "Block of Gold (Itemsanity)": 5
+        "Block of Gold (Itemsanity)": ITEMSANITY
     }, lambda state: canCompactResources(world, state) and canSmelt(world, state) and canUseIronTools(world, state))
 
     # REQUIRES NETHER AND FISHING ROD
     create_region(world, "NetherAccess", "NetherAccessAndFishing", {
-        "Warped Fungus on a Stick (Itemsanity)": 5
+        "Warped Fungus on a Stick (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessNether(world, state) and canUseFishingRod(world, state))
 
     # REQUIRES END AND SMELTING
     create_region(world, "EndAccess", "EndAccessAndSmelting", {
-        "Purpur Slab (Itemsanity)": 5,
-        "Purpur Block (Itemsanity)": 5,
-        "Purpur Pillar (Itemsanity)": 5,
-        "Purpur Stairs (Itemsanity)": 5,
-        "Popped Chorus Fruit (Itemsanity)": 5
+        "Purpur Slab (Itemsanity)": ITEMSANITY,
+        "Purpur Block (Itemsanity)": ITEMSANITY,
+        "Purpur Pillar (Itemsanity)": ITEMSANITY,
+        "Purpur Stairs (Itemsanity)": ITEMSANITY,
+        "Popped Chorus Fruit (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessEnd(world, state) and canSmelt(world, state))
 
     # REQUIRES END AND GLASS BOTTLES AND SMELTING
     create_region(world, "EndAccessAndSmelting", "EndAccessAndGlassBottles", {
-        "Dragon's Breath (Itemsanity)": 5
+        "Dragon's Breath (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessEnd(world, state) and canSmelt(world, state) and canUseBottles(world, state))
 
     # REQUIRES VANILLA END GAME
     create_region(world, "EndAccess", "VanillaEndGame", {
-        "End Rod (Itemsanity)": 5
+        "End Rod (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessVanillaEndGame(world, state))
 
     # REQUIRES NETHER + DIAMOND TOOLS OR CHESTS
     create_region(world, "NetherAccess", "NetherAccessGetDebree", {
-        "Ancient Debris (Itemsanity)": 5
+        "Ancient Debris (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessNether(world, state) and (canAccessChests(world, state) or canUseDiamondTools(world, state)))
 
     # REQUIRES NETHER + DIAMOND TOOLS OR CHESTS + Smelting
     create_region(world, "NetherAccessGetDebree", "NetherAccessGetDebreeScrap", {
-        "Netherite Scrap (Itemsanity)": 5,
-        "Netherite Ingot (Itemsanity)": 5,
-        "Lodestone (Itemsanity)": 5
+        "Netherite Scrap (Itemsanity)": ITEMSANITY,
+        "Netherite Ingot (Itemsanity)": ITEMSANITY,
+        "Lodestone (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessNether(world, state) and (canAccessChests(world, state) or canUseDiamondTools(world, state)) and canSmelt(world, state))
 
     # REQUIRES NETHER AND ENCHANTING
     create_region(world, "NetherAccess", "NetherAccessAndEnchanting", {
-        "Crimson Nylium (Itemsanity)": 5,
-        "Warped Nylium (Itemsanity)": 5,
-        "Nether Gold Ore (Itemsanity)": 5,
-        "Nether Quartz Ore (Itemsanity)": 5
+        "Crimson Nylium (Itemsanity)": ITEMSANITY,
+        "Warped Nylium (Itemsanity)": ITEMSANITY,
+        "Nether Gold Ore (Itemsanity)": ITEMSANITY,
+        "Nether Quartz Ore (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessNether(world, state) and canEnchant(world, state))
 
     # REQUIRES NETHER AND SMELTING
     create_region(world, "NetherAccess", "NetherAccessAndSmelting", {
-        "Nether Brick Slab (Itemsanity)": 5,
-        "Smooth Quartz Block (Itemsanity)": 5,
-        "Nether Bricks (Itemsanity)": 5,
-        "Cracked Nether Bricks (Itemsanity)": 5,
-        "Chiseled Nether Bricks (Itemsanity)": 5,
-        "Nether Brick Fence (Itemsanity)": 5,
-        "Nether Brick Stairs (Itemsanity)": 5,
-        "Nether Brick Wall (Itemsanity)": 5,
-        "Red Nether Brick Wall (Itemsanity)": 5,
-        "Smooth Quartz Stairs (Itemsanity)": 5,
-        "Red Nether Brick Stairs (Itemsanity)": 5,
-        "Smooth Quartz Slab (Itemsanity)": 5,
-        "Red Nether Brick Slab (Itemsanity)": 5,
-        "Daylight Detector (Itemsanity)": 5,
-        "Red Nether Bricks (Itemsanity)": 5,
-        "Nether Brick (Itemsanity)": 5,
-        "Cracked Polished Blackstone Bricks (Itemsanity)": 5
+        "Nether Brick Slab (Itemsanity)": ITEMSANITY,
+        "Smooth Quartz Block (Itemsanity)": ITEMSANITY,
+        "Nether Bricks (Itemsanity)": ITEMSANITY,
+        "Cracked Nether Bricks (Itemsanity)": ITEMSANITY,
+        "Chiseled Nether Bricks (Itemsanity)": ITEMSANITY,
+        "Nether Brick Fence (Itemsanity)": ITEMSANITY,
+        "Nether Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Nether Brick Wall (Itemsanity)": ITEMSANITY,
+        "Red Nether Brick Wall (Itemsanity)": ITEMSANITY,
+        "Smooth Quartz Stairs (Itemsanity)": ITEMSANITY,
+        "Red Nether Brick Stairs (Itemsanity)": ITEMSANITY,
+        "Smooth Quartz Slab (Itemsanity)": ITEMSANITY,
+        "Red Nether Brick Slab (Itemsanity)": ITEMSANITY,
+        "Daylight Detector (Itemsanity)": ITEMSANITY,
+        "Red Nether Bricks (Itemsanity)": ITEMSANITY,
+        "Nether Brick (Itemsanity)": ITEMSANITY,
+        "Cracked Polished Blackstone Bricks (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessNether(world, state) and canSmelt(world, state))
 
     # REQUIRES NETHER AND SMELTING AND IRON TOOLS
     create_region(world, "NetherAccessAndSmelting", "NetherAccessAndSmeltingAndIronTools", {
-        "Redstone Comparator (Itemsanity)": 5,
-        "Observer (Itemsanity)": 5,
-        "Redstone Lamp (Itemsanity)": 5
+        "Redstone Comparator (Itemsanity)": ITEMSANITY,
+        "Observer (Itemsanity)": ITEMSANITY,
+        "Redstone Lamp (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessNether(world, state) and canSmelt(world, state) and canUseIronTools(world, state))
 
     # REQUIRES SHEARS OR ENCHANTING
     create_region(world, "Menu", "ShearsOrEnchanting", {
-        "Oak Leaves (Itemsanity)": 5,
-        "Spruce Leaves (Itemsanity)": 5,
-        "Birch Leaves (Itemsanity)": 5,
-        "Jungle Leaves (Itemsanity)": 7,
-        "Acacia Leaves (Itemsanity)": 5,
-        "Cherry Leaves (Itemsanity)": 7,
-        "Dark Oak Leaves (Itemsanity)": 7,
-        "Mangrove Leaves (Itemsanity)": 7,
-        "Azalea Leaves (Itemsanity)": 5,
-        "Flowering Azalea Leaves (Itemsanity)": 5,
-        "Cobweb (Itemsanity)": 7
+        "Oak Leaves (Itemsanity)": ITEMSANITY,
+        "Spruce Leaves (Itemsanity)": ITEMSANITY,
+        "Birch Leaves (Itemsanity)": ITEMSANITY,
+        "Jungle Leaves (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Acacia Leaves (Itemsanity)": ITEMSANITY,
+        "Cherry Leaves (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Leaves (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Leaves (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Azalea Leaves (Itemsanity)": ITEMSANITY,
+        "Flowering Azalea Leaves (Itemsanity)": ITEMSANITY,
+        "Cobweb (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canUseShears(world, state) or canEnchant(world, state))
 
     # REQUIRES END AND BOW
     create_region(world, "EndAccess", "EndAccessAndBow", {
-        "Chorus Flower (Itemsanity)": 5
+        "Chorus Flower (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessEnd(world, state) and canUseBow(world, state))
 
     # REQUIRES DIAMOND TOOLS AND EYES OF ENDER
     create_region(world, "HasDiamondTools", "HasDiamondToolsAndEyesOfEnder", {
-        "Ender Chest (Itemsanity)": 5
+        "Ender Chest (Itemsanity)": ITEMSANITY
     }, lambda state: canGetObsidian(world, state) and canGetEyesOfEnder(world, state))
 
     # REQUIRES SWIM OR NETHER ACCESS
     create_region(world, "Menu", "NetherAccessOrSwim", {
-        "Magma Block (Itemsanity)": 5
+        "Magma Block (Itemsanity)": ITEMSANITY
     }, lambda state: canSwim(world, state) or canAccessNether(world, state))
 
     # REQUIRES CHESTS AND END ACCESS
     create_region(world, "EndAccess", "EndAccessAndChests", {
-        "Shulker Box (Itemsanity)": 5,
-        "Spire Armor Trim (Itemsanity)": 13
+        "Shulker Box (Itemsanity)": ITEMSANITY,
+        "Spire Armor Trim (Itemsanity)": TRIM
     }, lambda state: canAccessChests(world, state) and canAccessEnd(world, state))
 
     # REQUIRES CHESTS AND SMELTING
     create_region(world, "CanSmeltItems", "CanSmeltItemsAndUseChests", {
-        "Hopper (Itemsanity)": 5,
-        "Trapped Chest (Itemsanity)": 5
+        "Hopper (Itemsanity)": ITEMSANITY,
+        "Trapped Chest (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessChests(world, state) and canSmelt(world, state))
 
     # REQUIRES BOW AND IRON TOOLS
     create_region(world, "HasIronTools", "HasIronToolsAndBow", {
-        "Dispenser (Itemsanity)": 5
+        "Dispenser (Itemsanity)": ITEMSANITY
     }, lambda state: canUseIronTools(world, state) and canUseBow(world, state))
 
     # REQUIRES MINECART AND IRON TOOLS
     create_region(world, "HasMinecart", "HasMinecartAndIronTools", {
-        "Powered Rail (Itemsanity)": 5,
-        "Detector Rail (Itemsanity)": 5,
-        "Activator Rail (Itemsanity)": 5
+        "Powered Rail (Itemsanity)": ITEMSANITY,
+        "Detector Rail (Itemsanity)": ITEMSANITY,
+        "Activator Rail (Itemsanity)": ITEMSANITY
     }, lambda state: canUseMinecart(world, state) and canUseIronTools(world, state))
 
 
     # REQUIRES CHESTS AND IRON TOOLS
     create_region(world, "HasIronTools", "HasIronToolsAndChests", {
-        "Recovery Compass (Itemsanity)": 7
+        "Recovery Compass (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canAccessChests(world, state) and canUseIronTools(world, state))
 
     # REQUIRES MINECART AND CHESTS
     create_region(world, "HasMinecart", "HasMinecartAndChests", {
-        "Minecart with Chest (Itemsanity)": 5,
-        "Minecart with Hopper (Itemsanity)": 5
+        "Minecart with Chest (Itemsanity)": ITEMSANITY,
+        "Minecart with Hopper (Itemsanity)": ITEMSANITY
     }, lambda state: canUseMinecart(world, state) and canAccessChests(world, state))
 
     # REQUIRES FISHING OR SWIM
     create_region(world, "Menu", "HasSwimOrFishing", {
-        "Raw Cod (Itemsanity)": 5,
-        "Raw Salmon (Itemsanity)": 5,
-        "Tropical Fish (Itemsanity)": 5,
-        "Pufferfish (Itemsanity)": 5
+        "Raw Cod (Itemsanity)": ITEMSANITY,
+        "Raw Salmon (Itemsanity)": ITEMSANITY,
+        "Tropical Fish (Itemsanity)": ITEMSANITY,
+        "Pufferfish (Itemsanity)": ITEMSANITY
     }, lambda state: canSwim(world, state) or canUseFishingRod(world, state))
 
     # REQUIRES FISHING OR SWIM + SMELTING
     create_region(world, "Menu", "HasSwimOrFishingAndSmelting", {
-        "Cooked Cod (Itemsanity)": 5,
-        "Cooked Salmon (Itemsanity)": 5
+        "Cooked Cod (Itemsanity)": ITEMSANITY,
+        "Cooked Salmon (Itemsanity)": ITEMSANITY
     }, lambda state: canSmelt(world, state) and (canSwim(world, state) or canUseFishingRod(world, state)))
 
     # REQUIRES SHEARS AND NETHER
     create_region(world, "NetherAccess", "NetherAccessAndShears", {
-        "Nether Sprouts (Itemsanity)": 5
+        "Nether Sprouts (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessNether(world, state) and canUseShears(world, state))
 
     # Regular Dye
     create_region(world, "Menu", "RegularDye", {
-        "Red Wool (Itemsanity)": 15,
-        "Red Carpet (Itemsanity)": 15,
-        "Red Concrete (Itemsanity)": 15,
-        "Red Concrete Powder (Itemsanity)": 15,
-        "Red Dye (Itemsanity)": 5,
-        "Red Banner (Itemsanity)": 15,
+        "Red Wool (Itemsanity)": DYE,
+        "Red Carpet (Itemsanity)": DYE,
+        "Red Concrete (Itemsanity)": DYE,
+        "Red Concrete Powder (Itemsanity)": DYE,
+        "Red Dye (Itemsanity)": ITEMSANITY,
+        "Red Banner (Itemsanity)": DYE,
 
-        "Yellow Wool (Itemsanity)": 15,
-        "Yellow Carpet (Itemsanity)": 15,
-        "Yellow Concrete (Itemsanity)": 15,
-        "Yellow Concrete Powder (Itemsanity)": 15,
-        "Yellow Dye (Itemsanity)": 5,
-        "Yellow Banner (Itemsanity)": 15,
+        "Yellow Wool (Itemsanity)": DYE,
+        "Yellow Carpet (Itemsanity)": DYE,
+        "Yellow Concrete (Itemsanity)": DYE,
+        "Yellow Concrete Powder (Itemsanity)": DYE,
+        "Yellow Dye (Itemsanity)": ITEMSANITY,
+        "Yellow Banner (Itemsanity)": DYE,
 
-        "Blue Wool (Itemsanity)": 15,
-        "Blue Carpet (Itemsanity)": 15,
-        "Blue Concrete (Itemsanity)": 15,
-        "Blue Concrete Powder (Itemsanity)": 15,
-        "Blue Dye (Itemsanity)": 5,
-        "Blue Banner (Itemsanity)": 15,
+        "Blue Wool (Itemsanity)": DYE,
+        "Blue Carpet (Itemsanity)": DYE,
+        "Blue Concrete (Itemsanity)": DYE,
+        "Blue Concrete Powder (Itemsanity)": DYE,
+        "Blue Dye (Itemsanity)": ITEMSANITY,
+        "Blue Banner (Itemsanity)": DYE,
 
-        "White Wool (Itemsanity)": 15,
-        "White Carpet (Itemsanity)": 15,
-        "White Concrete (Itemsanity)": 15,
-        "White Concrete Powder (Itemsanity)": 15,
-        "White Dye (Itemsanity)": 5,
-        "White Banner (Itemsanity)": 15,
+        "White Wool (Itemsanity)": DYE,
+        "White Carpet (Itemsanity)": DYE,
+        "White Concrete (Itemsanity)": DYE,
+        "White Concrete Powder (Itemsanity)": DYE,
+        "White Dye (Itemsanity)": ITEMSANITY,
+        "White Banner (Itemsanity)": DYE,
 
-        "Firework Star (Itemsanity)": 5
+        "Firework Star (Itemsanity)": ITEMSANITY
     }, lambda state: canDyeBasic(world, state))
 
     # Regular Dye and Smelt
     create_region(world, "RegularDye", "RegularDyeAndSmelt", {
-        "Red Terracotta (Itemsanity)": 15,
-        "Red Stained Glass (Itemsanity)": 15,
-        "Red Stained Glass Pane (Itemsanity)": 15,
-        "Red Glazed Terracotta (Itemsanity)": 15,
+        "Red Terracotta (Itemsanity)": DYE,
+        "Red Stained Glass (Itemsanity)": DYE,
+        "Red Stained Glass Pane (Itemsanity)": DYE,
+        "Red Glazed Terracotta (Itemsanity)": DYE,
 
-        "Yellow Terracotta (Itemsanity)": 15,
-        "Yellow Stained Glass (Itemsanity)": 15,
-        "Yellow Stained Glass Pane (Itemsanity)": 15,
-        "Yellow Glazed Terracotta (Itemsanity)": 15,
+        "Yellow Terracotta (Itemsanity)": DYE,
+        "Yellow Stained Glass (Itemsanity)": DYE,
+        "Yellow Stained Glass Pane (Itemsanity)": DYE,
+        "Yellow Glazed Terracotta (Itemsanity)": DYE,
 
-        "Blue Terracotta (Itemsanity)": 15,
-        "Blue Stained Glass (Itemsanity)": 15,
-        "Blue Stained Glass Pane (Itemsanity)": 15,
-        "Blue Glazed Terracotta (Itemsanity)": 15,
+        "Blue Terracotta (Itemsanity)": DYE,
+        "Blue Stained Glass (Itemsanity)": DYE,
+        "Blue Stained Glass Pane (Itemsanity)": DYE,
+        "Blue Glazed Terracotta (Itemsanity)": DYE,
 
-        "White Terracotta (Itemsanity)": 15,
-        "White Stained Glass (Itemsanity)": 15,
-        "White Stained Glass Pane (Itemsanity)": 15,
-        "White Glazed Terracotta (Itemsanity)": 15
+        "White Terracotta (Itemsanity)": DYE,
+        "White Stained Glass (Itemsanity)": DYE,
+        "White Stained Glass Pane (Itemsanity)": DYE,
+        "White Glazed Terracotta (Itemsanity)": DYE
     }, lambda state: canDyeBasic(world, state) and canSmelt(world, state))
 
     # Regular Dye and Shears
     create_region(world, "RegularDye", "RegularDyeAndShears", {
-        "Red Candle (Itemsanity)": 15,
-        "Yellow Candle (Itemsanity)": 15,
-        "Blue Candle (Itemsanity)": 15,
-        "White Candle (Itemsanity)": 15
+        "Red Candle (Itemsanity)": DYE,
+        "Yellow Candle (Itemsanity)": DYE,
+        "Blue Candle (Itemsanity)": DYE,
+        "White Candle (Itemsanity)": DYE
     }, lambda state: canDyeBasic(world, state) and canUseShears(world, state))
 
     # Regular Dye and Sleep
     create_region(world, "RegularDye", "RegularDyeAndSleep", {
-        "Red Bed (Itemsanity)": 15,
-        "Yellow Bed (Itemsanity)": 15,
-        "Blue Bed (Itemsanity)": 15,
-        "White Bed (Itemsanity)": 15
+        "Red Bed (Itemsanity)": DYE,
+        "Yellow Bed (Itemsanity)": DYE,
+        "Blue Bed (Itemsanity)": DYE,
+        "White Bed (Itemsanity)": DYE
     }, lambda state: canDyeBasic(world, state) and canSleep(world, state))
 
     # Regular Dye and End and Chests
     create_region(world, "RegularDye", "RegularDyeAndShulker", {
-        "Red Shulker Box (Itemsanity)": 15,
-        "Yellow Shulker Box (Itemsanity)": 15,
-        "Blue Shulker Box (Itemsanity)": 15,
-        "White Shulker Box (Itemsanity)": 15
+        "Red Shulker Box (Itemsanity)": DYE,
+        "Yellow Shulker Box (Itemsanity)": DYE,
+        "Blue Shulker Box (Itemsanity)": DYE,
+        "White Shulker Box (Itemsanity)": DYE
     }, lambda state: canDyeBasic(world, state) and canAccessChests(world, state) and canAccessEnd(world, state))
 
     # Black Dye
     create_region(world, "RegularDye", "BlackDye", {
-        "Black Wool (Itemsanity)": 15,
-        "Black Carpet (Itemsanity)": 15,
-        "Black Concrete (Itemsanity)": 15,
-        "Black Concrete Powder (Itemsanity)": 15,
-        "Black Dye (Itemsanity)": 5,
-        "Black Banner (Itemsanity)": 15,
+        "Black Wool (Itemsanity)": DYE,
+        "Black Carpet (Itemsanity)": DYE,
+        "Black Concrete (Itemsanity)": DYE,
+        "Black Concrete Powder (Itemsanity)": DYE,
+        "Black Dye (Itemsanity)": ITEMSANITY,
+        "Black Banner (Itemsanity)": DYE,
 
-        "Gray Wool (Itemsanity)": 15,
-        "Gray Carpet (Itemsanity)": 15,
-        "Gray Concrete (Itemsanity)": 15,
-        "Gray Concrete Powder (Itemsanity)": 15,
-        "Gray Dye (Itemsanity)": 5,
-        "Gray Banner (Itemsanity)": 15
+        "Gray Wool (Itemsanity)": DYE,
+        "Gray Carpet (Itemsanity)": DYE,
+        "Gray Concrete (Itemsanity)": DYE,
+        "Gray Concrete Powder (Itemsanity)": DYE,
+        "Gray Dye (Itemsanity)": ITEMSANITY,
+        "Gray Banner (Itemsanity)": DYE
     }, lambda state: canDyeBlack(world, state))
 
     # Black Dye and Smelt
     create_region(world, "RegularDye", "BlackDyeAndSmelt", {
-        "Black Terracotta (Itemsanity)": 15,
-        "Black Stained Glass (Itemsanity)": 15,
-        "Black Stained Glass Pane (Itemsanity)": 15,
-        "Black Glazed Terracotta (Itemsanity)": 15,
+        "Black Terracotta (Itemsanity)": DYE,
+        "Black Stained Glass (Itemsanity)": DYE,
+        "Black Stained Glass Pane (Itemsanity)": DYE,
+        "Black Glazed Terracotta (Itemsanity)": DYE,
 
-        "Gray Terracotta (Itemsanity)": 15,
-        "Gray Stained Glass (Itemsanity)": 15,
-        "Gray Stained Glass Pane (Itemsanity)": 15,
-        "Gray Glazed Terracotta (Itemsanity)": 15
+        "Gray Terracotta (Itemsanity)": DYE,
+        "Gray Stained Glass (Itemsanity)": DYE,
+        "Gray Stained Glass Pane (Itemsanity)": DYE,
+        "Gray Glazed Terracotta (Itemsanity)": DYE
     }, lambda state: canDyeBlack(world, state) and canSmelt(world, state))
 
     # Black Dye and Shears
     create_region(world, "RegularDye", "BlackDyeAndShears", {
-        "Black Candle (Itemsanity)": 15,
-        "Gray Candle (Itemsanity)": 15
+        "Black Candle (Itemsanity)": DYE,
+        "Gray Candle (Itemsanity)": DYE
     }, lambda state: canDyeBlack(world, state) and canUseShears(world, state))
 
     # Black Dye and Sleep
     create_region(world, "RegularDye", "BlackDyeAndSleep", {
-        "Black Bed (Itemsanity)": 15,
-        "Gray Bed (Itemsanity)": 15
+        "Black Bed (Itemsanity)": DYE,
+        "Gray Bed (Itemsanity)": DYE
     }, lambda state: canDyeBlack(world, state) and canSleep(world, state))
 
     # Black Dye and End and Chests
     create_region(world, "RegularDye", "BlackDyeAndShulker", {
-        "Black Shulker Box (Itemsanity)": 15,
-        "Gray Shulker Box (Itemsanity)": 15
+        "Black Shulker Box (Itemsanity)": DYE,
+        "Gray Shulker Box (Itemsanity)": DYE
     }, lambda state: canDyeBlack(world, state) and canAccessChests(world, state) and canAccessEnd(world, state))
 
     # Green Dye and Smelt
     create_region(world, "RegularDye", "GreenDyeAndSmelt", {
-        "Green Terracotta (Itemsanity)": 16,
-        "Green Stained Glass (Itemsanity)": 16,
-        "Green Stained Glass Pane (Itemsanity)": 16,
-        "Green Glazed Terracotta (Itemsanity)": 16,
-        "Green Wool (Itemsanity)": 16,
-        "Green Carpet (Itemsanity)": 16,
-        "Green Concrete (Itemsanity)": 16,
-        "Green Concrete Powder (Itemsanity)": 16,
-        "Green Dye (Itemsanity)": 7,
-        "Green Banner (Itemsanity)": 16
+        "Green Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Stained Glass (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Stained Glass Pane (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Glazed Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Wool (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Carpet (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Concrete (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Concrete Powder (Itemsanity)": DYE_AND_EXPLORATION,
+        "Green Dye (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Green Banner (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canDyeGreen(world, state))
 
     # Green Dye and Shears
     create_region(world, "RegularDye", "GreenDyeAndShears", {
-        "Green Candle (Itemsanity)": 16
+        "Green Candle (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canUseShears(world, state) and canDyeGreen(world, state))
 
     # Green Dye and Sleep
     create_region(world, "RegularDye", "GreenDyeAndSleep", {
-        "Green Bed (Itemsanity)": 16
+        "Green Bed (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canSleep(world, state) and canDyeGreen(world, state))
 
     # Green Dye and End and Chests
     create_region(world, "RegularDye", "GreenDyeAndShulker", {
-        "Green Shulker Box (Itemsanity)": 16
+        "Green Shulker Box (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canAccessChests(world, state) and canAccessEnd(world, state) and canDyeGreen(world, state))
 
     # Full Dye
     create_region(world, "RegularDye", "FullDye", {
-        "Orange Wool (Itemsanity)": 15,
-        "Orange Carpet (Itemsanity)": 15,
-        "Orange Concrete (Itemsanity)": 15,
-        "Orange Concrete Powder (Itemsanity)": 15,
-        "Orange Dye (Itemsanity)": 5,
-        "Orange Banner (Itemsanity)": 15,
+        "Orange Wool (Itemsanity)": DYE,
+        "Orange Carpet (Itemsanity)": DYE,
+        "Orange Concrete (Itemsanity)": DYE,
+        "Orange Concrete Powder (Itemsanity)": DYE,
+        "Orange Dye (Itemsanity)": ITEMSANITY,
+        "Orange Banner (Itemsanity)": DYE,
 
-        "Light Blue Wool (Itemsanity)": 15,
-        "Light Blue Carpet (Itemsanity)": 15,
-        "Light Blue Concrete (Itemsanity)": 15,
-        "Light Blue Concrete Powder (Itemsanity)": 15,
-        "Light Blue Dye (Itemsanity)": 5,
-        "Light Blue Banner (Itemsanity)": 15,
+        "Light Blue Wool (Itemsanity)": DYE,
+        "Light Blue Carpet (Itemsanity)": DYE,
+        "Light Blue Concrete (Itemsanity)": DYE,
+        "Light Blue Concrete Powder (Itemsanity)": DYE,
+        "Light Blue Dye (Itemsanity)": ITEMSANITY,
+        "Light Blue Banner (Itemsanity)": DYE,
 
-        "Purple Wool (Itemsanity)": 15,
-        "Purple Carpet (Itemsanity)": 15,
-        "Purple Concrete (Itemsanity)": 15,
-        "Purple Concrete Powder (Itemsanity)": 15,
-        "Purple Dye (Itemsanity)": 5,
-        "Purple Banner (Itemsanity)": 15,
+        "Purple Wool (Itemsanity)": DYE,
+        "Purple Carpet (Itemsanity)": DYE,
+        "Purple Concrete (Itemsanity)": DYE,
+        "Purple Concrete Powder (Itemsanity)": DYE,
+        "Purple Dye (Itemsanity)": ITEMSANITY,
+        "Purple Banner (Itemsanity)": DYE,
 
-        "Pink Wool (Itemsanity)": 15,
-        "Pink Carpet (Itemsanity)": 15,
-        "Pink Concrete (Itemsanity)": 15,
-        "Pink Concrete Powder (Itemsanity)": 15,
-        "Pink Dye (Itemsanity)": 5,
-        "Pink Banner (Itemsanity)": 15,
+        "Pink Wool (Itemsanity)": DYE,
+        "Pink Carpet (Itemsanity)": DYE,
+        "Pink Concrete (Itemsanity)": DYE,
+        "Pink Concrete Powder (Itemsanity)": DYE,
+        "Pink Dye (Itemsanity)": ITEMSANITY,
+        "Pink Banner (Itemsanity)": DYE,
 
-        "Magenta Wool (Itemsanity)": 15,
-        "Magenta Carpet (Itemsanity)": 15,
-        "Magenta Concrete (Itemsanity)": 15,
-        "Magenta Concrete Powder (Itemsanity)": 15,
-        "Magenta Dye (Itemsanity)": 5,
-        "Magenta Banner (Itemsanity)": 15,
+        "Magenta Wool (Itemsanity)": DYE,
+        "Magenta Carpet (Itemsanity)": DYE,
+        "Magenta Concrete (Itemsanity)": DYE,
+        "Magenta Concrete Powder (Itemsanity)": DYE,
+        "Magenta Dye (Itemsanity)": ITEMSANITY,
+        "Magenta Banner (Itemsanity)": DYE,
 
-        "Light Gray Wool (Itemsanity)": 15,
-        "Light Gray Carpet (Itemsanity)": 15,
-        "Light Gray Concrete (Itemsanity)": 15,
-        "Light Gray Concrete Powder (Itemsanity)": 15,
-        "Light Gray Dye (Itemsanity)": 5,
-        "Light Gray Banner (Itemsanity)": 15,
+        "Light Gray Wool (Itemsanity)": DYE,
+        "Light Gray Carpet (Itemsanity)": DYE,
+        "Light Gray Concrete (Itemsanity)": DYE,
+        "Light Gray Concrete Powder (Itemsanity)": DYE,
+        "Light Gray Dye (Itemsanity)": ITEMSANITY,
+        "Light Gray Banner (Itemsanity)": DYE,
 
-        "Brown Wool (Itemsanity)": 16,
-        "Brown Carpet (Itemsanity)": 16,
-        "Brown Concrete (Itemsanity)": 16,
-        "Brown Concrete Powder (Itemsanity)": 16,
-        "Brown Dye (Itemsanity)": 7,
-        "Brown Banner (Itemsanity)": 16
+        "Brown Wool (Itemsanity)": DYE_AND_EXPLORATION,
+        "Brown Carpet (Itemsanity)": DYE_AND_EXPLORATION,
+        "Brown Concrete (Itemsanity)": DYE_AND_EXPLORATION,
+        "Brown Concrete Powder (Itemsanity)": DYE_AND_EXPLORATION,
+        "Brown Dye (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Brown Banner (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canDyeFull(world, state))
 
     # Full Dye and Smelt
     create_region(world, "RegularDye", "FullDyeAndSmelt", {
-        "Orange Terracotta (Itemsanity)": 15,
-        "Orange Stained Glass (Itemsanity)": 15,
-        "Orange Stained Glass Pane (Itemsanity)": 15,
-        "Orange Glazed Terracotta (Itemsanity)": 15,
+        "Orange Terracotta (Itemsanity)": DYE,
+        "Orange Stained Glass (Itemsanity)": DYE,
+        "Orange Stained Glass Pane (Itemsanity)": DYE,
+        "Orange Glazed Terracotta (Itemsanity)": DYE,
 
-        "Light Blue Terracotta (Itemsanity)": 15,
-        "Light Blue Stained Glass (Itemsanity)": 15,
-        "Light Blue Stained Glass Pane (Itemsanity)": 15,
-        "Light Blue Glazed Terracotta (Itemsanity)": 15,
+        "Light Blue Terracotta (Itemsanity)": DYE,
+        "Light Blue Stained Glass (Itemsanity)": DYE,
+        "Light Blue Stained Glass Pane (Itemsanity)": DYE,
+        "Light Blue Glazed Terracotta (Itemsanity)": DYE,
 
-        "Purple Terracotta (Itemsanity)": 15,
-        "Purple Stained Glass (Itemsanity)": 15,
-        "Purple Stained Glass Pane (Itemsanity)": 15,
-        "Purple Glazed Terracotta (Itemsanity)": 15,
+        "Purple Terracotta (Itemsanity)": DYE,
+        "Purple Stained Glass (Itemsanity)": DYE,
+        "Purple Stained Glass Pane (Itemsanity)": DYE,
+        "Purple Glazed Terracotta (Itemsanity)": DYE,
 
-        "Light Gray Terracotta (Itemsanity)": 15,
-        "Light Gray Stained Glass (Itemsanity)": 15,
-        "Light Gray Stained Glass Pane (Itemsanity)": 15,
-        "Light Gray Glazed Terracotta (Itemsanity)": 15,
+        "Light Gray Terracotta (Itemsanity)": DYE,
+        "Light Gray Stained Glass (Itemsanity)": DYE,
+        "Light Gray Stained Glass Pane (Itemsanity)": DYE,
+        "Light Gray Glazed Terracotta (Itemsanity)": DYE,
 
-        "Brown Terracotta (Itemsanity)": 16,
-        "Brown Stained Glass (Itemsanity)": 16,
-        "Brown Stained Glass Pane (Itemsanity)": 16,
-        "Brown Glazed Terracotta (Itemsanity)": 16,
+        "Brown Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
+        "Brown Stained Glass (Itemsanity)": DYE_AND_EXPLORATION,
+        "Brown Stained Glass Pane (Itemsanity)": DYE_AND_EXPLORATION,
+        "Brown Glazed Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
 
-        "Pink Terracotta (Itemsanity)": 15,
-        "Pink Stained Glass (Itemsanity)": 15,
-        "Pink Stained Glass Pane (Itemsanity)": 15,
-        "Pink Glazed Terracotta (Itemsanity)": 15,
+        "Pink Terracotta (Itemsanity)": DYE,
+        "Pink Stained Glass (Itemsanity)": DYE,
+        "Pink Stained Glass Pane (Itemsanity)": DYE,
+        "Pink Glazed Terracotta (Itemsanity)": DYE,
 
-        "Magenta Terracotta (Itemsanity)": 15,
-        "Magenta Stained Glass (Itemsanity)": 15,
-        "Magenta Stained Glass Pane (Itemsanity)": 15,
-        "Magenta Glazed Terracotta (Itemsanity)": 15
+        "Magenta Terracotta (Itemsanity)": DYE,
+        "Magenta Stained Glass (Itemsanity)": DYE,
+        "Magenta Stained Glass Pane (Itemsanity)": DYE,
+        "Magenta Glazed Terracotta (Itemsanity)": DYE
     }, lambda state: canDyeFull(world, state) and canSmelt(world, state))
 
     # Full Dye and Shears
     create_region(world, "RegularDye", "FullDyeAndShears", {
-        "Orange Candle (Itemsanity)": 15,
-        "Light Blue Candle (Itemsanity)": 15,
-        "Purple Candle (Itemsanity)": 15,
-        "Light Gray Candle (Itemsanity)": 15,
-        "Brown Candle (Itemsanity)": 16,
-        "Pink Candle (Itemsanity)": 15,
-        "Magenta Candle (Itemsanity)": 15
+        "Orange Candle (Itemsanity)": DYE,
+        "Light Blue Candle (Itemsanity)": DYE,
+        "Purple Candle (Itemsanity)": DYE,
+        "Light Gray Candle (Itemsanity)": DYE,
+        "Brown Candle (Itemsanity)": DYE_AND_EXPLORATION,
+        "Pink Candle (Itemsanity)": DYE,
+        "Magenta Candle (Itemsanity)": DYE
     }, lambda state: canDyeFull(world, state) and canUseShears(world, state))
 
     # Full Dye and Sleep
     create_region(world, "RegularDye", "FullDyeAndSleep", {
-        "Orange Bed (Itemsanity)": 15,
-        "Light Blue Bed (Itemsanity)": 15,
-        "Purple Bed (Itemsanity)": 15,
-        "Light Gray Bed (Itemsanity)": 15,
-        "Brown Bed (Itemsanity)": 16,
-        "Pink Bed (Itemsanity)": 15,
-        "Magenta Bed (Itemsanity)": 15
+        "Orange Bed (Itemsanity)": DYE,
+        "Light Blue Bed (Itemsanity)": DYE,
+        "Purple Bed (Itemsanity)": DYE,
+        "Light Gray Bed (Itemsanity)": DYE,
+        "Brown Bed (Itemsanity)": DYE_AND_EXPLORATION,
+        "Pink Bed (Itemsanity)": DYE,
+        "Magenta Bed (Itemsanity)": DYE
     }, lambda state: canDyeFull(world, state) and canSleep(world, state))
 
     # Full Dye and End and Chests
     create_region(world, "RegularDye", "FullDyeAndShulker", {
-        "Orange Shulker Box (Itemsanity)": 15,
-        "Light Blue Shulker Box (Itemsanity)": 15,
-        "Purple Shulker Box (Itemsanity)": 15,
-        "Light Gray Shulker Box (Itemsanity)": 15,
-        "Brown Shulker Box (Itemsanity)": 16,
-        "Pink Shulker Box (Itemsanity)": 15,
-        "Magenta Shulker Box (Itemsanity)": 15
+        "Orange Shulker Box (Itemsanity)": DYE,
+        "Light Blue Shulker Box (Itemsanity)": DYE,
+        "Purple Shulker Box (Itemsanity)": DYE,
+        "Light Gray Shulker Box (Itemsanity)": DYE,
+        "Brown Shulker Box (Itemsanity)": DYE_AND_EXPLORATION,
+        "Pink Shulker Box (Itemsanity)": DYE,
+        "Magenta Shulker Box (Itemsanity)": DYE
     }, lambda state: canDyeFull(world, state) and canAccessChests(world, state) and canAccessEnd(world, state))
 
     # Lime and Cyan Dye and Smelt
     create_region(world, "RegularDye", "LimeAndCyanDyeAndSmelt", {
-        "Lime Terracotta (Itemsanity)": 16,
-        "Lime Stained Glass (Itemsanity)": 16,
-        "Lime Stained Glass Pane (Itemsanity)": 16,
-        "Lime Glazed Terracotta (Itemsanity)": 16,
-        "Lime Wool (Itemsanity)": 16,
-        "Lime Carpet (Itemsanity)": 16,
-        "Lime Concrete (Itemsanity)": 16,
-        "Lime Concrete Powder (Itemsanity)": 16,
-        "Lime Dye (Itemsanity)": 7,
-        "Lime Banner (Itemsanity)": 16,
+        "Lime Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Stained Glass (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Stained Glass Pane (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Glazed Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Wool (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Carpet (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Concrete (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Concrete Powder (Itemsanity)": DYE_AND_EXPLORATION,
+        "Lime Dye (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Lime Banner (Itemsanity)": DYE_AND_EXPLORATION,
 
-        "Cyan Terracotta (Itemsanity)": 16,
-        "Cyan Stained Glass (Itemsanity)": 16,
-        "Cyan Stained Glass Pane (Itemsanity)": 16,
-        "Cyan Glazed Terracotta (Itemsanity)": 16,
-        "Cyan Wool (Itemsanity)": 16,
-        "Cyan Carpet (Itemsanity)": 16,
-        "Cyan Concrete (Itemsanity)": 16,
-        "Cyan Concrete Powder (Itemsanity)": 16,
-        "Cyan Dye (Itemsanity)": 7,
-        "Cyan Banner (Itemsanity)": 16
+        "Cyan Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Stained Glass (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Stained Glass Pane (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Glazed Terracotta (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Wool (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Carpet (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Concrete (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Concrete Powder (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Dye (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Cyan Banner (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canDyeFull(world, state) and canDyeGreen(world, state))
 
     # Lime and Cyan Dye and Shears
     create_region(world, "RegularDye", "LimeAndCyanDyeAndShears", {
-        "Lime Candle (Itemsanity)": 16,
-        "Cyan Candle (Itemsanity)": 16
+        "Lime Candle (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Candle (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canDyeFull(world, state) and canUseShears(world, state) and canDyeGreen(world, state))
 
     # Lime and Cyan Dye and Sleep
     create_region(world, "RegularDye", "LimeAndCyanDyeAndSleep", {
-        "Lime Bed (Itemsanity)": 16,
-        "Cyan Bed (Itemsanity)": 16
+        "Lime Bed (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Bed (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canDyeFull(world, state) and canSleep(world, state) and canDyeGreen(world, state))
 
     # Lime and Cyan Dye and End and Chests
     create_region(world, "RegularDye", "LimeAndCyanDyeAndShulker", {
-        "Lime Shulker Box (Itemsanity)": 16,
-        "Cyan Shulker Box (Itemsanity)": 16
+        "Lime Shulker Box (Itemsanity)": DYE_AND_EXPLORATION,
+        "Cyan Shulker Box (Itemsanity)": DYE_AND_EXPLORATION
     }, lambda state: canDyeFull(world, state) and canAccessChests(world, state) and canAccessEnd(world, state) and canDyeGreen(world, state))
 
     # Can Smelt and Compact
     create_region(world, "CanSmeltItems", "CanSmeltItemsAndCompact", {
-        "Lantern (Itemsanity)": 5,
-        "Chain (Itemsanity)": 5,
-        "Oak Hanging Sign (Itemsanity)": 5,
-        "Spruce Hanging Sign (Itemsanity)": 5,
-        "Birch Hanging Sign (Itemsanity)": 5,
-        "Jungle Hanging Sign (Itemsanity)": 7,
-        "Acacia Hanging Sign (Itemsanity)": 5,
-        "Cherry Hanging Sign (Itemsanity)": 7,
-        "Dark Oak Hanging Sign (Itemsanity)": 7,
-        "Mangrove Hanging Sign (Itemsanity)": 7,
-        "Bamboo Hanging Sign (Itemsanity)": 7
+        "Lantern (Itemsanity)": ITEMSANITY,
+        "Chain (Itemsanity)": ITEMSANITY,
+        "Oak Hanging Sign (Itemsanity)": ITEMSANITY,
+        "Spruce Hanging Sign (Itemsanity)": ITEMSANITY,
+        "Birch Hanging Sign (Itemsanity)": ITEMSANITY,
+        "Jungle Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Acacia Hanging Sign (Itemsanity)": ITEMSANITY,
+        "Cherry Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Dark Oak Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Mangrove Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Bamboo Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canCompactResources(world, state) and canSmelt(world, state))
 
     # Can Smelt and Compact and Has Nether
     create_region(world, "CanSmeltItemsAndCompact", "CanSmeltItemsAndCompactAndNether", {
-        "Crimson Hanging Sign (Itemsanity)": 5,
-        "Warped Hanging Sign (Itemsanity)": 5,
-        "Soul Lantern (Itemsanity)": 5
+        "Crimson Hanging Sign (Itemsanity)": ITEMSANITY,
+        "Warped Hanging Sign (Itemsanity)": ITEMSANITY,
+        "Soul Lantern (Itemsanity)": ITEMSANITY
     }, lambda state: canCompactResources(world, state) and canSmelt(world, state) and canAccessNether(world, state))
 
     # Can Shear and Enchant
     create_region(world, "HasEnchanting", "HasEnchantingAndShears", {
-        "Turtle Egg (Itemsanity)": 5
+        "Turtle Egg (Itemsanity)": ITEMSANITY
     }, lambda state: canEnchant(world, state) and canUseShears(world, state))
 
     # Can Use Chests and Access Nether
     create_region(world, "NetherAccess", "NetherAccessAndChests", {
-        "Netherite Smithing Template (Itemsanity)": 12,
-        "Snout Banner Pattern (Itemsanity)": 7,
-        "Music Disc Pigstep (Itemsanity)": 9,
-        "Snout Armor Trim (Itemsanity)": 13,
-        "Rib Armor Trim (Itemsanity)": 13
+        "Netherite Smithing Template (Itemsanity)": NETHERITE,
+        "Snout Banner Pattern (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Music Disc Pigstep (Itemsanity)": DISCS,
+        "Snout Armor Trim (Itemsanity)": TRIM,
+        "Rib Armor Trim (Itemsanity)": TRIM
     }, lambda state: canAccessChests(world, state) and canAccessNether(world, state))
 
 

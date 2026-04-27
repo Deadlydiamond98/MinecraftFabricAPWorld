@@ -3,278 +3,281 @@ from __future__ import annotations
 
 from worlds.minecraft_fabric.region.regions_helper import create_locations_and_connect
 from worlds.minecraft_fabric.logic.create_logic import *
-
+from worlds.minecraft_fabric.region.mc_regions_consts import *
 
 if TYPE_CHECKING:
    from worlds.minecraft_fabric import FabricMinecraftWorld
 
 
 def create_create_advancement_regions(world: FabricMinecraftWorld):
-    create_locations_and_connect(world, "Menu", "MenuCreateAdvancements", {
-        "Cuprum Bokum {Create}": 0,
-        "The Copper Age {Create}": 0,
-        "Tumble Draining {Create}": 0,
-        "On a Roll {Create}": 0
-    })
+    create_locations_and_connect(world, "Menu", "MenuCreateAdvancements", {})
 
     # Has Andesite Alloy
     create_region(world, "Menu", "AndesiteAlloy", {
-        "Sturdier Rocks {Create}": 0,
-        "The Andesite Age {Create}": 0,
-        "Workout Session {Create}": 0
+        "Sturdier Rocks {Create}": ADVANCEMENT,
+        "The Andesite Age {Create}": ADVANCEMENT,
+        "Workout Session {Create}": ADVANCEMENT
     }, lambda state: canCraftAndesiteAlloyCreate(world, state))
 
     # REQUIRES ROSE QUARTZ
     create_region(world, "Menu", "RoseQuartz", {
-        "Supercharged {Create}": 0
+        "Supercharged {Create}": ADVANCEMENT
     }, lambda state: canCraftRoseQuartz(world, state))
+
+    # REQUIRES SMELTING
+    create_region(world, "Menu", "Smelting", {
+        "Cuprum Bokum {Create}": ADVANCEMENT,
+        "The Copper Age {Create}": ADVANCEMENT,
+        "Tumble Draining {Create}": ADVANCEMENT,
+        "On a Roll {Create}": ADVANCEMENT
+    }, lambda state: canSmelt(world, state))
 
     # Has Diving Suit
     create_region(world, "AndesiteAlloy", "HasDivingSuit", {
-        "Pressure to Go {Create}": 0,
-        "Ready for the Depths {Create}": 0
+        "Pressure to Go {Create}": ADVANCEMENT,
+        "Ready for the Depths {Create}": ADVANCEMENT
     }, lambda state: canWearGoldArmor(world, state) and canCompactResources(world, state))
 
     # Has Spout
     create_region(world, "AndesiteAlloy", "HasSpout", {
-        "Sploosh {Create}": 0
+        "Sploosh {Create}": ADVANCEMENT
     }, lambda state: canUseSpout(world, state))
 
     # Has Steam Engine
     create_region(world, "AndesiteAlloy", "SteamEngine", {
-        "The Powerhouse {Create}": 0
+        "The Powerhouse {Create}": ADVANCEMENT
     }, lambda state: hasSteamEngine(world, state))
 
     # Has Cogs
     create_region(world, "AndesiteAlloy", "Cogs", {
-        "Shifting Gears {Create}": 0,
-        "Embrace the Grind {Create}": 0
+        "Shifting Gears {Create}": ADVANCEMENT,
+        "Embrace the Grind {Create}": ADVANCEMENT
     }, lambda state: hasCogs(world, state))
 
     # Has Water Wheel
     create_region(world, "AndesiteAlloy", "WaterWheel", {
-        "Harnessed Hydraulics {Create}": 0
+        "Harnessed Hydraulics {Create}": ADVANCEMENT
     }, lambda state: hasWaterWheel(world, state))
 
     # Has Windmill
     create_region(world, "AndesiteAlloy", "Windmill", {
-        "A mild Breeze {Create}": 0,
-        "A strong Breeze {Create}": 0
+        "A mild Breeze {Create}": ADVANCEMENT,
+        "A strong Breeze {Create}": ADVANCEMENT
     }, lambda state: hasWindmill(world, state))
 
     # Has Press
     create_region(world, "AndesiteAlloy", "Press", {
-        "Area of Connect {Create}": 0,
-        "Moving with Purpose {Create}": 0,
-        "Drive-by Exchange {Create}": 0,
-        "Rope to Nowhere {Create}": 0,
-        "Bonk! {Create}": 0,
-        "Wind Maker {Create}": 0,
-        "Processing by Particle {Create}": 0,
-        "Workshop's Most Feared {Create}": 0,
-        "Compactification {Create}": 0,
-        "Vertical Logistics {Create}": 0,
-        "Remote Activation {Create}": 0
+        "Area of Connect {Create}": ADVANCEMENT,
+        "Moving with Purpose {Create}": ADVANCEMENT,
+        "Drive-by Exchange {Create}": ADVANCEMENT,
+        "Rope to Nowhere {Create}": ADVANCEMENT,
+        "Bonk! {Create}": ADVANCEMENT,
+        "Wind Maker {Create}": ADVANCEMENT,
+        "Processing by Particle {Create}": ADVANCEMENT,
+        "Workshop's Most Feared {Create}": ADVANCEMENT,
+        "Compactification {Create}": ADVANCEMENT,
+        "Vertical Logistics {Create}": ADVANCEMENT,
+        "Remote Activation {Create}": ADVANCEMENT
     }, lambda state: hasPress(world, state))
 
     # Has Pump
     create_region(world, "Press", "HasPump", {
-        "Under Pressure {Create}": 0,
-        "Don't Cross the Streams! {Create}": 0,
-        "Flow Discovery {Create}": 0,
-        "Puddle Collector {Create}": 0,
-        "Industrial Spillage {Create}": 0,
-        "Autonomous Bee-Keeping {Create}": 0
+        "Under Pressure {Create}": ADVANCEMENT,
+        "Don't Cross the Streams! {Create}": ADVANCEMENT,
+        "Flow Discovery {Create}": ADVANCEMENT,
+        "Puddle Collector {Create}": ADVANCEMENT,
+        "Industrial Spillage {Create}": ADVANCEMENT,
+        "Autonomous Bee-Keeping {Create}": ADVANCEMENT
     }, lambda state: hasPump(world, state))
 
     # Has Mixer
     create_region(world, "AndesiteAlloy", "Mixer", {
-        "Mixing It Up {Create}": 0
+        "Mixing It Up {Create}": ADVANCEMENT
     }, lambda state: hasMixer(world, state))
 
     # Has Kelp
     create_region(world, "AndesiteAlloy", "Kelp", {
-        "Kelp Drive {Create}": 0
+        "Kelp Drive {Create}": ADVANCEMENT
     }, lambda state: canCraftAndesiteAlloy(world, state) and canCraftDriedKelp(world, state))
 
     # Has Cardboard
     create_region(world, "AndesiteAlloy", "Cardboard", {
-        "Part and Parcel {Create}": 0,
-        "Full Stealth {Create}": 0
+        "Part and Parcel {Create}": ADVANCEMENT,
+        "Full Stealth {Create}": ADVANCEMENT
     }, lambda state: canCraftCardboard(world, state))
 
     # Has Packager
     create_region(world, "Cardboard", "Packager", {
-        "Post Production {Create}": 0,
-        "Order Up! {Create}": 0,
-        "Open for business {Create}": 0,
-        "Nothing but net {Create}": 0
+        "Post Production {Create}": ADVANCEMENT,
+        "Order Up! {Create}": ADVANCEMENT,
+        "Open for business {Create}": ADVANCEMENT,
+        "Nothing but net {Create}": ADVANCEMENT
     }, lambda state: canUsePackager(world, state))
 
     # Has Brass
     create_region(world, "AndesiteAlloy", "Brass", {
-        "Real Alloys {Create}": 0,
-        "The Brass Age {Create}": 0,
-        "Shadow Sense {Create}": 0,
-        "Contraption o'Clock {Create}": 0,
-        "Big Data {Create}": 0,
-        "Artificial Intelligence {Create}": 0
+        "Real Alloys {Create}": ADVANCEMENT,
+        "The Brass Age {Create}": ADVANCEMENT,
+        "Shadow Sense {Create}": ADVANCEMENT,
+        "Contraption o'Clock {Create}": ADVANCEMENT,
+        "Big Data {Create}": ADVANCEMENT,
+        "Artificial Intelligence {Create}": ADVANCEMENT
     }, lambda state: canCraftBrass(world, state))
 
     # Has Brass And Minecarts
     create_region(world, "Brass", "BrassAndMinecarts", {
-        "Self-Driving Cart {Create}": 0
+        "Self-Driving Cart {Create}": ADVANCEMENT
     }, lambda state: canCraftBrass(world, state) and canUseMinecart(world, state))
 
     # Has Percision Mechanism
     create_region(world, "Brass", "PercisionMechanism", {
-        "Complex Curiosities {Create}": 0,
-        "Engineers hate this simple trick! {Create}": 0,
-        "Busy Hands {Create}": 0,
-        "Organize-o-Tron {Create}": 0,
-        "DJ Mechanico {Create}": 0,
-        "Pound It, Bro! {Create}": 0
+        "Complex Curiosities {Create}": ADVANCEMENT,
+        "Engineers hate this simple trick! {Create}": ADVANCEMENT,
+        "Busy Hands {Create}": ADVANCEMENT,
+        "Organize-o-Tron {Create}": ADVANCEMENT,
+        "DJ Mechanico {Create}": ADVANCEMENT,
+        "Pound It, Bro! {Create}": ADVANCEMENT
     }, lambda state: canCraftPercisionMechanism(world, state))
 
     # Has Mechanical Crafters
     create_region(world, "Brass", "MechanicalCrafter", {
-        "Automated Assembly {Create}": 0,
-        "Crushing It {Create}": 0,
-        "Wheels of Destruction {Create}": 0
+        "Automated Assembly {Create}": ADVANCEMENT,
+        "Crushing It {Create}": ADVANCEMENT,
+        "Wheels of Destruction {Create}": ADVANCEMENT
     }, lambda state: hasMechanicalCrafter(world, state))
 
     # Has Sturdy Sheet
     create_region(world, "Brass", "SturdySheet", {
-        "The Sturdiest Rocks {Create}": 0,
-        "The Locomotive Age {Create}": 0,
-        "All Aboard! {Create}": 0,
-        "Choo Choo! {Create}": 0,
-        "Dimensional Commuter {Create}": 1,
-        "Ambitious Endeavours {Create}": 1,
-        "Field Trip {Create}": 3,
-        "Conductor Instructor {Create}": 0,
-        "Traffic Control {Create}": 0,
-        "Blind Spot {Create}": 1,
-        "Road Kill {Create}": 0,
-        "Dynamic Timetables {Create}": 0,
-        "Expert Driver {Create}": 0,
-        "Terrible Service {Create}": 1
+        "The Sturdiest Rocks {Create}": ADVANCEMENT,
+        "The Locomotive Age {Create}": ADVANCEMENT,
+        "All Aboard! {Create}": ADVANCEMENT,
+        "Choo Choo! {Create}": ADVANCEMENT,
+        "Dimensional Commuter {Create}": ADVANCEMENT_HARD,
+        "Ambitious Endeavours {Create}": ADVANCEMENT_HARD,
+        "Field Trip {Create}": ADVANCEMENT_UNREASONABLE,
+        "Conductor Instructor {Create}": ADVANCEMENT,
+        "Traffic Control {Create}": ADVANCEMENT,
+        "Blind Spot {Create}": ADVANCEMENT_HARD,
+        "Road Kill {Create}": ADVANCEMENT,
+        "Dynamic Timetables {Create}": ADVANCEMENT,
+        "Expert Driver {Create}": ADVANCEMENT,
+        "Terrible Service {Create}": ADVANCEMENT_HARD
     }, lambda state: canCraftSturdySheet(world, state))
 
     # Has Train Tracks
     create_region(world, "AndesiteAlloy", "TrainTracks", {
-        "A New Gauge {Create}": 0,
-        "Track Factory {Create}": 3
+        "A New Gauge {Create}": ADVANCEMENT,
+        "Track Factory {Create}": ADVANCEMENT_UNREASONABLE
     }, lambda state: canCraftTrainTracks(world, state))
 
     # Has Percision Mechanism And Mechanical Crafter
     create_region(world, "PercisionMechanism", "PercisionMechanismAndMechanicalCrafter", {
-        "Fwoomp! {Create}": 0,
-        "Boioioing! {Create}": 0,
-        "Veggie Fireworks {Create}": 1,
-        "To Full Extent {Create}": 1,
-        "Desperate Measures {Create}": 0
+        "Fwoomp! {Create}": ADVANCEMENT,
+        "Boioioing! {Create}": ADVANCEMENT,
+        "Veggie Fireworks {Create}": ADVANCEMENT_HARD,
+        "To Full Extent {Create}": ADVANCEMENT_HARD,
+        "Desperate Measures {Create}": ADVANCEMENT
     }, lambda state: canCraftPercisionMechanism(world, state) and hasMechanicalCrafter(world, state))
 
     # Has Percision Mechanism And Blaze Burner
     create_region(world, "PercisionMechanism", "PercisionMechanismAndBlazeBurner", {
-        "Combust-o-Tron {Create}": 0
+        "Combust-o-Tron {Create}": ADVANCEMENT
     }, lambda state: canCraftPercisionMechanism(world, state) and hasBlazeBurner(world, state))
 
     # Has Cardboard and Smithing
     create_region(world, "Cardboard", "CardboardAndSmithing", {
-        "Arts and Crafts {Create}": 0
+        "Arts and Crafts {Create}": ADVANCEMENT
     }, lambda state: canCraftCardboard(world, state) and canGetAndUseArmorTrims(world, state))
 
     # Has Packager and Precision Mechanism
     create_region(world, "Packager", "PackagerAndPrecisionMechanism", {
-        "High Logistics {Create}": 0
+        "High Logistics {Create}": ADVANCEMENT
     }, lambda state: canUsePackager(world, state) and canCraftPercisionMechanism(world, state))
 
     # Has Packager and Bucket
     create_region(world, "Packager", "PackagerAndBucket", {
-        "Hungry hoppers {Create}": 2
+        "Hungry hoppers {Create}": ADVANCEMENT_EXPLORATION
     }, lambda state: canUsePackager(world, state) and canUseBucket(world, state))
 
     # Has Water Wheel And Bucket
     create_region(world, "WaterWheel", "WaterWheelAndBucket", {
-        "Magma Wheel {Create}": 0
+        "Magma Wheel {Create}": ADVANCEMENT
     }, lambda state: hasWaterWheel(world, state) and canUseBucket(world, state))
 
     # Has Kelp And Press
     create_region(world, "Kelp", "KelpAndPress", {
-        "The Parrots and the Flaps {Create}": 0
+        "The Parrots and the Flaps {Create}": ADVANCEMENT
     }, lambda state: canCraftAndesiteAlloy(world, state) and canCraftDriedKelp(world, state) and hasPress(world, state))
 
 
     # Has Steam Engine And Press
     create_region(world, "Press", "SteamEngineAndPress", {
-        "Voice of an Angel {Create}": 0,
-        "The Pipe Organ {Create}": 0
+        "Voice of an Angel {Create}": ADVANCEMENT,
+        "The Pipe Organ {Create}": ADVANCEMENT
     }, lambda state: hasSteamEngine(world, state) and hasPress(world, state))
 
     # Has Press and Nether
     create_region(world, "Press", "PressAndNether", {
-        "Sentient Fireplace {Create}": 0
+        "Sentient Fireplace {Create}": ADVANCEMENT
     }, lambda state: hasPress(world, state) and canAccessNether(world, state))
 
     # Has Kelp And Chests
     create_region(world, "Kelp", "KelpAndChests", {
-        "Airport Aesthetic {Create}": 0
+        "Airport Aesthetic {Create}": ADVANCEMENT
     }, lambda state: canCraftAndesiteAlloy(world, state) and canCraftDriedKelp(world, state) and canAccessChests(world, state))
 
     # Has Press and Minecarts
     create_region(world, "Press", "PressAndMinecart", {
-        "Strong Arms {Create}": 1
+        "Strong Arms {Create}": ADVANCEMENT_HARD
     }, lambda state: hasPress(world, state) and canUseMinecart(world, state))
 
     # Has Press and Cogs
     create_region(world, "Press", "PressAndCogs", {
-        "Springboard Champion {Create}": 0
+        "Springboard Champion {Create}": ADVANCEMENT
     }, lambda state: hasPress(world, state) and hasCogs(world, state))
 
     # Has Press and Cogs and Nether and Buckets
     create_region(world, "PressAndCogs", "PressAndCogsAndNetherAndBuckets", {
-        "Tapping the Mantle {Create}": 3
+        "Tapping the Mantle {Create}": ADVANCEMENT_UNREASONABLE
     }, lambda state: hasPress(world, state) and hasCogs(world, state) and canAccessNether(world, state) and canUseBucket(world, state)
                      and canAccessChests(world, state))
 
     # Can Max Out Boiler
     create_region(world, "Menu", "CanMaxOutBoiler", {
-        "Full Steam {Create}": 3
+        "Full Steam {Create}": ADVANCEMENT_UNREASONABLE
     }, lambda state: hasSteamEngine(world, state) and canUseBlazeCake(world, state) and canUseBucket(world, state)
                      and hasCogs(world, state) and canAccessChests(world, state))
 
     # Can Use Netherite Diving Gear
     create_region(world, "AndesiteAlloy", "NetheriteDivingGear", {
-        "Swimming with the Striders {Create}": 1
+        "Swimming with the Striders {Create}": ADVANCEMENT_HARD
     }, lambda state: canCompactResources(world, state) and canWearNetheriteArmor(world, state) and canSmelt(world, state))
 
     # Can Make Fluid Foods
     create_region(world, "Menu", "CanMakeFluidFoods", {
-        "Balanced Diet {Create}": 3
+        "Balanced Diet {Create}": ADVANCEMENT_UNREASONABLE
     }, lambda state: canUseSpout(world, state) and canUseBottles(world, state) and canUseBucket(world, state) and hasBlazeBurner(world, state))
 
     # Has Iron Tools
     create_region(world, "AndesiteAlloy", "AlloyAndIronTools", {
-        "Is it Time? {Create}": 0
+        "Is it Time? {Create}": ADVANCEMENT
     }, lambda state: canUseIronTools(world, state))
 
     # Has Press and Armor
     create_region(world, "Press", "PressAndArmor", {
-        "Kitted Out {Create}": 0,
-        "Stress for Nerds {Create}": 0,
-        "Perfectly Stressed {Create}": 0
+        "Kitted Out {Create}": ADVANCEMENT,
+        "Stress for Nerds {Create}": ADVANCEMENT,
+        "Perfectly Stressed {Create}": ADVANCEMENT
     }, lambda state: hasPress(world, state) and canWearLeatherArmor(world, state) and canUseIronTools(world, state))
 
     # Has Mechanical Press and Enchanting
     create_region(world, "AndesiteAlloy", "MechanicalPressAndEnchant", {
-        "Blacksmith Artillery {Create}": 0
+        "Blacksmith Artillery {Create}": ADVANCEMENT
     }, lambda state: canCraftAndesiteAlloyCreate(world, state) and canEnchant(world, state))
 
     # Can Make Chocolate
     create_region(world, "Mixer", "CanMakeChocolate", {
-        "A World of Imagination {Create}": 0
+        "A World of Imagination {Create}": ADVANCEMENT
     }, lambda state: hasMixer(world, state) and hasPump(world, state) and canUseBucket(world, state) and hasBlazeBurner(world, state))
 
 

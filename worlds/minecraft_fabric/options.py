@@ -124,11 +124,12 @@ class ItemsanityLocalFill(Range):
 class ExcludedFromItemsanity(OptionSet):
     """
     Determines certain Items that shouldn't appear in Itemsanity
-    Primarily used to blacklist Items that are Tedious or VERY RNG heavy
+    Useful for blacklisting tedious items, or cutting down the amount of Itemsanity checks in a game
 
     Options:
         Discs - Music Discs
-        Dyed Items - Items that are Dyed (Concretes, Wools, etc.)
+        Dyed Items - Items that are Dyed (Concretes, Wools, Terracottas, etc.)
+        Flowers - Flowers (all flowers except Wither Rose)
         Rare Ores - Ores that are extremely rare (such as Deepslate Emerald)
         Mob Heads - Mob Heads that're only dropped from Charged Creeper Explosions
         Netherite Gear - Netherite Tools, Armor, and Netherite Smithing Template
@@ -138,6 +139,7 @@ class ExcludedFromItemsanity(OptionSet):
     display_name = "Excluded From Itemsanity"
     default = {
         "Discs",
+        "Flowers"
         "Rare Ores",
         "Mob Heads",
         "Netherite Gear",
@@ -151,7 +153,8 @@ class ExcludedFromItemsanity(OptionSet):
         "Mob Heads",
         "Netherite Gear",
         "Trims",
-        "Sherds"
+        "Sherds",
+        "Flowers"
     }
 
 class EmptyFillPercentage(Range):

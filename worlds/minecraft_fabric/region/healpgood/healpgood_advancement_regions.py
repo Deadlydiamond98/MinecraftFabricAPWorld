@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-
+from worlds.minecraft_fabric.region.mc_regions_consts import *
 from worlds.minecraft_fabric.region.regions_helper import create_locations_and_connect
 from worlds.minecraft_fabric.logic.vanilla_logic import *
 
@@ -11,17 +11,17 @@ if TYPE_CHECKING:
 
 def create_healpgood_advancements_regions(world: FabricMinecraftWorld):
     create_locations_and_connect(world, "Menu", "MenuHealPGoodAdvancement", {
-        "Heart Breaker {Healing Pretty Good}": 7,
-        "Heart Donor {Healing Pretty Good}": 7
+        "Heart Breaker {Healing Pretty Good}": ADVANCEMENT_HARD,
+        "Heart Donor {Healing Pretty Good}": ADVANCEMENT_HARD
     }, lambda state: canUseDiamondTools(world, state))
 
     create_region(world, "Menu", "HasNetherAccess", {
-        "Heart-Side Unlocked {Healing Pretty Good}": 7
+        "Heart-Side Unlocked {Healing Pretty Good}": ADVANCEMENT_HARD
     }, lambda state: canAccessNether(world, state))
 
     create_region(world, "HasNetherAccess", "HasNetherAndEndAccess", {
-        "Phanes Blessing {Healing Pretty Good}": 7,
-        "Maxed Out {Healing Pretty Good}": 8
+        "Phanes Blessing {Healing Pretty Good}": ADVANCEMENT_HARD,
+        "Maxed Out {Healing Pretty Good}": ADVANCEMENT_UNREASONABLE
     }, lambda state: canAccessEnd(world, state))
 
 def create_region(world: FabricMinecraftWorld, region_name: str, new_region_name: str, locations: dict[str, int], rule=None):

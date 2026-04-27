@@ -1,4 +1,4 @@
-create_advancements = [
+healpgood_advancements = [
     "Heart-Side Unlocked {Healing Pretty Good}"
     "Heart Donor {Healing Pretty Good}",
     "Phanes Blessing {Healing Pretty Good}",

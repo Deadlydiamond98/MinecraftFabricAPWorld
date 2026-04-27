@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING, Optional
 
 
 from worlds.minecraft_fabric.logic.vanilla_logic import *
-
+from worlds.minecraft_fabric.region.mc_regions_consts import *
 
 if TYPE_CHECKING:
    from worlds.minecraft_fabric import FabricMinecraftWorld
@@ -19,33 +19,34 @@ from worlds.minecraft_fabric.location.minecraft_locations import location_table
 # Determines whether a location is included
 def blacklisted_location(world: FabricMinecraftWorld, location_type: int):
     exclusions = {
-        0: False,                                                                       # Default Advancement
-        1: "Hard" in world.options.excluded_locations.value,                            # Hard Advancement
-        2: "Exploration" in world.options.excluded_locations.value,                     # Exploration Advancement
-        3: "Unreasonable" in world.options.excluded_locations.value,                    # Unreasonable Advancement
+        ADVANCEMENT: False,
+        ADVANCEMENT_HARD: "Hard" in world.options.excluded_locations.value,
+        ADVANCEMENT_EXPLORATION: "Exploration" in world.options.excluded_locations.value,
+        ADVANCEMENT_UNREASONABLE: "Unreasonable" in world.options.excluded_locations.value,
 
-        5: False,                                                                       # Default Itemsanity
-        6: "Hard" in world.options.excluded_locations.value,                            # Hard Itemsanity
-        7: "Exploration" in world.options.excluded_locations.value,                     # Exploration Itemsanity
-        8: "Unreasonable" in world.options.excluded_locations.value,                    # Unreasonable Itemsanity
+        ITEMSANITY: False,
+        ITEMSANITY_HARD: "Hard" in world.options.excluded_locations.value,
+        ITEMSANITY_EXPLORATION: "Exploration" in world.options.excluded_locations.value,
+        ITEMSANITY_UNREASONABLE: "Unreasonable" in world.options.excluded_locations.value,
 
-        9: "Discs" in world.options.excluded_from_itemsanity.value,                     # Music Disc Checks
-        10: "Rare Ores" in world.options.excluded_from_itemsanity.value,                # Rare Ore Checks
-        11: "Mob Heads" in world.options.excluded_from_itemsanity.value,                # Mob Head Checks
-        12: "Netherite Gear" in world.options.excluded_from_itemsanity.value,           # Netherite Gear Checks
-        13: "Trims" in world.options.excluded_from_itemsanity.value,                    # Armor Trim Checks
-        14: "Sherds" in world.options.excluded_from_itemsanity.value,                   # Pottery Sherd Checks
-        15: "Dyed Items" in world.options.excluded_from_itemsanity.value,               # Dyed Item Checks
-
-        16: "Dyed Items" in world.options.excluded_from_itemsanity.value                # Exploration Dyed Item Checks
-            or "Exploration" in world.options.excluded_locations.value                  #
+        DISCS: "Discs" in world.options.excluded_from_itemsanity.value,
+        RARE_ORE: "Rare Ores" in world.options.excluded_from_itemsanity.value,
+        MOB_HEADS: "Mob Heads" in world.options.excluded_from_itemsanity.value,
+        NETHERITE: "Netherite Gear" in world.options.excluded_from_itemsanity.value,
+        TRIM: "Trims" in world.options.excluded_from_itemsanity.value,
+        SHERD: "Sherds" in world.options.excluded_from_itemsanity.value,
+        DYE: "Dyed Items" in world.options.excluded_from_itemsanity.value,
+        DYE_AND_EXPLORATION: "Dyed Items" in world.options.excluded_from_itemsanity.value or "Exploration" in world.options.excluded_locations.value,
+        FLOWER: "Flowers" in world.options.excluded_from_itemsanity.value,
+        FLOWER_AND_EXPLORATION: "Flowers" in world.options.excluded_from_itemsanity.value or "Exploration" in world.options.excluded_locations.value,
+        FLOWER_AND_HARD: "Flowers" in world.options.excluded_from_itemsanity.value or "Hard" in world.options.excluded_locations.value
     }
 
     if location_type in exclusions:
         if exclusions[location_type]:
             return True
 
-    if location_type in [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] and not world.options.itemsanity:
+    if location_type >= ITEMSANITY and not world.options.itemsanity:
         return True
 
     return False
