@@ -135,6 +135,9 @@ class ExcludedFromItemsanity(OptionSet):
         Netherite Gear - Netherite Tools, Armor, and Netherite Smithing Template
         Trims - Smithing Templates that're used for Trims (Doesn't include Upgrade Templates)
         Sherds - Pottery Sherds
+        Slabs - Slabs (such as Oak Slabs, Stone Slabs, etc.)
+        Stairs - Stairs (such as Oak Stairs, Stone Stairs, etc.)
+        Walls - Walls, Fences, and Fence Gates (Oak Fence, Stone Wall, etc.)
     """
     display_name = "Excluded From Itemsanity"
     default = {
@@ -154,7 +157,10 @@ class ExcludedFromItemsanity(OptionSet):
         "Netherite Gear",
         "Trims",
         "Sherds",
-        "Flowers"
+        "Flowers",
+        "Slabs",
+        "Stairs",
+        "Walls"
     }
 
 class EmptyFillPercentage(Range):

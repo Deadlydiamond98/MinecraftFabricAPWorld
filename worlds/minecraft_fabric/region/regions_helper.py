@@ -39,7 +39,16 @@ def blacklisted_location(world: FabricMinecraftWorld, location_type: int):
         DYE_AND_EXPLORATION: "Dyed Items" in world.options.excluded_from_itemsanity.value or "Exploration" in world.options.excluded_locations.value,
         FLOWER: "Flowers" in world.options.excluded_from_itemsanity.value,
         FLOWER_AND_EXPLORATION: "Flowers" in world.options.excluded_from_itemsanity.value or "Exploration" in world.options.excluded_locations.value,
-        FLOWER_AND_HARD: "Flowers" in world.options.excluded_from_itemsanity.value or "Hard" in world.options.excluded_locations.value
+        FLOWER_AND_HARD: "Flowers" in world.options.excluded_from_itemsanity.value or "Hard" in world.options.excluded_locations.value,
+
+        SLAB: "Slabs" in world.options.excluded_from_itemsanity.value,
+        SLAB_AND_EXPLORATION: "Slabs" in world.options.excluded_from_itemsanity.value or "Exploration" in world.options.excluded_locations.value,
+
+        STAIR: "Stairs" in world.options.excluded_from_itemsanity.value,
+        STAIR_AND_EXPLORATION: "Stairs" in world.options.excluded_from_itemsanity.value or "Exploration" in world.options.excluded_locations.value,
+
+        WALL: "Walls" in world.options.excluded_from_itemsanity.value,
+        WALL_AND_EXPLORATION: "Walls" in world.options.excluded_from_itemsanity.value or "Exploration" in world.options.excluded_locations.value,
     }
 
     if location_type in exclusions:

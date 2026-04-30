@@ -38,6 +38,7 @@ vanilla_items = [
     needed_bl("Resource Compacting Recipes"),
     needed_bl("Shield Recipes"),
     needed_bl("Bundle Recipes"),
+    needed_bl("TNT Recipes"),
     # USEFUL ###########################################################################################################
     # Materials
     useful("4 Emeralds"),
@@ -66,11 +67,13 @@ vanilla_items = [
     # Ore Vein
     useful("Iron Ore Vein"),
     useful("Gold Ore Vein"),
+    useful("Copper Ore Vein"),
     useful("Diamond Ore Vein"),
     useful("Emerald Ore Vein"),
     # Large Ore Vein
     useful("Large Iron Ore Vein"),
     useful("Large Gold Ore Vein"),
+    useful("Large Copper Ore Vein"),
     useful("Large Diamond Ore Vein"),
     useful("Large Emerald Ore Vein"),
     # Misc

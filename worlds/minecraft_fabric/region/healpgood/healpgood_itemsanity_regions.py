@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from worlds.minecraft_fabric.region.mc_regions_consts import ITEMSANITY_HARD
+from worlds.minecraft_fabric.region.mc_regions_consts import ITEMSANITY_HARD, DISCS
 from worlds.minecraft_fabric.region.regions_helper import create_locations_and_connect
 from worlds.minecraft_fabric.logic.vanilla_logic import *
 
@@ -17,7 +17,7 @@ def create_healpgood_itemsanity_regions(world: FabricMinecraftWorld):
         "Heart Cookie (Itemsanity) {Healing Pretty Good}": ITEMSANITY_HARD,
         "Crystal Apple (Itemsanity) {Healing Pretty Good}": ITEMSANITY_HARD,
         "Empty Heart Container (Itemsanity) {Healing Pretty Good}": ITEMSANITY_HARD,
-        "Music Disc Heartstep (Itemsanity) {Healing Pretty Good}": ITEMSANITY_HARD,
+        "Music Disc Heartstep (Itemsanity) {Healing Pretty Good}": DISCS,
         "Heart Crystal Block (Itemsanity) {Healing Pretty Good}": ITEMSANITY_HARD,
         "Polished Heart Crystal (Itemsanity) {Healing Pretty Good}": ITEMSANITY_HARD,
         "Polished Heart Crystal Stairs (Itemsanity) {Healing Pretty Good}": ITEMSANITY_HARD,

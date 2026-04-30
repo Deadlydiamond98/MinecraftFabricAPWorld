@@ -22,7 +22,7 @@ def create_create_advancement_regions(world: FabricMinecraftWorld):
     # REQUIRES ROSE QUARTZ
     create_region(world, "Menu", "RoseQuartz", {
         "Supercharged {Create}": ADVANCEMENT
-    }, lambda state: canCraftRoseQuartz(world, state))
+    }, lambda state: canCraftRoseQuartz(world, state) and canUseSandpaper(world, state))
 
     # REQUIRES SMELTING
     create_region(world, "Menu", "Smelting", {
@@ -121,8 +121,13 @@ def create_create_advancement_regions(world: FabricMinecraftWorld):
         "Shadow Sense {Create}": ADVANCEMENT,
         "Contraption o'Clock {Create}": ADVANCEMENT,
         "Big Data {Create}": ADVANCEMENT,
-        "Artificial Intelligence {Create}": ADVANCEMENT
     }, lambda state: canCraftBrass(world, state))
+
+    # Has Brass And Sandpaper
+    create_region(world, "AndesiteAlloy", "BrassAndSandpaper", {
+        "Artificial Intelligence {Create}": ADVANCEMENT,
+        "Pound It, Bro! {Create}": ADVANCEMENT
+    }, lambda state: canCraftBrass(world, state) and canUseSandpaper(world, state))
 
     # Has Brass And Minecarts
     create_region(world, "Brass", "BrassAndMinecarts", {
@@ -135,8 +140,7 @@ def create_create_advancement_regions(world: FabricMinecraftWorld):
         "Engineers hate this simple trick! {Create}": ADVANCEMENT,
         "Busy Hands {Create}": ADVANCEMENT,
         "Organize-o-Tron {Create}": ADVANCEMENT,
-        "DJ Mechanico {Create}": ADVANCEMENT,
-        "Pound It, Bro! {Create}": ADVANCEMENT
+        "DJ Mechanico {Create}": ADVANCEMENT
     }, lambda state: canCraftPercisionMechanism(world, state))
 
     # Has Mechanical Crafters
