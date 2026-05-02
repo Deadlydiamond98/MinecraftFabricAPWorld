@@ -205,7 +205,7 @@ def canAccessEnd(world: FabricMinecraftWorld, state: CollectionState):
 # MISC VANILLA #########################################################################################################
 
 def canGetNetherite(world: FabricMinecraftWorld, state: CollectionState):
-    return hasTNT(world, state) and canUseDiamondTools(world, state) and canAccessNether(world, state) and canAccessChests(world, state)
+    return (hasTNT(world, state) or canSleep(world, state)) and canUseDiamondTools(world, state) and canAccessNether(world, state) and canAccessChests(world, state)
 
 def canPlaceBeacon(world: FabricMinecraftWorld, state: CollectionState):
     return canGoalWither(world, state) and canSmelt(world, state) and canGetObsidian(world, state) and canCompactResources(world, state)

@@ -142,7 +142,7 @@ class ExcludedFromItemsanity(OptionSet):
     display_name = "Excluded From Itemsanity"
     default = {
         "Discs",
-        "Flowers"
+        "Flowers",
         "Rare Ores",
         "Mob Heads",
         "Netherite Gear",

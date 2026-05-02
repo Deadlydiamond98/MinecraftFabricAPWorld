@@ -17,13 +17,13 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Limestone (Itemsanity) {Create}": ITEMSANITY,
         "Ochrum (Itemsanity) {Create}": ITEMSANITY,
         "Veridium (Itemsanity) {Create}": ITEMSANITY,
+        "Scoria (Itemsanity) {Create}": ITEMSANITY,
     })
 
-    # Nether Access
+    # Nether Access or Black Dye
     create_region(world, "Menu", "NetherAccess", {
-        "Scoria (Itemsanity) {Create}": ITEMSANITY,
         "Scorchia (Itemsanity) {Create}": ITEMSANITY,
-    }, lambda state: canAccessNether(world, state))
+    }, lambda state: canAccessNether(world, state) or canDyeBlack(world, state))
 
     # Can Use Sandpaper
     create_region(world, "Menu", "Sandpaper", {
@@ -32,7 +32,7 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
 
     # Can Use Red Sandpaper
     create_region(world, "Sandpaper", "RedSandpaper", {
-        "Red Sand Paper (Itemsanity) {Create}": ITEMSANITY_EXPLORATION
+        "Red Sand Paper (Itemsanity) {Create}": ITEMSANITY
     }, lambda state: canUseSandpaper(world, state) and hasCogs(world, state) and canCraftAndesiteAlloy(world, state))
 
     # Can Smelt
@@ -608,24 +608,6 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Small Dripstone Brick Wall (Itemsanity) {Create}": WALL,
         "Layered Dripstone (Itemsanity) {Create}": ITEMSANITY,
         "Dripstone Pillar (Itemsanity) {Create}": ITEMSANITY,
-        "Cut Deepslate (Itemsanity) {Create}": ITEMSANITY,
-        "Cut Deepslate Stairs (Itemsanity) {Create}": STAIR,
-        "Cut Deepslate Slab (Itemsanity) {Create}": SLAB,
-        "Cut Deepslate Wall (Itemsanity) {Create}": WALL,
-        "Polished Cut Deepslate (Itemsanity) {Create}": ITEMSANITY,
-        "Polished Cut Deepslate Stairs (Itemsanity) {Create}": STAIR,
-        "Polished Cut Deepslate Slab (Itemsanity) {Create}": SLAB,
-        "Polished Cut Deepslate Wall (Itemsanity) {Create}": WALL,
-        "Cut Deepslate Bricks (Itemsanity) {Create}": ITEMSANITY,
-        "Cut Deepslate Brick Stairs (Itemsanity) {Create}": STAIR,
-        "Cut Deepslate Brick Slab (Itemsanity) {Create}": SLAB,
-        "Cut Deepslate Brick Wall (Itemsanity) {Create}": WALL,
-        "Small Deepslate Bricks (Itemsanity) {Create}": ITEMSANITY,
-        "Small Deepslate Brick Stairs (Itemsanity) {Create}": STAIR,
-        "Small Deepslate Brick Slab (Itemsanity) {Create}": SLAB,
-        "Small Deepslate Brick Wall (Itemsanity) {Create}": WALL,
-        "Layered Deepslate (Itemsanity) {Create}": ITEMSANITY,
-        "Deepslate Pillar (Itemsanity) {Create}": ITEMSANITY,
         "Cut Tuff (Itemsanity) {Create}": ITEMSANITY,
         "Cut Tuff Stairs (Itemsanity) {Create}": STAIR,
         "Cut Tuff Slab (Itemsanity) {Create}": SLAB,
@@ -734,6 +716,24 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Small Veridium Brick Wall (Itemsanity) {Create}": WALL,
         "Layered Veridium (Itemsanity) {Create}": ITEMSANITY,
         "Veridium Pillar (Itemsanity) {Create}": ITEMSANITY,
+        "Cut Scoria (Itemsanity) {Create}": ITEMSANITY,
+        "Cut Scoria Stairs (Itemsanity) {Create}": STAIR,
+        "Cut Scoria Slab (Itemsanity) {Create}": SLAB,
+        "Cut Scoria Wall (Itemsanity) {Create}": WALL,
+        "Polished Cut Scoria (Itemsanity) {Create}": ITEMSANITY,
+        "Polished Cut Scoria Stairs (Itemsanity) {Create}": STAIR,
+        "Polished Cut Scoria Slab (Itemsanity) {Create}": SLAB,
+        "Polished Cut Scoria Wall (Itemsanity) {Create}": WALL,
+        "Cut Scoria Bricks (Itemsanity) {Create}": ITEMSANITY,
+        "Cut Scoria Brick Stairs (Itemsanity) {Create}": STAIR,
+        "Cut Scoria Brick Slab (Itemsanity) {Create}": SLAB,
+        "Cut Scoria Brick Wall (Itemsanity) {Create}": WALL,
+        "Small Scoria Bricks (Itemsanity) {Create}": ITEMSANITY,
+        "Small Scoria Brick Stairs (Itemsanity) {Create}": STAIR,
+        "Small Scoria Brick Slab (Itemsanity) {Create}": SLAB,
+        "Small Scoria Brick Wall (Itemsanity) {Create}": WALL,
+        "Layered Scoria (Itemsanity) {Create}": ITEMSANITY,
+        "Scoria Pillar (Itemsanity) {Create}": ITEMSANITY,
     }, lambda state: canCraftSPDecorativeStone(world, state))
 
     # Has Smelting
@@ -806,28 +806,28 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Weathered Iron Window (Itemsanity) {Create}": ITEMSANITY,
         "Industrial Iron Window Pane (Itemsanity) {Create}": ITEMSANITY,
         "Weathered Iron Window Pane (Itemsanity) {Create}": ITEMSANITY,
+        "Cut Deepslate (Itemsanity) {Create}": ITEMSANITY,
+        "Cut Deepslate Stairs (Itemsanity) {Create}": STAIR,
+        "Cut Deepslate Slab (Itemsanity) {Create}": SLAB,
+        "Cut Deepslate Wall (Itemsanity) {Create}": WALL,
+        "Polished Cut Deepslate (Itemsanity) {Create}": ITEMSANITY,
+        "Polished Cut Deepslate Stairs (Itemsanity) {Create}": STAIR,
+        "Polished Cut Deepslate Slab (Itemsanity) {Create}": SLAB,
+        "Polished Cut Deepslate Wall (Itemsanity) {Create}": WALL,
+        "Cut Deepslate Bricks (Itemsanity) {Create}": ITEMSANITY,
+        "Cut Deepslate Brick Stairs (Itemsanity) {Create}": STAIR,
+        "Cut Deepslate Brick Slab (Itemsanity) {Create}": SLAB,
+        "Cut Deepslate Brick Wall (Itemsanity) {Create}": WALL,
+        "Small Deepslate Bricks (Itemsanity) {Create}": ITEMSANITY,
+        "Small Deepslate Brick Stairs (Itemsanity) {Create}": STAIR,
+        "Small Deepslate Brick Slab (Itemsanity) {Create}": SLAB,
+        "Small Deepslate Brick Wall (Itemsanity) {Create}": WALL,
+        "Layered Deepslate (Itemsanity) {Create}": ITEMSANITY,
+        "Deepslate Pillar (Itemsanity) {Create}": ITEMSANITY,
     }, lambda state: canSmelt(world, state) and canCraftSPDecorativeStone(world, state))
 
-    # Has Nether Access
+    # Has Nether Access or Black Dye
     create_region(world, "NetherAccess", "NetherAccessAndCutting", {
-        "Cut Scoria (Itemsanity) {Create}": ITEMSANITY,
-        "Cut Scoria Stairs (Itemsanity) {Create}": STAIR,
-        "Cut Scoria Slab (Itemsanity) {Create}": SLAB,
-        "Cut Scoria Wall (Itemsanity) {Create}": WALL,
-        "Polished Cut Scoria (Itemsanity) {Create}": ITEMSANITY,
-        "Polished Cut Scoria Stairs (Itemsanity) {Create}": STAIR,
-        "Polished Cut Scoria Slab (Itemsanity) {Create}": SLAB,
-        "Polished Cut Scoria Wall (Itemsanity) {Create}": WALL,
-        "Cut Scoria Bricks (Itemsanity) {Create}": ITEMSANITY,
-        "Cut Scoria Brick Stairs (Itemsanity) {Create}": STAIR,
-        "Cut Scoria Brick Slab (Itemsanity) {Create}": SLAB,
-        "Cut Scoria Brick Wall (Itemsanity) {Create}": WALL,
-        "Small Scoria Bricks (Itemsanity) {Create}": ITEMSANITY,
-        "Small Scoria Brick Stairs (Itemsanity) {Create}": STAIR,
-        "Small Scoria Brick Slab (Itemsanity) {Create}": SLAB,
-        "Small Scoria Brick Wall (Itemsanity) {Create}": WALL,
-        "Layered Scoria (Itemsanity) {Create}": ITEMSANITY,
-        "Scoria Pillar (Itemsanity) {Create}": ITEMSANITY,
         "Cut Scorchia (Itemsanity) {Create}": ITEMSANITY,
         "Cut Scorchia Stairs (Itemsanity) {Create}": STAIR,
         "Cut Scorchia Slab (Itemsanity) {Create}": SLAB,
@@ -846,7 +846,7 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Small Scorchia Brick Wall (Itemsanity) {Create}": WALL,
         "Layered Scorchia (Itemsanity) {Create}": ITEMSANITY,
         "Scorchia Pillar (Itemsanity) {Create}": ITEMSANITY,
-    }, lambda state: canAccessNether(world, state) and canCraftSPDecorativeStone(world, state))
+    }, lambda state: (canAccessNether(world, state) or canDyeBlack(world, state)) and canCraftSPDecorativeStone(world, state))
 
     # Has Rose Quartz
     create_region(world, "RoseQuartz", "RoseQuartzAndCutting", {

@@ -19,7 +19,7 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
         "Voluntary Exile": ADVANCEMENT,
         "Monster Hunter": ADVANCEMENT,
         "The Parrots and the Bats": ADVANCEMENT,
-        "You've Got a Friend in Me": ADVANCEMENT,
+        "You've Got a Friend in Me": ADVANCEMENT_EXPLORATION,
         "Best Friends Forever": ADVANCEMENT,
         "A Seedy Place": ADVANCEMENT,
         "Getting Wood": ADVANCEMENT,
