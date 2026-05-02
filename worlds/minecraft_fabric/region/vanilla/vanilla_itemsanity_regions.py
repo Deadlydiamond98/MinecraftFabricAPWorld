@@ -470,7 +470,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     }, lambda state: canWearLeatherArmor(world, state))
 
     # REQUIRES SMELTING
-    create_region(world, "HasStoneTools", "CanSmeltItems", {
+    create_region(world, "Menu", "CanSmeltItems", {
         "Glass (Itemsanity)": ITEMSANITY,
         "Tinted Glass (Itemsanity)": ITEMSANITY,
         "Smooth Stone Slab (Itemsanity)": SLAB,
@@ -481,7 +481,6 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Decorated Pot (Itemsanity)": ITEMSANITY,
         "Furnace (Itemsanity)": ITEMSANITY,
         "Cracked Stone Bricks (Itemsanity)": ITEMSANITY,
-        "Iron Bars (Itemsanity)": ITEMSANITY,
         "Glass Pane (Itemsanity)": ITEMSANITY,
         "Brick Stairs (Itemsanity)": STAIR,
         "Smooth Basalt (Itemsanity)": ITEMSANITY,
@@ -489,18 +488,11 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Terracotta (Itemsanity)": ITEMSANITY,
         "Smooth Sandstone Stairs (Itemsanity)": STAIR,
         "Smooth Sandstone Slab (Itemsanity)": SLAB,
-        "Tripwire Hook (Itemsanity)": ITEMSANITY,
-        "Heavy Weighted Pressure Plate (Itemsanity)": ITEMSANITY,
-        "Iron Door (Itemsanity)": ITEMSANITY,
-        "Iron Trapdoor (Itemsanity)": ITEMSANITY,
         "Charcoal (Itemsanity)": ITEMSANITY,
-        "Iron Ingot (Itemsanity)": ITEMSANITY,
-        "Copper Ingot (Itemsanity)": ITEMSANITY,
         "Cooked Porkchop (Itemsanity)": ITEMSANITY,
         "Brick (Itemsanity)": ITEMSANITY,
         "Steak (Itemsanity)": ITEMSANITY,
         "Cooked Chicken (Itemsanity)": ITEMSANITY,
-        "Cauldron (Itemsanity)": ITEMSANITY,
         "Flower Pot (Itemsanity)": ITEMSANITY,
         "Baked Potato (Itemsanity)": ITEMSANITY,
         "Cooked Rabbit (Itemsanity)": ITEMSANITY,
@@ -512,11 +504,27 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Cracked Deepslate Tiles (Itemsanity)": ITEMSANITY
     }, lambda state: canSmelt(world, state))
 
+    # CAN GET IRON
+    create_region(world, "HasStoneTools", "CanSmeltItemsIron", {
+        "Iron Bars (Itemsanity)": ITEMSANITY,
+        "Tripwire Hook (Itemsanity)": ITEMSANITY,
+        "Heavy Weighted Pressure Plate (Itemsanity)": ITEMSANITY,
+        "Iron Door (Itemsanity)": ITEMSANITY,
+        "Iron Trapdoor (Itemsanity)": ITEMSANITY,
+        "Iron Ingot (Itemsanity)": ITEMSANITY,
+        "Copper Ingot (Itemsanity)": ITEMSANITY,
+        "Cauldron (Itemsanity)": ITEMSANITY,
+    }, lambda state: canGetIron(world, state))
+
     # REQUIRES SMELTING (x2)
     create_region(world, "CanSmeltItems", "CanSmeltItemsBetter", {
-        "Smoker (Itemsanity)": ITEMSANITY,
-        "Blast Furnace (Itemsanity)": ITEMSANITY
+        "Smoker (Itemsanity)": ITEMSANITY
     }, lambda state: canSmeltBetter(world, state))
+
+    # REQUIRES SMELTING (x2) AND IRON
+    create_region(world, "CanSmeltItemsBetter", "CanSmeltItemsBetterAndMineIron", {
+        "Blast Furnace (Itemsanity)": ITEMSANITY
+    }, lambda state: canSmeltBetter(world, state) and canUseStoneTools(world, state))
 
     # REQUIRES SHIELD
     create_region(world, "CanSmeltItems", "HasShield", {
@@ -891,7 +899,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     }, lambda state: canGetCryingObsidian(world, state))
 
     # REQUIRES SHEARS
-    create_region(world, "CanSmeltItems", "HasShears", {
+    create_region(world, "CanSmeltItemsIron", "HasShears", {
         "Grass (Itemsanity)": ITEMSANITY,
         "Fern (Itemsanity)": ITEMSANITY,
         "Dead Bush (Itemsanity)": ITEMSANITY,
@@ -917,13 +925,21 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     }, lambda state: canUseShears(world, state))
 
     # REQUIRES MISC CRAFTING
-    create_region(world, "CanSmeltItems", "CanCraftMiscStations", {
+    create_region(world, "Menu", "CanCraftMiscStations", {
         "Loom (Itemsanity)": ITEMSANITY,
         "Cartography Table (Itemsanity)": ITEMSANITY,
         "Fletching Table (Itemsanity)": ITEMSANITY,
-        "Grindstone (Itemsanity)": ITEMSANITY,
-        "Stonecutter (Itemsanity)": ITEMSANITY
     }, lambda state: canAccessMiscJobsites(world, state))
+
+    # REQUIRES MISC CRAFTING AND SMELT
+    create_region(world, "Menu", "CanCraftMiscStationsAndSmelt", {
+        "Grindstone (Itemsanity)": ITEMSANITY
+    }, lambda state: canAccessMiscJobsites(world, state) and canSmelt(world, state))
+
+    # REQUIRES MISC CRAFTING AND SMELT AND STONE TOOLS
+    create_region(world, "CanCraftMiscStationsAndSmelt", "CanCraftMiscStationsAndSmeltAndStoneTools", {
+        "Stonecutter (Itemsanity)": ITEMSANITY
+    }, lambda state: canAccessMiscJobsites(world, state) and canGetIron(world, state))
 
     # REQUIRES TRADING
     create_region(world, "Menu", "HasTrading", {
@@ -1085,11 +1101,15 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Weathered Cut Copper Slab (Itemsanity)": SLAB,
         "Oxidized Cut Copper Slab (Itemsanity)": SLAB,
         "Iron Nugget (Itemsanity)": ITEMSANITY,
-    }, lambda state: canSmelt(world, state) and canCompactResources(world, state))
+    }, lambda state: canGetIron(world, state) and canCompactResources(world, state))
+
+    # REQUIRES COMPACTING
+    create_region(world, "Menu", "CanCompact", {
+        "Block of Coal (Itemsanity)": ITEMSANITY
+    }, lambda state: canCompactResources(world, state))
 
     # REQUIRES COMPACTING AND STONE TOOLS
     create_region(world, "HasStoneTools", "CanCompactAndStoneTools", {
-        "Block of Coal (Itemsanity)": ITEMSANITY,
         "Block of Raw Iron (Itemsanity)": ITEMSANITY,
         "Block of Raw Copper (Itemsanity)": ITEMSANITY,
         "Block of Lapis Lazuli (Itemsanity)": ITEMSANITY
@@ -1111,7 +1131,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     # REQUIRES COMPACTING AND IRON TOOLS AND SMELTING
     create_region(world, "HasIronTools", "CanCompactAndIronToolsAndSmelting", {
         "Block of Gold (Itemsanity)": ITEMSANITY
-    }, lambda state: canCompactResources(world, state) and canSmelt(world, state) and canUseIronTools(world, state))
+    }, lambda state: canCompactResources(world, state) and canGetIron(world, state) and canUseIronTools(world, state))
 
     # REQUIRES NETHER AND FISHING ROD
     create_region(world, "NetherAccess", "NetherAccessAndFishing", {
@@ -1147,7 +1167,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Netherite Scrap (Itemsanity)": ITEMSANITY,
         "Netherite Ingot (Itemsanity)": ITEMSANITY,
         "Lodestone (Itemsanity)": ITEMSANITY
-    }, lambda state: canGetNetherite(world, state) and canSmelt(world, state))
+    }, lambda state: canGetNetherite(world, state) and canGetIron(world, state))
 
     # REQUIRES NETHER AND ENCHANTING
     create_region(world, "NetherAccess", "NetherAccessAndEnchanting", {
@@ -1183,7 +1203,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Redstone Comparator (Itemsanity)": ITEMSANITY,
         "Observer (Itemsanity)": ITEMSANITY,
         "Redstone Lamp (Itemsanity)": ITEMSANITY
-    }, lambda state: canAccessNether(world, state) and canSmelt(world, state) and canUseIronTools(world, state))
+    }, lambda state: canAccessNether(world, state) and canGetIron(world, state) and canUseIronTools(world, state))
 
     # REQUIRES SHEARS OR ENCHANTING
     create_region(world, "Menu", "ShearsOrEnchanting", {
@@ -1225,7 +1245,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     create_region(world, "CanSmeltItems", "CanSmeltItemsAndUseChests", {
         "Hopper (Itemsanity)": ITEMSANITY,
         "Trapped Chest (Itemsanity)": ITEMSANITY
-    }, lambda state: canAccessChests(world, state) and canSmelt(world, state))
+    }, lambda state: canAccessChests(world, state) and canGetIron(world, state))
 
     # REQUIRES BOW AND IRON TOOLS
     create_region(world, "HasIronTools", "HasIronToolsAndBow", {
@@ -1606,14 +1626,14 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Dark Oak Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
         "Mangrove Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION,
         "Bamboo Hanging Sign (Itemsanity)": ITEMSANITY_EXPLORATION
-    }, lambda state: canCompactResources(world, state) and canSmelt(world, state))
+    }, lambda state: canCompactResources(world, state) and canGetIron(world, state))
 
     # Can Smelt and Compact and Has Nether
     create_region(world, "CanSmeltItemsAndCompact", "CanSmeltItemsAndCompactAndNether", {
         "Crimson Hanging Sign (Itemsanity)": ITEMSANITY,
         "Warped Hanging Sign (Itemsanity)": ITEMSANITY,
         "Soul Lantern (Itemsanity)": ITEMSANITY
-    }, lambda state: canCompactResources(world, state) and canSmelt(world, state) and canAccessNether(world, state))
+    }, lambda state: canCompactResources(world, state) and canGetIron(world, state) and canAccessNether(world, state))
 
     # Can Shear and Enchant
     create_region(world, "HasEnchanting", "HasEnchantingAndShears", {

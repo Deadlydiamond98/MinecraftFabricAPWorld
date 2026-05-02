@@ -20,7 +20,7 @@ def create_ironchests_itemsanity_regions(world: FabricMinecraftWorld):
         "Copper Chest Upgrade (Itemsanity) {Iron Chests: Restocked}": ITEMSANITY,
         "Iron Chest Upgrade (Itemsanity) {Iron Chests: Restocked}": ITEMSANITY,
         "Iron Dolly (Itemsanity) {Iron Chests: Restocked}": ITEMSANITY_EXPLORATION,
-    }, lambda state: canSmelt(world, state))
+    }, lambda state: canGetIron(world, state))
 
     # Has Smelting And Storage
     create_region(world, "HasSmelting", "HasSmeltingAndStorage", {
@@ -28,7 +28,7 @@ def create_ironchests_itemsanity_regions(world: FabricMinecraftWorld):
         "Copper Barrel (Itemsanity) {Iron Chests: Restocked}": ITEMSANITY,
         "Iron Chest (Itemsanity) {Iron Chests: Restocked}": ITEMSANITY,
         "Iron Barrel (Itemsanity) {Iron Chests: Restocked}": ITEMSANITY,
-    }, lambda state: canSmelt(world, state) and canAccessChests(world, state))
+    }, lambda state: canGetIron(world, state) and canAccessChests(world, state))
 
     # Has Smelting And Storage And Gold
     create_region(world, "HasSmeltingAndStorage", "HasSmeltingAndStorageAndGold", {

@@ -30,7 +30,7 @@ def create_create_advancement_regions(world: FabricMinecraftWorld):
         "The Copper Age {Create}": ADVANCEMENT,
         "Tumble Draining {Create}": ADVANCEMENT,
         "On a Roll {Create}": ADVANCEMENT
-    }, lambda state: canSmelt(world, state))
+    }, lambda state: canGetIron(world, state))
 
     # Has Diving Suit
     create_region(world, "AndesiteAlloy", "HasDivingSuit", {
@@ -255,7 +255,7 @@ def create_create_advancement_regions(world: FabricMinecraftWorld):
     # Can Use Netherite Diving Gear
     create_region(world, "AndesiteAlloy", "NetheriteDivingGear", {
         "Swimming with the Striders {Create}": ADVANCEMENT_HARD
-    }, lambda state: canCompactResources(world, state) and canWearNetheriteArmor(world, state) and canSmelt(world, state))
+    }, lambda state: canCompactResources(world, state) and canWearNetheriteArmor(world, state) and canGetIron(world, state))
 
     # Can Make Fluid Foods
     create_region(world, "Menu", "CanMakeFluidFoods", {

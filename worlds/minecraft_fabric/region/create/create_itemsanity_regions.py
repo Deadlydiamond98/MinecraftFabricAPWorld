@@ -35,35 +35,16 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Red Sand Paper (Itemsanity) {Create}": ITEMSANITY
     }, lambda state: canUseSandpaper(world, state) and hasCogs(world, state) and canCraftAndesiteAlloy(world, state))
 
-    # Can Smelt
-    create_region(world, "Menu", "CanSmelt", {
-        "Schematic Table (Itemsanity) {Create}": ITEMSANITY,
+    # Can Get Iron
+    create_region(world, "Menu", "CanGetIron", {
         "Item Drain (Itemsanity) {Create}": ITEMSANITY,
         "Copper Casing (Itemsanity) {Create}": ITEMSANITY,
         "Copper Diving Helmet (Itemsanity) {Create}": ITEMSANITY,
-        "Copper Door (Itemsanity) {Create}": ITEMSANITY,
-        "Oak Window (Itemsanity) {Create}": ITEMSANITY,
-        "Spruce Window (Itemsanity) {Create}": ITEMSANITY,
-        "Birch Window (Itemsanity) {Create}": ITEMSANITY,
-        "Jungle Window (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Acacia Window (Itemsanity) {Create}": ITEMSANITY,
-        "Dark Oak Window (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Mangrove Window (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Cherry Window (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Bamboo Window (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Oak Window Pane (Itemsanity) {Create}": ITEMSANITY,
-        "Spruce Window Pane (Itemsanity) {Create}": ITEMSANITY,
-        "Birch Window Pane (Itemsanity) {Create}": ITEMSANITY,
-        "Jungle Window Pane (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Acacia Window Pane (Itemsanity) {Create}": ITEMSANITY,
-        "Dark Oak Window Pane (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Mangrove Window Pane (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Cherry Window Pane (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-        "Bamboo Window Pane (Itemsanity) {Create}": ITEMSANITY_EXPLORATION,
-    }, lambda state: canSmelt(world, state))
+        "Copper Door (Itemsanity) {Create}": ITEMSANITY
+    }, lambda state: canGetIron(world, state))
 
     # Can Smelt And Nether Access
-    create_region(world, "CanSmelt", "CanSmeltAndNether", {
+    create_region(world, "Menu", "CanSmeltAndNether", {
         "Crimson Window (Itemsanity) {Create}": ITEMSANITY,
         "Warped Window (Itemsanity) {Create}": ITEMSANITY,
         "Crimson Window Pane (Itemsanity) {Create}": ITEMSANITY,
@@ -71,12 +52,12 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
     }, lambda state: canSmelt(world, state) and canAccessNether(world, state))
 
     # Can Smelt And Compact
-    create_region(world, "CanSmelt", "CanSmeltAndCompact", {
+    create_region(world, "Menu", "CanSmeltAndCompact", {
         "Copper Nugget (Itemsanity) {Create}": ITEMSANITY,
         "List Filter (Itemsanity) {Create}": ITEMSANITY,
         "Ornate Iron Window (Itemsanity) {Create}": ITEMSANITY,
         "Ornate Iron Window Pane (Itemsanity) {Create}": ITEMSANITY,
-    }, lambda state: canSmelt(world, state) and canCompactResources(world, state))
+    }, lambda state: canGetIron(world, state) and canCompactResources(world, state))
 
     # Has Iron Tools
     create_region(world, "Menu", "IronTools", {
@@ -442,9 +423,9 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
     }, lambda state: hasPress(world, state) and canUseMinecart(world, state))
 
     # Can Smelt and Can Compact and Has Archery
-    create_region(world, "CanSmelt", "CanSmeltAndCompactAndArchery", {
+    create_region(world, "Menu", "CanSmeltAndCompactAndArchery", {
         "Schematicannon (Itemsanity) {Create}": ITEMSANITY
-    }, lambda state: canSmelt(world, state) and canCompactResources(world, state) and canUseBow(world, state))
+    }, lambda state: canGetIron(world, state) and canCompactResources(world, state) and canUseBow(world, state))
 
     # Has Gold and Electron Tubes and Minecarts
     create_region(world, "AndesiteAlloy", "GoldAndElectronTubesAndMinecarts", {
@@ -491,9 +472,9 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
     }, lambda state: canCraftAndesiteAlloy(world, state) and canWearNetheriteArmor(world, state))
 
     # Netherite Diving Gear
-    create_region(world, "CanSmelt", "NetheriteDivingHelmet", {
+    create_region(world, "Menu", "NetheriteDivingHelmet", {
         "Netherite Diving Helmet (Itemsanity) {Create}": ITEMSANITY
-    }, lambda state: canSmelt(world, state) and canWearNetheriteArmor(world, state))
+    }, lambda state: canGetIron(world, state) and canWearNetheriteArmor(world, state))
 
     # Has Enchanting
     create_region(world, "Menu", "HasEnchanting", {
@@ -736,8 +717,8 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Scoria Pillar (Itemsanity) {Create}": ITEMSANITY,
     }, lambda state: canCraftSPDecorativeStone(world, state))
 
-    # Has Smelting
-    create_region(world, "CanSmelt", "SmeltAndCutting", {
+    # Has Iron
+    create_region(world, "Menu", "IronAndCutting", {
         "Copper Table Cover (Itemsanity) {Create}": ITEMSANITY,
         "Copper Ladder (Itemsanity) {Create}": ITEMSANITY,
         "Copper Bars (Itemsanity) {Create}": ITEMSANITY,
@@ -805,7 +786,12 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
         "Industrial Iron Window (Itemsanity) {Create}": ITEMSANITY,
         "Weathered Iron Window (Itemsanity) {Create}": ITEMSANITY,
         "Industrial Iron Window Pane (Itemsanity) {Create}": ITEMSANITY,
-        "Weathered Iron Window Pane (Itemsanity) {Create}": ITEMSANITY,
+        "Weathered Iron Window Pane (Itemsanity) {Create}": ITEMSANITY
+    }, lambda state: canGetIron(world, state) and canCraftSPDecorativeStone(world, state))
+
+
+    # Has Smelting
+    create_region(world, "Menu", "SmeltAndCutting", {
         "Cut Deepslate (Itemsanity) {Create}": ITEMSANITY,
         "Cut Deepslate Stairs (Itemsanity) {Create}": STAIR,
         "Cut Deepslate Slab (Itemsanity) {Create}": SLAB,

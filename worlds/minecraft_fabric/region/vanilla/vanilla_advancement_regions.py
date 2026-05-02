@@ -73,10 +73,14 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
     }, lambda state: canWearLeatherArmor(world, state))
 
     # REQUIRES SMELTING
-    create_region(world, "HasStoneTools", "CanSmeltItems", {
-        "Acquire Hardware": ADVANCEMENT,
+    create_region(world, "Menu", "CanSmeltItems", {
         "Hot Topic": ADVANCEMENT
     }, lambda state: canSmelt(world, state))
+
+    # REQUIRES SMELTING
+    create_region(world, "HasStoneTools", "CanGetIron", {
+        "Acquire Hardware": ADVANCEMENT
+    }, lambda state: canGetIron(world, state))
 
     # REQUIRES SHIELD
     create_region(world, "CanSmeltItems", "HasShield", {
@@ -302,7 +306,7 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
     # REQUIRES COMPACTING AND SMELTING
     create_region(world, "CanSmeltItems", "CanSmeltAndCanCompact", {
         "Hired Help": ADVANCEMENT
-    }, lambda state: canSmelt(world, state) and canCompactResources(world, state))
+    }, lambda state: canGetIron(world, state) and canCompactResources(world, state) and canUseShears(world, state))
 
     # REQUIRES NETHER AND FISHING ROD AND CHESTS
     create_region(world, "NetherAccess", "NetherAccessAndFishingRodAndChests", {

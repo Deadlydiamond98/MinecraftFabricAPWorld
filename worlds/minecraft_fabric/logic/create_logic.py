@@ -19,10 +19,10 @@ from BaseClasses import CollectionState
 # BASIC COMPONENTS #####################################################################################################
 
 def canCraftAndesiteAlloy(world: FabricMinecraftWorld, state: CollectionState):
-    return canCompactResources(world, state) and canSmelt(world, state)
+    return canCompactResources(world, state) and canGetIron(world, state)
 
 def canGetZinc(world: FabricMinecraftWorld, state: CollectionState):
-    return canSmelt(world, state) and canUseIronTools(world, state)
+    return canGetIron(world, state) and canUseIronTools(world, state)
 
 def canCraftBrass(world: FabricMinecraftWorld, state: CollectionState):
     return hasMixer(world, state) and hasBlazeBurner(world, state) and canUseIronTools(world, state)
@@ -62,11 +62,11 @@ def canFillFluidWater(world: FabricMinecraftWorld, state: CollectionState):
     return hasPump(world, state) and canUseBucket(world, state)
 
 def canMakeHeat(world: FabricMinecraftWorld, state: CollectionState):
-    return (canUseFlintAndSteel(world, state) or canUseStoneTools(world, state) or canSmelt(world, state) or
+    return (canUseFlintAndSteel(world, state) or canUseStoneTools(world, state) or canGetIron(world, state) or
             canUseBucket(world, state))
 
 def canUsePackager(world: FabricMinecraftWorld, state: CollectionState):
-    return (canCompactResources(world, state) and canSmelt(world, state) and canUseIronTools(world, state) and
+    return (canCompactResources(world, state) and canGetIron(world, state) and canUseIronTools(world, state) and
             canAccessChests(world, state) and canCraftCardboard(world, state))
 
 # POWER GENERATION #####################################################################################################
@@ -121,7 +121,7 @@ def canHaunt(world: FabricMinecraftWorld, state: CollectionState):
 # FLUID TANKS ##########################################################################################################
 
 def hasFluidTank(world: FabricMinecraftWorld, state: CollectionState):
-    return hasPress(world, state) and canAccessChests(world, state) and canSmelt(world, state)
+    return hasPress(world, state) and canAccessChests(world, state) and canGetIron(world, state)
 
 def canFillFluidTankWater(world: FabricMinecraftWorld, state: CollectionState):
     return hasFluidTank(world, state) and canFillFluidWater(world, state)
