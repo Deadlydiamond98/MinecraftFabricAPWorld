@@ -94,6 +94,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Snow (Itemsanity)": ITEMSANITY,
         "Snow Block (Itemsanity)": ITEMSANITY,
         "Clay (Itemsanity)": ITEMSANITY,
+        "Clay Ball (Itemsanity)": ITEMSANITY,
         "Oak Fence (Itemsanity)": WALL,
         "Spruce Fence (Itemsanity)": WALL,
         "Birch Fence (Itemsanity)": WALL,
@@ -399,7 +400,6 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Nether Quartz (Itemsanity)": ITEMSANITY,
         "Crimson Sign (Itemsanity)": ITEMSANITY,
         "Warped Sign (Itemsanity)": ITEMSANITY,
-        "Clay Ball (Itemsanity)": ITEMSANITY,
         "Glowstone Dust (Itemsanity)": ITEMSANITY,
         "Blaze Rod (Itemsanity)": ITEMSANITY,
         "Ghast Tear (Itemsanity)": ITEMSANITY,
@@ -763,10 +763,10 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Brown Mushroom Block (Itemsanity)": ITEMSANITY,
         "Red Mushroom Block (Itemsanity)": ITEMSANITY,
         "Mushroom Stem (Itemsanity)": ITEMSANITY,
-        "Sculk (Itemsanity)": ITEMSANITY,
-        "Sculk Vein (Itemsanity)": ITEMSANITY,
-        "Sculk Catalyst (Itemsanity)": ITEMSANITY,
-        "Sculk Shrieker (Itemsanity)": ITEMSANITY,
+        "Sculk (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Sculk Vein (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Sculk Catalyst (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Sculk Shrieker (Itemsanity)": ITEMSANITY_EXPLORATION,
         "Enchanting Table (Itemsanity)": ITEMSANITY,
         "Anvil (Itemsanity)": ITEMSANITY,
         "Chipped Anvil (Itemsanity)": ITEMSANITY,
@@ -774,8 +774,8 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Packed Ice (Itemsanity)": ITEMSANITY,
         "Blue Ice (Itemsanity)": ITEMSANITY,
         "Lectern (Itemsanity)": ITEMSANITY,
-        "Sculk Sensor (Itemsanity)": ITEMSANITY,
-        "Calibrated Sculk Sensor (Itemsanity)": ITEMSANITY,
+        "Sculk Sensor (Itemsanity)": ITEMSANITY_EXPLORATION,
+        "Calibrated Sculk Sensor (Itemsanity)": ITEMSANITY_EXPLORATION,
         "Bee Nest (Itemsanity)": ITEMSANITY,
         "Small Amethyst Bud (Itemsanity)": ITEMSANITY,
         "Medium Amethyst Bud (Itemsanity)": ITEMSANITY,
@@ -794,9 +794,6 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Lava Bucket (Itemsanity)": ITEMSANITY,
         "Milk Bucket (Itemsanity)": ITEMSANITY,
         "Cake (Itemsanity)": ITEMSANITY,
-
-        "Suspicious Sand (Itemsanity)": ITEMSANITY_HARD,
-        "Suspicious Gravel (Itemsanity)": ITEMSANITY_HARD,
 
         "Powder Snow Bucket (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canUseBucket(world, state))
@@ -819,7 +816,7 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Stone Button (Itemsanity)": ITEMSANITY,
         "Stone Pressure Plate (Itemsanity)": ITEMSANITY,
         "Deepslate (Itemsanity)": ITEMSANITY
-    }, lambda state: canUseBucket(world, state))
+    }, lambda state: canEnchant(world, state) or canSmelt(world, state))
 
     # REQUIRES BREWING
     create_region(world, "NetherAccess", "HasBrewing", {
@@ -863,7 +860,6 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Dark Prismarine Stairs (Itemsanity)": STAIR_AND_EXPLORATION,
 
         "Sea Lantern (Itemsanity)": ITEMSANITY_EXPLORATION,
-        "Sponge (Itemsanity)": ITEMSANITY_EXPLORATION,
         "Wet Sponge (Itemsanity)": ITEMSANITY_EXPLORATION,
         "Tide Armor Trim (Itemsanity)": TRIM
     }, lambda state: canSwim(world, state))
@@ -962,6 +958,12 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
     # MULTIPLE CHECKS ##################################################################################################
     ####################################################################################################################
 
+    # REQUIRES BUCKET AND NETHER ACCESS OR SHEARS
+    create_region(world, "Menu", "HasBucketAndNetherOrShears", {
+        "Suspicious Sand (Itemsanity)": ITEMSANITY_HARD,
+        "Suspicious Gravel (Itemsanity)": ITEMSANITY_HARD,
+    }, lambda state: canUseShears(world, state) or canEnchant(world, state) or (canUseBucket(world, state) and canAccessNether(world, state)))
+
     # REQUIRES SWIMMING AND ENCHANTING
     create_region(world, "HasEnchanting", "HasSwimAndEnchanting", {
         "Tube Coral Block (Itemsanity)": ITEMSANITY_EXPLORATION,
@@ -993,15 +995,19 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
         "Zombie Head (Itemsanity)": MOB_HEADS,
         "Skeleton Skull (Itemsanity)": MOB_HEADS,
         "Creeper Head (Itemsanity)": MOB_HEADS,
-        "Piglin Head (Itemsanity)": MOB_HEADS,
         "Creeper Charge Banner Pattern (Itemsanity)": MOB_HEADS,
 
         "Mycelium (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canSwim(world, state) and canEnchant(world, state))
 
+    # REQUIRES SWIMMING AND ENCHANTING AND NETHER
+    create_region(world, "HasSwimAndEnchanting", "HasSwimAndEnchantingAndNether", {
+        "Piglin Head (Itemsanity)": MOB_HEADS,
+    }, lambda state: canSwim(world, state) and canEnchant(world, state) and canAccessNether(world, state))
+
     # REQUIRES SWIMMING AND BRUSH
     create_region(world, "HasBrush", "HasSwimAndBrush", {
-        "Sniffer Egg (Itemsanity)": ITEMSANITY,
+        "Sniffer Egg (Itemsanity)": ITEMSANITY_HARD,
         "Torchflower Seeds (Itemsanity)": FLOWER_AND_HARD,
         "Pitcher Pod (Itemsanity)": FLOWER_AND_HARD,
         "Torchflower (Itemsanity)": FLOWER_AND_HARD,
@@ -1080,6 +1086,11 @@ def create_vanilla_itemsanity_regions(world: FabricMinecraftWorld):
 
         "Bucket of Tadpole (Itemsanity)": ITEMSANITY_EXPLORATION
     }, lambda state: canUseBucket(world, state) and canSwim(world, state))
+
+    # REQUIRES SMELT AND SWIM
+    create_region(world, "HasSwim", "HasSmeltAndSwim", {
+        "Sponge (Itemsanity)": ITEMSANITY_EXPLORATION,
+    }, lambda state: canSmelt(world, state) and canSwim(world, state))
 
     # REQUIRES COMPACTING AND SMELTING
     create_region(world, "CanSmeltItems", "CanSmeltAndCanCompact", {

@@ -150,7 +150,7 @@ def canUseMinecart(world: FabricMinecraftWorld, state: CollectionState):
     return canGetIron(world, state) and state.has("Minecart Recipes", world.player)
 
 def canUseBrush(world: FabricMinecraftWorld, state: CollectionState):
-    return canGetIron(world, state) and state.has("Brush Recipes", world.player)
+        return canGetIron(world, state) and state.has("Brush Recipes", world.player)
 
 def canUseSpyglass(world: FabricMinecraftWorld, state: CollectionState):
     return canGetIron(world, state) and state.has("Spyglass Recipes", world.player)
@@ -263,7 +263,7 @@ def canDyeBlack(world: FabricMinecraftWorld, state: CollectionState):
     if hasCreate(world):
         createMethod = state.has("Cogwheels", world.player) and canCraftAndesiteAlloyCreate(world, state) and canGetIron(world, state)
 
-    return (canDyeBasic(world, state) and canSwim(world, state)) or createMethod
+    return (canDyeBasic(world, state) and (canGoalWither(world, state) or canSwim(world, state))) or createMethod
 
 def canDyeGreen(world: FabricMinecraftWorld, state: CollectionState):
     createMethod = False
@@ -299,7 +299,7 @@ def canAccessVanillaEndGame(world: FabricMinecraftWorld, state: CollectionState)
 
     return ((canEnchant(world, state) and canBrew(world, state) and canPlaceBeacon(world, state)
             and canBeatDragonAndWither(world, state) and canUseDiamondTools(world, state))
-            and canAccessChests(world, state) and createMethod)
+            and canAccessChests(world, state) and canSmith(world, state) and createMethod)
 
 def canGoalEnderDragon(world: FabricMinecraftWorld, state: CollectionState):
     return canAccessEnd(world, state)

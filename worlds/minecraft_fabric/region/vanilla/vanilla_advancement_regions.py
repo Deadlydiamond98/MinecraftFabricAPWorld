@@ -175,11 +175,15 @@ def create_vanilla_advancement_regions(world: FabricMinecraftWorld):
 
     # REQUIRES BUCKET
     create_region(world, "CanSmeltItems", "HasBucket", {
-        "Birthday Song": ADVANCEMENT,
         "Hot Stuff": ADVANCEMENT,
         "The Lie": ADVANCEMENT,
         "Bukkit Bukkit": ADVANCEMENT_EXPLORATION
     }, lambda state: canUseBucket(world, state))
+
+    # REQUIRES BUCKET AND IRON TOOLS
+    create_region(world, "HasBucket", "HasBucketAndIronTools", {
+        "Birthday Song": ADVANCEMENT_EXPLORATION
+    }, lambda state: canUseBucket(world, state) and canUseIronTools(world, state))
 
     # REQUIRES BREWING
     create_region(world, "NetherAccess", "HasBrewing", {

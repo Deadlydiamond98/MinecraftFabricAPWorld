@@ -298,7 +298,7 @@ class TimeSavingOptions(OptionSet):
     Decrease Wait times or Increase likelihood for various events that can occur in the game
 
     Options:
-        "Wither Skulls" - Increases the 2.5% Chance for Wither Skulls to drop to 25%
+        "Wither Skulls" - Increases the 2.5% Chance for Wither Skulls to drop to 50%
         "Rabbits Foot" - Increases the 10% Chance for Rabbit's Foot to drop to 50%
         "Drowned Items" - Increases the Chance for a Drowned to drop the items they're holding to 100%
         "Copper Oxidation" - Increases the Chance for Copper Blocks to attempt to Oxidize from 5% to 55%

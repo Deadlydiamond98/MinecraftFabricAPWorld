@@ -39,7 +39,6 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
     create_region(world, "Menu", "CanGetIron", {
         "Item Drain (Itemsanity) {Create}": ITEMSANITY,
         "Copper Casing (Itemsanity) {Create}": ITEMSANITY,
-        "Copper Diving Helmet (Itemsanity) {Create}": ITEMSANITY,
         "Copper Door (Itemsanity) {Create}": ITEMSANITY
     }, lambda state: canGetIron(world, state))
 
@@ -62,13 +61,13 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
     # Has Iron Tools
     create_region(world, "Menu", "IronTools", {
         "Powered Latch (Itemsanity) {Create}": ITEMSANITY,
-        "Powered Toggle Latch (Itemsanity) {Create}": ITEMSANITY
+        "Powered Toggle Latch (Itemsanity) {Create}": ITEMSANITY,
+        "Raw Zinc (Itemsanity) {Create}": ITEMSANITY
     }, lambda state: canUseIronTools(world, state))
 
     # Has Iron Tools And Compact
     create_region(world, "IronTools", "IronToolsAndCompact", {
-        "Block of Raw Zinc (Itemsanity) {Create}": ITEMSANITY,
-        "Raw Zinc (Itemsanity) {Create}": ITEMSANITY
+        "Block of Raw Zinc (Itemsanity) {Create}": ITEMSANITY
     }, lambda state: canUseIronTools(world, state) and canCompactResources(world, state))
 
     # Has Zinc
@@ -462,6 +461,7 @@ def create_create_itemsanity_regions(world: FabricMinecraftWorld):
     # Copper Diving Gear
     create_region(world, "AndesiteAlloy", "CopperDivingGear", {
         "Copper Backtank (Itemsanity) {Create}": ITEMSANITY,
+        "Copper Diving Helmet (Itemsanity) {Create}": ITEMSANITY,
         "Copper Diving Boots (Itemsanity) {Create}": ITEMSANITY
     }, lambda state: canCraftAndesiteAlloy(world, state) and canWearGoldArmor(world, state))
 
